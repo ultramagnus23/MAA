@@ -26,11 +26,11 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "MAA — Ministry of Academic Affairs, Ashoka University",
-    template: "%s — MAA, Ashoka University",
+    default: "MAA | Ministry of Academic Affairs, Ashoka University",
+    template: "%s | MAA, Ashoka University",
   },
   description:
-    "The Ministry of Academic Affairs (MAA) at Ashoka University — representatives, office hours, events, and academic resources for students.",
+    "The Ministry of Academic Affairs (MAA) at Ashoka University: representatives, office hours, events, and academic resources for students.",
 };
 
 export default function RootLayout({

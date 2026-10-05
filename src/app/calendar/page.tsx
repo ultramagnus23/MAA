@@ -1,62 +1,106 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader, Card, SectionHeading, Tag } from "@/components/ui";
+import { PageHeader, Card, SectionHeading, Tag, Eyebrow } from "@/components/ui";
 import { getEvents, splitUpcomingPast } from "@/lib/events";
 import { site } from "@/data/site";
 
-export const metadata: Metadata = { title: "Calendar" };
+export const metadata: Metadata = {
+  title: "Calendar",
+  description:
+    "Ashoka University academic calendar milestones, events, and scheduling dates.",
+};
 
 export default async function CalendarPage() {
   const { events } = await getEvents();
   const { upcoming } = splitUpcomingPast(events);
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <PageHeader
-        eyebrow="Plan ahead"
-        title="Calendar"
-        description="MAA hasn't shared a single public university-wide calendar link with us yet — so rather than guess at one, here's every upcoming event we do have, as simple cards."
+        number="05"
+        eyebrow="Chronological View"
+        title="Academic Calendar"
+        italicTitle="Semester schedule."
+        description="A clear, chronological index of all scheduled academic townhalls, add/drop milestones, and council meetings."
       />
 
-      <section className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
-        <SectionHeading eyebrow="Upcoming" title="What's coming up" />
-        <div className="mt-6 space-y-3">
+      <section className="mx-auto max-w-4xl px-5 py-14 sm:px-8 sm:py-20">
+        <SectionHeading
+          number="01"
+          eyebrow="Schedule"
+          title="Upcoming Calendar Entries"
+        />
+
+        <div className="mt-8 space-y-3.5">
           {upcoming.length === 0 ? (
-            <Card className="text-sm text-ink-soft">
-              Nothing scheduled right now — see{" "}
-              <Link href="/events" className="text-accent hover:underline">
-                Events
-              </Link>{" "}
-              for updates as they come in.
-            </Card>
+            <div className="rounded-xs border border-line bg-paper p-8 sm:p-10">
+              <span className="font-mono-tag text-xs text-accent uppercase tracking-wider">
+                Status
+              </span>
+              <h3 className="font-serif-heading mt-2 text-xl text-ink font-normal">
+                Calendar Entries Synchronizing
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                All scheduled events from the MAA events sheet will populate
+                here automatically. For general event updates and details, visit{" "}
+                <Link href="/events" className="text-accent underline font-medium">
+                  Events
+                </Link>
+                .
+              </p>
+            </div>
           ) : (
-            upcoming.map((event) => (
-              <Card key={`${event.title}-${event.date}`} className="flex items-center justify-between gap-4">
-                <div>
-                  <Tag>{event.category}</Tag>
-                  <p className="font-serif-heading mt-2 text-base text-ink">{event.title}</p>
-                </div>
-                <div className="shrink-0 text-right text-sm text-ink-soft">
-                  <p className="font-medium text-ink">
-                    {new Date(event.date).toLocaleDateString("en-IN", {
-                      day: "numeric",
-                      month: "short",
-                    })}
-                  </p>
-                  {event.location && <p>{event.location}</p>}
-                </div>
-              </Card>
-            ))
+            upcoming.map((event) => {
+              const d = new Date(event.date);
+              const day = d.getDate();
+              const month = d.toLocaleDateString("en-IN", {
+                month: "short",
+              }).toUpperCase();
+
+              return (
+                <Card
+                  key={`${event.title}-${event.date}`}
+                  className="flex items-center justify-between gap-4 p-5 hover:border-accent"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-xs border border-line bg-paper-dim/60 text-center">
+                      <span className="font-mono-tag text-[9px] font-medium text-accent">
+                        {month}
+                      </span>
+                      <span className="font-serif-heading text-lg font-light text-ink">
+                        {day}
+                      </span>
+                    </div>
+
+                    <div>
+                      <Tag variant="accent">{event.category}</Tag>
+                      <h4 className="font-serif-heading mt-1 text-base text-ink font-medium">
+                        {event.title}
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div className="shrink-0 text-right text-xs font-mono-tag text-ink-faint">
+                    {event.location && <p>{event.location}</p>}
+                    {event.time && <p>{event.time}</p>}
+                  </div>
+                </Card>
+              );
+            })
           )}
         </div>
 
-        <Card className="mt-10">
-          <p className="text-sm text-ink-soft">
-            Have the official Ashoka academic calendar link? Send it to{" "}
-            <a href={`mailto:${site.email}`} className="text-accent hover:underline">
+        <Card className="mt-12 bg-paper-dim/40 border-line">
+          <Eyebrow number="NOTE">Official University Calendar</Eyebrow>
+          <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+            Looking for Ashoka University&apos;s overarching academic calendar
+            (mid-semesters, end-semester examination dates, convocation)? If you
+            have the verified institutional calendar link from the Registrar&apos;s
+            office, send it to{" "}
+            <a href={`mailto:${site.email}`} className="text-accent underline font-medium">
               {site.email}
             </a>{" "}
-            and we&apos;ll add it here.
+            to index it here.
           </p>
         </Card>
       </section>

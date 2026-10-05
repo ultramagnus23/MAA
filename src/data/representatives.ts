@@ -1,7 +1,7 @@
 // Only representatives with a real, currently-live public contact channel
 // (a booking link from MAA's own Linktree, linktr.ee/acadaffairs.ministry)
 // are listed as "current." Do not add a name here without a verifiable,
-// currently-active source — see /representatives/archive for the dated
+// currently-active source; see /representatives/archive for the dated
 // 2024-25 department roster instead.
 
 export type CurrentRep = {
@@ -66,7 +66,7 @@ export const departmentContacts: DepartmentContact[] = [
   { department: "Visual Arts", email: "studentrepresentative.visualarts@ashoka.edu.in" },
 ];
 
-// Historical, dated roster — from MAA's BOR Annual Report 2024-25.
+// Historical, dated roster from MAA's BOR Annual Report 2024-25.
 // Shown only on the archive page, clearly labeled as that academic year.
 export type ArchivedRep = {
   department: string;
@@ -116,6 +116,6 @@ export const archivedFcReps2024_25 = [
   {
     fc: "POS / MnB / QRMT",
     name: "Khushi Jain",
-    note: "Held 10 office hours in total — 7 in person, 3 online.",
+    note: "Held 10 office hours in total (7 in person, 3 online).",
   },
 ];
