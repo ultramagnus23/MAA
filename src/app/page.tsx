@@ -26,7 +26,7 @@ export default async function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.15fr_1fr]">
           <div>
             <Eyebrow>{site.university}</Eyebrow>
-            <h1 className="mt-3 text-4xl font-bold leading-[1.1] text-accent sm:text-6xl">
+            <h1 className="mt-3 text-4xl font-bold leading-[1.1] text-ink sm:text-6xl">
               Ministry of Academic Affairs
             </h1>
             <p className="mt-6 text-xl font-medium text-ink">Your academic voice at Ashoka.</p>
@@ -53,12 +53,12 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="rounded-lg bg-aubergine p-6 text-aubergine-text">
+          <div className="rounded-lg border border-line bg-white p-6">
             <div className="flex items-center gap-3">
               <Image src="/logo.png" alt="" width={48} height={48} className="h-12 w-12" />
-              <p className="text-lg font-semibold">Meet a representative</p>
+              <p className="text-lg font-semibold text-ink">Meet a representative</p>
             </div>
-            <p className="mt-3 text-sm leading-relaxed text-aubergine-muted">
+            <p className="mt-3 text-sm leading-relaxed text-ink-soft">
               Representatives hold regular office hours. Choose a time that
               suits you and book it directly.
             </p>
@@ -69,19 +69,19 @@ export default async function Home() {
                   href={rep.bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between gap-4 rounded bg-aubergine-surface px-4 py-3 transition-colors hover:bg-aubergine-highlight"
+                  className="flex items-center justify-between gap-4 rounded border border-line bg-paper px-4 py-3 transition-colors hover:border-accent"
                 >
                   <span>
-                    <span className="block font-medium">{rep.name}</span>
-                    <span className="block text-sm text-aubergine-muted">{rep.role}</span>
+                    <span className="block font-medium text-ink">{rep.name}</span>
+                    <span className="block text-sm text-ink-soft">{rep.role}</span>
                   </span>
-                  <span className="text-sm font-medium text-gold">Book a time →</span>
+                  <span className="text-sm font-medium text-accent">Book a time →</span>
                 </a>
               ))}
             </div>
-            <div className="mt-5 flex items-center justify-between border-t border-aubergine-border pt-4 text-sm">
-              <span className="text-aubergine-muted">Department contacts</span>
-              <Link href="/representatives" className="font-medium text-gold hover:underline">
+            <div className="mt-5 flex items-center justify-between border-t border-line pt-4 text-sm">
+              <span className="text-ink-soft">Department contacts</span>
+              <Link href="/representatives" className="font-medium text-accent hover:underline">
                 View all {departmentContacts.length} →
               </Link>
             </div>
@@ -90,14 +90,14 @@ export default async function Home() {
       </section>
 
       {/* Quick questions */}
-      <section className="border-b border-line bg-rose-soft">
+      <section className="border-b border-line bg-paper-dim">
         <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {quickQuestions.map((item) => (
               <Link
                 key={item.q}
                 href={item.href}
-                className="group flex items-center justify-between rounded border border-rose/40 bg-white px-4 py-4 text-sm transition-colors hover:border-accent"
+                className="group flex items-center justify-between rounded border border-line bg-white px-4 py-4 text-sm transition-colors hover:border-accent"
               >
                 <span className="font-medium text-ink">{item.q}</span>
                 <span
@@ -150,7 +150,7 @@ export default async function Home() {
       </section>
 
       {/* Events */}
-      <section className="border-y border-line bg-accent-soft">
+      <section className="border-y border-line bg-paper-dim">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading eyebrow="What is on" title="Upcoming events" />
@@ -221,7 +221,7 @@ export default async function Home() {
       </section>
 
       {/* Team */}
-      <section className="border-t border-line bg-paper-dim">
+      <section className="border-t border-line">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <SectionHeading
             eyebrow="The team"
@@ -235,12 +235,12 @@ export default async function Home() {
       </section>
 
       {/* Contact */}
-      <section className="bg-aubergine text-aubergine-text">
+      <section className="border-t border-line bg-paper-dim">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-          <h2 className="max-w-2xl text-2xl font-semibold sm:text-3xl">
+          <h2 className="max-w-2xl text-2xl font-semibold text-ink sm:text-3xl">
             Whom should I approach with an academic concern?
           </h2>
-          <p className="mt-3 max-w-2xl text-base leading-relaxed text-aubergine-muted">
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
             For questions about a particular course, please begin with your
             department&apos;s representative. For matters handled by the
             Ministry directly, such as policy, thesis guidance and academic
@@ -249,13 +249,13 @@ export default async function Home() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/representatives"
-              className="rounded border border-aubergine-muted px-5 py-2.5 text-sm font-medium transition-colors hover:bg-aubergine-surface"
+              className="rounded border border-accent px-5 py-2.5 text-sm font-medium text-accent transition-colors hover:bg-accent-soft"
             >
               Find your department contact
             </Link>
             <a
               href={`mailto:${site.email}`}
-              className="rounded bg-gold px-5 py-2.5 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
+              className="rounded bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-dim"
             >
               Email {site.email}
             </a>

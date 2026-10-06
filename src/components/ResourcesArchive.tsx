@@ -80,7 +80,7 @@ export default function ResourcesArchive() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`rounded-xs px-3 py-1.5 text-[11px] transition-all cursor-pointer ${
                   active
-                    ? "bg-aubergine text-aubergine-text font-medium"
+                    ? "bg-accent text-white font-medium"
                     : "border border-line bg-paper text-ink-soft hover:border-line-strong hover:text-ink"
                 }`}
               >

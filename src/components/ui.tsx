@@ -179,10 +179,10 @@ export function PageHeader({
   description?: string;
 }) {
   return (
-    <header className="bg-aubergine">
+    <header className="border-b border-line bg-paper-dim">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
-        <Eyebrow variant="gold">{eyebrow}</Eyebrow>
-        <h1 className="mt-3 text-3xl font-bold text-aubergine-text sm:text-4xl lg:text-5xl">
+        <Eyebrow>{eyebrow}</Eyebrow>
+        <h1 className="mt-3 text-3xl font-bold text-ink sm:text-4xl lg:text-5xl">
           {title}
           {italicTitle && (
             <span className="text-gold ml-2">
@@ -191,7 +191,7 @@ export function PageHeader({
           )}
         </h1>
         {description && (
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-aubergine-muted">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">
             {description}
           </p>
         )}
