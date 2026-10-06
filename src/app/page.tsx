@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Eyebrow, SectionHeading, Tag } from "@/components/ui";
 import TeamGallery from "@/components/TeamGallery";
-import { currentReps, departmentContacts } from "@/data/representatives";
+import { currentReps } from "@/data/representatives";
 import { resources } from "@/data/resources";
 import { site } from "@/data/site";
 import { getEvents, splitUpcomingPast } from "@/lib/events";
@@ -13,7 +13,7 @@ export default async function Home() {
   const featuredResources = resources.slice(0, 6);
 
   const quickQuestions = [
-    { q: "Who is my representative?", href: "/representatives" },
+    { q: "Who do I contact for my department?", href: "/representatives#departments" },
     { q: "When are office hours held?", href: "/representatives#office-hours" },
     { q: "What is happening this week?", href: "/events" },
     { q: "Where can I find the policy document?", href: "/resources" },
@@ -42,7 +42,7 @@ export default async function Home() {
                 href="/representatives"
                 className="rounded bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-dim"
               >
-                Find your representative →
+                Reach the Ministry →
               </Link>
               <Link
                 href="/resources"
@@ -56,11 +56,10 @@ export default async function Home() {
           <div className="rounded-lg border border-line bg-white p-6">
             <div className="flex items-center gap-3">
               <Image src="/logo.png" alt="" width={48} height={48} className="h-12 w-12" />
-              <p className="text-lg font-semibold text-ink">Meet a representative</p>
+              <p className="text-lg font-semibold text-ink">Meet the Core Team</p>
             </div>
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-              Representatives hold regular office hours. Choose a time that
-              suits you and book it directly.
+              Book an office hour with a Core Team member to discuss any general academic matter.
             </p>
             <div className="mt-5 space-y-3">
               {currentReps.map((rep) => (
@@ -73,16 +72,16 @@ export default async function Home() {
                 >
                   <span>
                     <span className="block font-medium text-ink">{rep.name}</span>
-                    <span className="block text-sm text-ink-soft">{rep.role}</span>
+                    <span className="block text-sm text-ink-soft">Core Team</span>
                   </span>
                   <span className="text-sm font-medium text-accent">Book a time →</span>
                 </a>
               ))}
             </div>
             <div className="mt-5 flex items-center justify-between border-t border-line pt-4 text-sm">
-              <span className="text-ink-soft">Department contacts</span>
+              <span className="text-ink-soft">Department matters?</span>
               <Link href="/representatives" className="font-medium text-accent hover:underline">
-                View all {departmentContacts.length} →
+                Contact your Department Representative →
               </Link>
             </div>
           </div>
@@ -127,7 +126,7 @@ export default async function Home() {
             >
               <div>
                 <p className="text-lg font-semibold text-ink">{rep.name}</p>
-                <p className="mt-1 text-sm text-ink-soft">{rep.role}</p>
+                <p className="mt-1 text-sm text-ink-soft">Core Team</p>
               </div>
               <a
                 href={rep.bookingUrl}
