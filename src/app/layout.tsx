@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const main = Source_Sans_3({ subsets: ["latin"], variable: "--font-main", display: "swap" });
 
 export const metadata: Metadata = {
   icons: { icon: "/logo.png" },
@@ -22,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={main.variable}>
+    <html lang="en">
       <body
         className={`antialiased flex min-h-screen flex-col`}
       >

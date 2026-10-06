@@ -47,7 +47,7 @@
   --color-aubergine-muted: var(--color-aubergine-muted);
   --color-aubergine-tag: var(--color-aubergine-tag);
   --color-aubergine-highlight: var(--color-aubergine-highlight);
-  --font-sans: var(--font-main), system-ui, sans-serif;
+  --font-sans: Georgia, "Times New Roman", serif;
 }
 
 html {
@@ -98,8 +98,14 @@ select:focus-visible,
 
 /* One typeface and one style across the whole site */
 *, *::before, *::after {
-  font-family: var(--font-sans) !important;
+  font-family: Georgia, "Times New Roman", serif !important;
   font-style: normal !important;
   letter-spacing: normal !important;
   text-transform: none !important;
 }
+
+/* Fluid type scale: sizes adjust automatically to screen width */
+body { font-size: clamp(1rem, 0.95rem + 0.2vw, 1.0625rem); line-height: 1.7; }
+h1 { font-size: clamp(2rem, 1.2rem + 3.2vw, 3.5rem) !important; line-height: 1.15; font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem) !important; line-height: 1.25; font-weight: 700; }
+h3 { font-size: clamp(1.125rem, 1rem + 0.6vw, 1.5rem) !important; line-height: 1.3; font-weight: 700; }
