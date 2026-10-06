@@ -17,7 +17,7 @@ export default function ResourcesPage() {
       <PageHeader
         eyebrow="Everything in one place"
         title="Resources"
-        description="Policy documents, guides, and directories MAA maintains — every link here traces back to a real document."
+        description="Policy documents, guides and directories maintained by the Ministry of Academic Affairs."
       />
 
       <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
@@ -37,7 +37,7 @@ export default function ResourcesPage() {
                     className="group block rounded border border-line bg-paper p-5 transition-colors hover:border-accent"
                   >
                     <div className="flex items-start justify-between gap-2">
-                      <p className="font-serif-heading text-base text-ink">{resource.title}</p>
+                      <p className="text-base text-ink">{resource.title}</p>
                       {resource.fileNote && <Tag>{resource.fileNote}</Tag>}
                     </div>
                     <p className="mt-2 text-sm leading-relaxed text-ink-soft">
@@ -53,7 +53,7 @@ export default function ResourcesPage() {
         <div className="mb-14">
           <SectionHeading
             title="Department Handbooks"
-            description="Each department's own official handbook, archived by MAA."
+            description="The official handbook of each department, archived by the Ministry."
           />
           <div className="mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {departmentHandbooks.map((h) => (
@@ -73,7 +73,7 @@ export default function ResourcesPage() {
         <div>
           <SectionHeading
             title="Student Handbooks"
-            description="Programme-wide handbooks. A few very large batch-specific handbooks aren't mirrored here to keep this site light."
+            description="Handbooks that apply across programmes. A few very large batch-specific handbooks are not hosted on this site."
           />
           <div className="mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {studentHandbooks.map((h) => (
@@ -89,12 +89,12 @@ export default function ResourcesPage() {
             ))}
           </div>
           <p className="mt-4 text-sm text-ink-faint">
-            Not mirrored here (large files):{" "}
+            Not hosted here due to file size:{" "}
             {largeHandbooksNotMirrored.join(", ")}. Email{" "}
             <a href={`mailto:${site.email}`} className="text-accent hover:underline">
               {site.email}
             </a>{" "}
-            for the current Drive link.
+            for a current link.
           </p>
         </div>
       </section>

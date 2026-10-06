@@ -8,23 +8,21 @@ export default function AddEventPage() {
   return (
     <div>
       <PageHeader
-        eyebrow="For MAA Academic Representatives"
-        title="Adding an event to this site"
-        description="Events on this site are pulled from a Google Sheet — no code, no deploys, no developer needed."
+        eyebrow="For Ministry representatives"
+        title="How to add an event"
+        description="Events on this site are read from a shared Google Sheet. No technical knowledge is required to update them."
       />
 
       <section className="mx-auto max-w-2xl px-5 py-14 sm:px-8">
         <ol className="space-y-6 text-[15px] leading-relaxed text-ink-soft">
           <li>
-            <p className="font-medium text-ink">1. Open the MAA Events sheet</p>
+            <p className="font-medium text-ink">1. Open the Events sheet</p>
             <p className="mt-1">
-              Ask a current MAA member for the &quot;MAA Events&quot; Google
-              Sheet link if you don&apos;t already have it. It has one row
-              per event.
+              Request the link to the &quot;MAA Events&quot; Google Sheet from a current member of the Ministry. The sheet contains one row for each event.
             </p>
           </li>
           <li>
-            <p className="font-medium text-ink">2. Add a row with these columns</p>
+            <p className="font-medium text-ink">2. Add a row with the following columns</p>
             <div className="mt-2 overflow-x-auto rounded border border-line">
               <table className="w-full min-w-[560px] border-collapse text-sm">
                 <thead>
@@ -33,7 +31,7 @@ export default function AddEventPage() {
                     <th className="px-3 py-2 font-medium text-ink">Example</th>
                   </tr>
                 </thead>
-                <tbody className="font-mono-tag text-[13px]">
+                <tbody className="text-[13px]">
                   {[
                     ["title", "Academic Societies Mixer"],
                     ["date", "2026-10-14"],
@@ -53,27 +51,24 @@ export default function AddEventPage() {
               </table>
             </div>
             <p className="mt-2 text-sm">
-              Use <code className="font-mono-tag">date</code> in
-              YYYY-MM-DD format so events sort correctly. The{" "}
-              <code className="font-mono-tag">category</code> field controls
-              which badge shows — use exactly one of the three values above.
+              Enter the date in YYYY-MM-DD format so that events are sorted
+              correctly. The category field must contain exactly one of the
+              three values shown above.
             </p>
           </li>
           <li>
-            <p className="font-medium text-ink">3. That&apos;s it</p>
+            <p className="font-medium text-ink">3. Completion</p>
             <p className="mt-1">
-              The site checks the sheet automatically every few minutes.
-              Nobody needs to touch code or redeploy anything.
+              The website reads the sheet automatically every few minutes, so the event will appear without any further action.
             </p>
           </li>
         </ol>
 
         <Card className="mt-10">
-          <p className="text-sm font-medium text-ink">Setting this up for the first time?</p>
+          <p className="text-sm font-medium text-ink">Setting up for the first time?</p>
           <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-            See <code className="font-mono-tag">README.md</code> in the
-            project repository for how to connect a new Google Sheet as the
-            events source (it&apos;s a five-minute, one-time setup).
+            Please refer to the README file in the project repository for
+            instructions on connecting a new Google Sheet as the source of events.
           </p>
         </Card>
 

@@ -15,12 +15,12 @@ function EventRow({
     <Card className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
       <div>
         <div className="flex flex-wrap items-center gap-2">
-          <Tag>{event.category}</Tag>
+          <Tag >{event.category}</Tag>
           {event.organizer && (
             <span className="text-xs text-ink-faint">by {event.organizer}</span>
           )}
         </div>
-        <p className="font-serif-heading mt-2 text-lg text-ink">{event.title}</p>
+        <p className="mt-2 text-lg text-ink">{event.title}</p>
         {event.description && (
           <p className="mt-1 max-w-xl text-sm leading-relaxed text-ink-soft">
             {event.description}
@@ -55,9 +55,10 @@ export default async function EventsPage() {
   return (
     <div>
       <PageHeader
-        eyebrow="What's on"
+        eyebrow="Events"
         title="Events"
-        description="MAA events and other academic events MAA is actively promoting — kept current by MAA's Academic Representatives."
+        description="Events organised by the Ministry, together with other academic events it supports. This list is maintained by the Ministry’s representatives."
+       
       />
 
       <section className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
@@ -65,10 +66,9 @@ export default async function EventsPage() {
         <div className="mt-6 space-y-3">
           {upcoming.length === 0 ? (
             <Card className="text-sm text-ink-soft">
-              Nothing scheduled right now. Running something MAA should list
-              here?{" "}
+              No events are scheduled at present. If you are organising an event that should be listed here, please{" "}
               <a href={`mailto:${site.email}`} className="text-accent hover:underline">
-                Send us the details
+                send us the details
               </a>
               .
             </Card>
@@ -81,7 +81,7 @@ export default async function EventsPage() {
 
         {past.length > 0 && (
           <div className="mt-14">
-            <SectionHeading eyebrow="Already happened" title="Past events" />
+            <SectionHeading eyebrow="Previous events" title="Past events" />
             <div className="mt-6 space-y-3 opacity-80">
               {past.map((event) => (
                 <EventRow key={`${event.title}-${event.date}`} event={event} />

@@ -15,26 +15,27 @@ export default async function CalendarPage() {
       <PageHeader
         eyebrow="Plan ahead"
         title="Calendar"
-        description="MAA hasn't shared a single public university-wide calendar link with us yet — so rather than guess at one, here's every upcoming event we do have, as simple cards."
+        description="A university-wide academic calendar has not yet been shared with us. In the meantime, all upcoming events known to the Ministry are listed below."
+       
       />
 
       <section className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
-        <SectionHeading eyebrow="Upcoming" title="What's coming up" />
+        <SectionHeading eyebrow="Upcoming" title="Upcoming events" />
         <div className="mt-6 space-y-3">
           {upcoming.length === 0 ? (
             <Card className="text-sm text-ink-soft">
-              Nothing scheduled right now — see{" "}
+              No events are scheduled at present. Please see{" "}
               <Link href="/events" className="text-accent hover:underline">
                 Events
               </Link>{" "}
-              for updates as they come in.
+              for updates.
             </Card>
           ) : (
             upcoming.map((event) => (
               <Card key={`${event.title}-${event.date}`} className="flex items-center justify-between gap-4">
                 <div>
-                  <Tag>{event.category}</Tag>
-                  <p className="font-serif-heading mt-2 text-base text-ink">{event.title}</p>
+                  <Tag >{event.category}</Tag>
+                  <p className="mt-2 text-base text-ink">{event.title}</p>
                 </div>
                 <div className="shrink-0 text-right text-sm text-ink-soft">
                   <p className="font-medium text-ink">
@@ -52,11 +53,11 @@ export default async function CalendarPage() {
 
         <Card className="mt-10">
           <p className="text-sm text-ink-soft">
-            Have the official Ashoka academic calendar link? Send it to{" "}
+            If you have the official Ashoka academic calendar, please send it to{" "}
             <a href={`mailto:${site.email}`} className="text-accent hover:underline">
               {site.email}
             </a>{" "}
-            and we&apos;ll add it here.
+            and we will add it to this page.
           </p>
         </Card>
       </section>

@@ -14,7 +14,7 @@ export default function ArchivePage() {
       <PageHeader
         eyebrow="Archive · 2024–25 academic year"
         title="Board of Representatives, 2024–25"
-        description="Sourced from MAA's own 2024–25 Annual Report. Kept for reference — these are not current representatives. For today's contacts, use the department emails on the main Representatives page."
+        description="Compiled from the Ministry's 2024–25 Annual Report and kept for reference only. These are not current representatives. For current contacts, please use the department emails on the Representatives page."
       />
 
       <div className="mx-auto max-w-6xl px-5 py-4 sm:px-8">
@@ -28,9 +28,9 @@ export default function ArchivePage() {
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {archivedBorRoster2024_25.map((entry) => (
             <Card key={entry.department}>
-              <p className="font-serif-heading text-base text-ink">{entry.department}</p>
+              <p className="text-base text-ink">{entry.department}</p>
               {entry.vacant ? (
-                <p className="mt-2 text-sm italic text-ink-faint">No representative that year</p>
+                <p className="mt-2 text-sm text-ink-faint">No representative that year</p>
               ) : (
                 <ul className="mt-2 space-y-1 text-sm text-ink-soft">
                   {entry.names.map((name) => (
@@ -53,7 +53,7 @@ export default function ArchivePage() {
             {archivedFcReps2024_25.map((fc) => (
               <Card key={fc.fc}>
                 <Tag>FC</Tag>
-                <p className="font-serif-heading mt-3 text-base text-ink">{fc.fc}</p>
+                <p className="mt-3 text-base text-ink">{fc.fc}</p>
                 <p className="mt-1 text-sm text-ink-soft">{fc.name}</p>
                 <p className="mt-2 text-xs leading-relaxed text-ink-faint">{fc.note}</p>
               </Card>

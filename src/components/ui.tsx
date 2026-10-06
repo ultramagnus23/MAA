@@ -2,18 +2,14 @@ import type { ReactNode } from "react";
 
 export function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="font-mono-tag inline-block rounded-sm border border-line-strong bg-paper px-2 py-0.5 text-[11px] uppercase text-ink-soft">
+    <span className="inline-block rounded-sm border border-line-strong px-2 py-0.5 text-xs text-ink-soft">
       {children}
     </span>
   );
 }
 
 export function Eyebrow({ children }: { children: ReactNode }) {
-  return (
-    <p className="font-mono-tag text-xs uppercase tracking-wider text-accent">
-      {children}
-    </p>
-  );
+  return <p className="text-sm font-medium text-accent">{children}</p>;
 }
 
 export function SectionHeading({
@@ -28,11 +24,9 @@ export function SectionHeading({
   return (
     <div className="max-w-2xl">
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2 className="font-serif-heading mt-2 text-2xl font-medium text-ink sm:text-3xl">
-        {title}
-      </h2>
+      <h2 className="mt-1 text-2xl font-semibold text-ink sm:text-3xl">{title}</h2>
       {description && (
-        <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{description}</p>
+        <p className="mt-3 text-base leading-relaxed text-ink-soft">{description}</p>
       )}
     </div>
   );
@@ -47,7 +41,7 @@ export function Card({
 }) {
   return (
     <div
-      className={`rounded border border-line bg-paper p-5 transition-colors hover:border-line-strong ${className}`}
+      className={`rounded-lg border border-line bg-white p-5 transition-colors hover:border-accent/40 ${className}`}
     >
       {children}
     </div>
@@ -67,11 +61,9 @@ export function PageHeader({
     <div className="border-b border-line bg-paper-dim">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="font-serif-heading mt-3 text-3xl font-medium text-ink sm:text-4xl">
-          {title}
-        </h1>
+        <h1 className="mt-2 max-w-3xl text-3xl font-semibold text-ink sm:text-4xl">{title}</h1>
         {description && (
-          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-soft">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">
             {description}
           </p>
         )}

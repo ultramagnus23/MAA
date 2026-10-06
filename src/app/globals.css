@@ -1,32 +1,16 @@
 @import "tailwindcss";
 
-:root {
-  --color-paper: #faf7f1;
-  --color-paper-dim: #f2ede4;
-  --color-ink: #211d1a;
-  --color-ink-soft: #55504a;
-  --color-ink-faint: #8a837a;
-  --color-line: #ddd5c8;
-  --color-line-strong: #c9beac;
-  --color-accent: #8a2c1d;
-  --color-accent-soft: #f4e2dc;
-  --color-accent-dim: #6f2317;
-}
-
 @theme inline {
-  --color-paper: var(--color-paper);
-  --color-paper-dim: var(--color-paper-dim);
-  --color-ink: var(--color-ink);
-  --color-ink-soft: var(--color-ink-soft);
-  --color-ink-faint: var(--color-ink-faint);
-  --color-line: var(--color-line);
-  --color-line-strong: var(--color-line-strong);
-  --color-accent: var(--color-accent);
-  --color-accent-soft: var(--color-accent-soft);
-  --color-accent-dim: var(--color-accent-dim);
-  --font-serif: var(--font-newsreader);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-ibm-plex-mono);
+  --color-paper: #fdfcf8;
+  --color-paper-dim: #f5f1e8;
+  --color-ink: #1d1423;
+  --color-ink-soft: #4d4455;
+  --color-ink-faint: #6e6577;
+  --color-line: #e1dbd0;
+  --color-line-strong: #c7bdd0;
+  --color-accent: #4b1a6b;
+  --color-accent-dim: #3a1252;
+  --font-sans: var(--font-main), system-ui, sans-serif;
 }
 
 html {
@@ -37,20 +21,8 @@ body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
-}
-
-::selection {
-  background: var(--color-accent-soft);
-  color: var(--color-accent-dim);
-}
-
-.font-serif-heading {
-  font-family: var(--font-serif);
-}
-
-.font-mono-tag {
-  font-family: var(--font-mono);
-  letter-spacing: 0.06em;
+  font-style: normal;
+  line-height: 1.6;
 }
 
 /* Focus states: visible everywhere, never suppressed */
@@ -74,4 +46,10 @@ select:focus-visible,
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* One typeface, one style: no italics or emphasis shifts anywhere */
+*, *::before, *::after {
+  font-family: var(--font-sans) !important;
+  font-style: normal !important;
 }

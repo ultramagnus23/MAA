@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { nav, site } from "@/data/site";
 
@@ -7,15 +8,16 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
         <div className="grid gap-8 sm:grid-cols-3">
           <div>
-            <p className="font-serif-heading text-base font-medium text-ink">
-              {site.name}
-            </p>
+            <div className="flex items-center gap-3">
+              <Image src="/logo.png" alt="" width={40} height={40} className="h-10 w-10" />
+              <p className="text-base font-semibold text-ink">{site.name}</p>
+            </div>
             <p className="mt-1 text-sm text-ink-soft">{site.university}</p>
             <p className="mt-3 text-sm text-ink-soft">{site.tagline}</p>
           </div>
 
           <div>
-            <p className="font-mono-tag text-xs uppercase text-ink-faint">Find your way</p>
+            <p className="text-sm font-medium text-ink">Pages</p>
             <ul className="mt-3 space-y-2 text-sm">
               {nav.slice(1).map((item) => (
                 <li key={item.href}>
@@ -28,7 +30,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="font-mono-tag text-xs uppercase text-ink-faint">Reach us</p>
+            <p className="text-sm font-medium text-ink">Contact</p>
             <ul className="mt-3 space-y-2 text-sm text-ink-soft">
               <li>
                 <a href={`mailto:${site.email}`} className="hover:text-accent">
@@ -50,7 +52,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-10 border-t border-line pt-6 text-xs text-ink-faint">
-          Built by and for Ashoka students. If something here is out of date, tell us at{" "}
+          Maintained by Ashoka students. If any information here is out of date, please write to{" "}
           <a href={`mailto:${site.email}`} className="underline hover:text-accent">
             {site.email}
           </a>

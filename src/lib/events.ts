@@ -117,6 +117,17 @@ function sortEvents(events: MaaEvent[]): MaaEvent[] {
   return [...events].sort((a, b) => a.date.localeCompare(b.date));
 }
 
+export function categoryTone(category: EventCategory): "accent" | "gold" | "teal" {
+  switch (category) {
+    case "MAA":
+      return "accent";
+    case "Academic Society":
+      return "gold";
+    case "University":
+      return "teal";
+  }
+}
+
 export function splitUpcomingPast(events: MaaEvent[]) {
   const today = new Date().toISOString().slice(0, 10);
   return {

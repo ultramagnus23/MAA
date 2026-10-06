@@ -4,7 +4,7 @@ export const site = {
   university: "Ashoka University",
   email: "academicaffairs.ministry@ashoka.edu.in",
   linktree: "https://linktr.ee/acadaffairs.ministry",
-  tagline: "Ashoka's student body for everything academic.",
+  tagline: "The student body for academic affairs at Ashoka.",
 };
 
 export const nav = [

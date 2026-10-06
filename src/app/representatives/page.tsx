@@ -10,22 +10,22 @@ export default function RepresentativesPage() {
   return (
     <div>
       <PageHeader
-        eyebrow="Who represents you"
-        title="Representatives & office hours"
-        description="Two ways to reach MAA: book time directly with a current representative, or email your department's standing contact."
+        eyebrow="Your representatives"
+        title="Representatives and office hours"
+        description="There are two ways to reach the Ministry: book a meeting with a current representative, or write to your department's representative."
       />
 
       <section id="office-hours" className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
         <SectionHeading
-          eyebrow="Book a slot"
+          eyebrow="Book a meeting"
           title="Current office hours"
-          description="These three representatives currently hold bookable office hours via Calendly — the only office-hours channels we can verify are live right now."
+          description="The following representatives currently hold office hours that can be booked online."
         />
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {currentReps.map((rep) => (
             <Card key={rep.name} className="flex flex-col justify-between">
               <div>
-                <p className="font-serif-heading text-lg text-ink">{rep.name}</p>
+                <p className="text-lg text-ink">{rep.name}</p>
                 <p className="mt-1 text-sm text-ink-soft">{rep.role}</p>
               </div>
               <a
@@ -44,9 +44,9 @@ export default function RepresentativesPage() {
       <section className="border-t border-line bg-paper-dim">
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <SectionHeading
-            eyebrow="By department"
+            eyebrow="Departments"
             title="Department representative contacts"
-            description="Each department has a standing representative email — the same address works regardless of who holds the role this year."
+            description="Each department has a permanent representative email address. The same address remains valid regardless of who holds the role in a given year."
           />
           <div className="mt-8 overflow-hidden rounded border border-line">
             <table className="w-full border-collapse text-sm">
@@ -61,14 +61,14 @@ export default function RepresentativesPage() {
                   <tr
                     key={dept.department}
                     className={`border-b border-line last:border-0 ${
-                      i % 2 === 1 ? "bg-paper-dim/60" : "bg-paper"
+                      i % 2 === 1 ? "bg-paper-dim" : "bg-paper"
                     }`}
                   >
                     <td className="px-4 py-3 text-ink">{dept.department}</td>
                     <td className="px-4 py-3">
                       <a
                         href={`mailto:${dept.email}`}
-                        className="font-mono-tag text-[13px] text-accent hover:underline"
+                        className="text-[13px] text-accent hover:underline"
                       >
                         {dept.email}
                       </a>
@@ -84,10 +84,10 @@ export default function RepresentativesPage() {
       <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
         <Card className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <Eyebrow>Looking for last year&apos;s reps?</Eyebrow>
+            <Eyebrow>Looking for last year&apos;s representatives?</Eyebrow>
             <p className="mt-1 text-sm text-ink-soft">
               The full 2024–25 department and Foundation Course representative
-              roster is kept as a dated archive, not shown as current.
+              roster is kept as a dated archive and is not current.
             </p>
           </div>
           <Link
@@ -99,10 +99,9 @@ export default function RepresentativesPage() {
         </Card>
 
         <p className="mt-8 text-sm text-ink-faint">
-          Don&apos;t see who you&apos;re looking for, or need to update this
-          page?{" "}
+          To request a correction to this page, please{" "}
           <a href={`mailto:${site.email}`} className="text-accent hover:underline">
-            Email MAA
+            write to the Ministry
           </a>
           .
         </p>

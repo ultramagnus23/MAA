@@ -10,8 +10,9 @@ export default function AboutPage() {
     <div>
       <PageHeader
         eyebrow="About MAA"
-        title="What the Ministry of Academic Affairs actually does"
-        description="MAA is a student-run body at Ashoka University focused on one thing: making academic life work better for students."
+        title="The work of the Ministry of Academic Affairs"
+        description="The Ministry of Academic Affairs is a student-run body at Ashoka University dedicated to improving the academic experience of students."
+       
       />
 
       <section className="mx-auto max-w-3xl px-5 py-14 sm:px-8">
@@ -26,7 +27,7 @@ export default function AboutPage() {
             experience isn&apos;t working.
           </p>
 
-          <h2 className="font-serif-heading text-xl text-ink">How MAA is structured</h2>
+          <h2 className="text-xl text-ink">Structure of the Ministry</h2>
           <p>
             MAA&apos;s work is organised across a few functional areas —
             policy and resources, support and research, and collaborations
@@ -35,7 +36,7 @@ export default function AboutPage() {
             academic societies, and follow up on issues raised by students.
           </p>
 
-          <h2 className="font-serif-heading text-xl text-ink">Representation, at two levels</h2>
+          <h2 className="text-xl text-ink">Representation</h2>
           <p>
             Every department has a representative — reachable at a standing
             department email address regardless of who holds the role in a
@@ -55,7 +56,7 @@ export default function AboutPage() {
             for who&apos;s currently holding them.
           </p>
 
-          <h2 className="font-serif-heading text-xl text-ink">Working with academic societies</h2>
+          <h2 className="text-xl text-ink">Academic societies</h2>
           <p>
             MAA keeps an open channel and monthly touchpoints with academic
             society heads, runs the yearly Academic Societies Fair and
@@ -73,7 +74,7 @@ export default function AboutPage() {
             .
           </p>
 
-          <h2 className="font-serif-heading text-xl text-ink">Where the paper trail lives</h2>
+          <h2 className="text-xl text-ink">Records and resources</h2>
           <p>
             MAA has produced a real, growing archive of policy explainers,
             department handbooks, thesis and academic-integrity guides, and
@@ -81,9 +82,8 @@ export default function AboutPage() {
             <Link href="/resources" className="text-accent hover:underline">
               Resources
             </Link>
-            . If a document on this site looks outdated or wrong, tell us —
-            students maintain this, and it&apos;s only as good as the last
-            person who checked it.
+            . If any document on this site appears outdated or incorrect, please
+            inform us so that it can be corrected.
           </p>
         </div>
 
@@ -91,9 +91,7 @@ export default function AboutPage() {
           <Eyebrow>A note on accuracy</Eyebrow>
           <p className="mt-2 text-sm leading-relaxed text-ink-soft">
             This site only lists representatives, office hours, and events
-            MAA can currently verify. Where our records are dated —
-            like the 2024–25 department representative roster — we say so
-            instead of presenting old information as current. See the{" "}
+            MAA can currently verify. Where our records are dated, such as the 2024–25 department representative roster, we state so clearly rather than presenting them as current. See the{" "}
             <Link href="/representatives/archive" className="text-accent hover:underline">
               archived roster
             </Link>{" "}
@@ -102,7 +100,7 @@ export default function AboutPage() {
         </Card>
 
         <p className="mt-10 text-sm text-ink-faint">
-          Questions about MAA itself, or something missing here? Write to{" "}
+          For questions about the Ministry, or to report missing information, please write to{" "}
           <a href={`mailto:${site.email}`} className="text-accent hover:underline">
             {site.email}
           </a>
