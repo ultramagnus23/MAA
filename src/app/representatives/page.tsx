@@ -1,110 +1,125 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader, Card, SectionHeading, Eyebrow } from "@/components/ui";
-import { currentReps, departmentContacts } from "@/data/representatives";
+import { PageHeader, Card, SectionHeading, Eyebrow, StatusDot } from "@/components/ui";
+import { currentReps } from "@/data/representatives";
 import { site } from "@/data/site";
+import DepartmentDirectory from "@/components/DepartmentDirectory";
 
-export const metadata: Metadata = { title: "Representatives" };
+export const metadata: Metadata = {
+  title: "Representatives",
+  description:
+    "Direct contact channels for all 21 academic departments and bookable office hours with active student representatives at Ashoka University.",
+};
 
 export default function RepresentativesPage() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <PageHeader
         eyebrow="Your representatives"
-        title="Representatives and office hours"
+        title="Representatives and Office Hours"
         description="There are two ways to reach the Ministry: book a meeting with a current representative, or write to your department's representative."
       />
 
-      <section id="office-hours" className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-        <SectionHeading
-          eyebrow="Book a meeting"
-          title="Current office hours"
-          description="The following representatives currently hold office hours that can be booked online."
-        />
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+      {/* Bookable Office Hours Section */}
+      <section id="office-hours" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+        <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <SectionHeading
+            eyebrow="Book a meeting"
+            title="Current Office Hours"
+            description="These three representatives currently hold office hours that can be booked online."
+          />
+          <span className="text-xs text-accent">
+            3 representatives available
+          </span>
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-3">
           {currentReps.map((rep) => (
-            <Card key={rep.name} className="flex flex-col justify-between">
+            <Card
+              key={rep.name}
+              className="flex flex-col justify-between transition-all hover:border-accent hover:shadow-xs"
+            >
               <div>
-                <p className="text-lg text-ink">{rep.name}</p>
-                <p className="mt-1 text-sm text-ink-soft">{rep.role}</p>
+                <div className="flex items-center justify-between">
+                  <StatusDot active={true} />
+                  <span className="text-[10px] text-ink-faint">
+                    Ashoka UG&apos;24
+                  </span>
+                </div>
+                <h3 className="mt-4 text-xl font-medium text-ink">
+                  {rep.name}
+                </h3>
+                <p className="mt-1 text-xs text-ink-soft">{rep.role}</p>
+                <p className="mt-3 text-xs leading-relaxed text-ink-faint border-t border-line/70 pt-3">
+                  Available to help with course planning, add/drop questions, grade concerns and academic accommodations.
+                </p>
               </div>
-              <a
-                href={rep.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
-              >
-                {rep.bookingLabel} →
-              </a>
+
+              <div className="mt-6 pt-4 border-t border-line">
+                <a
+                  href={rep.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex w-full items-center justify-between rounded-xs border border-line-strong bg-paper px-4 py-2.5 text-xs font-medium text-ink transition-all hover:border-accent hover:bg-accent hover:text-paper"
+                >
+                  <span>{rep.bookingLabel}</span>
+                  <span className="transition-transform group-hover:translate-x-0.5">
+                    ↗
+                  </span>
+                </a>
+              </div>
             </Card>
           ))}
         </div>
       </section>
 
-      <section className="border-t border-line bg-paper-dim">
-        <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+      {/* 21 Department Representative Directory */}
+      <section className="border-t border-line bg-paper-dim/40 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <SectionHeading
-            eyebrow="Departments"
-            title="Department representative contacts"
+            eyebrow="By department"
+            title="Department Representatives"
             description="Each department has a permanent representative email address. The same address remains valid regardless of who holds the role in a given year."
           />
-          <div className="mt-8 overflow-hidden rounded border border-line">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-line bg-paper text-left">
-                  <th className="px-4 py-3 font-medium text-ink-soft">Department</th>
-                  <th className="px-4 py-3 font-medium text-ink-soft">Email</th>
-                </tr>
-              </thead>
-              <tbody>
-                {departmentContacts.map((dept, i) => (
-                  <tr
-                    key={dept.department}
-                    className={`border-b border-line last:border-0 ${
-                      i % 2 === 1 ? "bg-paper-dim" : "bg-paper"
-                    }`}
-                  >
-                    <td className="px-4 py-3 text-ink">{dept.department}</td>
-                    <td className="px-4 py-3">
-                      <a
-                        href={`mailto:${dept.email}`}
-                        className="text-[13px] text-accent hover:underline"
-                      >
-                        {dept.email}
-                      </a>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+
+          <div className="mt-10">
+            <DepartmentDirectory />
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-        <Card className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <Eyebrow>Looking for last year&apos;s representatives?</Eyebrow>
-            <p className="mt-1 text-sm text-ink-soft">
-              The full 2024–25 department and Foundation Course representative
-              roster is kept as a dated archive and is not current.
+      {/* Archive Callout & Disclaimer */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <Card className="flex flex-col gap-6 p-8 sm:flex-row sm:items-center sm:justify-between bg-paper border-line">
+          <div className="max-w-xl">
+            <Eyebrow>Past representatives</Eyebrow>
+            <h3 className="mt-2 text-xl font-normal text-ink">
+              Looking for past representatives?
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+              The full 2024–25 list of department and Foundation Course representatives is kept as a dated archive.
             </p>
           </div>
           <Link
             href="/representatives/archive"
-            className="whitespace-nowrap rounded border border-line-strong px-4 py-2 text-sm font-medium text-ink hover:border-accent hover:text-accent"
+            className="group inline-flex shrink-0 items-center gap-2 rounded-xs border border-line-strong bg-paper px-5 py-3 text-xs font-medium text-ink transition-all hover:border-accent hover:bg-paper-dim hover:text-accent"
           >
-            View 2024–25 archive →
+            <span>View the 2024–25 archive</span>
+            <span className="transition-transform group-hover:translate-x-0.5">
+              →
+            </span>
           </Link>
         </Card>
 
-        <p className="mt-8 text-sm text-ink-faint">
-          To request a correction to this page, please{" "}
-          <a href={`mailto:${site.email}`} className="text-accent hover:underline">
-            write to the Ministry
-          </a>
-          .
-        </p>
+        <div className="mt-10 border-t border-line pt-6 text-xs text-ink-faint">
+          <p>
+            To update office hours or contact details, please write to{" "}
+            <a href={`mailto:${site.email}`} className="text-accent underline">
+              {site.email}
+            </a>
+            .
+          </p>
+        </div>
       </section>
     </div>
   );

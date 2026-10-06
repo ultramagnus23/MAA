@@ -2,7 +2,7 @@ import { seedEvents, type MaaEvent, type EventCategory } from "@/data/events";
 
 /**
  * Events come from a Google Sheet that any Academic Representative can edit
- * directly — no code changes or deploys needed. Set EVENTS_SHEET_CSV_URL to
+ * directly with no code changes or deploys needed. Set EVENTS_SHEET_CSV_URL to
  * that sheet's "publish to web -> CSV" link (File -> Share -> Publish to web,
  * choose the Events tab, format CSV). See README.md for the exact column
  * headers expected. Until that env var is configured, the site falls back to
