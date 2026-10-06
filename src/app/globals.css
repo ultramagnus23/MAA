@@ -1,21 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --color-paper: #faf7f1;
-  --color-paper-dim: #f2ede4;
-  --color-ink: #211d1a;
-  --color-ink-soft: #55504a;
-  --color-ink-faint: #8a837a;
-  --color-line: #ddd5c8;
-  --color-line-strong: #c9beac;
-  --color-accent: #8a2c1d;
-  --color-accent-soft: #f4e2dc;
-  --color-accent-dim: #6f2317;
+  /* Canvas & Paper */
+  --color-paper: #fbf9f4;
+  --color-paper-dim: #f3ede2;
+  --color-paper-warm: #eae2d3;
+
+  /* Ink & Typography */
+  --color-ink: #161311;
+  --color-ink-soft: #484139;
+  --color-ink-faint: #797166;
+
+  /* Editorial Hairlines */
+  --color-line: #e3dcd0;
+  --color-line-strong: #c4b9a8;
+
+  /* Ashoka Institutional Terracotta / Red Accent */
+  --color-accent: #8d2b1f;
+  --color-accent-soft: #f7e8e2;
+  --color-accent-dim: #6e2016;
+
+  /* Dark Purple / Deep Aubergine: The Single Added Signature Major Color */
+  --color-aubergine: #1c1221;
+  --color-aubergine-surface: #25182c;
+  --color-aubergine-border: #3b2847;
+  --color-aubergine-text: #fbf8fc;
+  --color-aubergine-muted: #b8a8bf;
+  --color-aubergine-tag: #2d1d36;
+  --color-aubergine-highlight: #34203f;
 }
 
 @theme inline {
   --color-paper: var(--color-paper);
   --color-paper-dim: var(--color-paper-dim);
+  --color-paper-warm: var(--color-paper-warm);
   --color-ink: var(--color-ink);
   --color-ink-soft: var(--color-ink-soft);
   --color-ink-faint: var(--color-ink-faint);
@@ -24,6 +42,13 @@
   --color-accent: var(--color-accent);
   --color-accent-soft: var(--color-accent-soft);
   --color-accent-dim: var(--color-accent-dim);
+  --color-aubergine: var(--color-aubergine);
+  --color-aubergine-surface: var(--color-aubergine-surface);
+  --color-aubergine-border: var(--color-aubergine-border);
+  --color-aubergine-text: var(--color-aubergine-text);
+  --color-aubergine-muted: var(--color-aubergine-muted);
+  --color-aubergine-tag: var(--color-aubergine-tag);
+  --color-aubergine-highlight: var(--color-aubergine-highlight);
   --font-serif: var(--font-newsreader);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-ibm-plex-mono);
@@ -31,29 +56,33 @@
 
 html {
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  min-height: 100vh;
 }
 
 ::selection {
-  background: var(--color-accent-soft);
-  color: var(--color-accent-dim);
+  background: var(--color-aubergine);
+  color: var(--color-aubergine-text);
 }
 
 .font-serif-heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-serif), Georgia, serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
 .font-mono-tag {
-  font-family: var(--font-mono);
-  letter-spacing: 0.06em;
+  font-family: var(--font-mono), monospace;
+  letter-spacing: 0.08em;
 }
 
-/* Focus states: visible everywhere, never suppressed */
+/* Focus states: visible everywhere, never suppressed, WCAG AA/AAA */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -63,6 +92,16 @@ select:focus-visible,
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+/* Subtle image finish */
+.editorial-image {
+  filter: contrast(1.02) saturate(0.98);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.editorial-image:hover {
+  filter: contrast(1.05) saturate(1.02);
 }
 
 @media (prefers-reduced-motion: reduce) {

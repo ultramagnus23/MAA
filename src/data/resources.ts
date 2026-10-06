@@ -35,7 +35,7 @@ export const resources: Resource[] = [
   },
   {
     title: "General Academic Policy Document (2024–25, archived)",
-    description: "Previous year's version, kept for reference only — the 2025–26 document above supersedes it.",
+    description: "Previous year's version, kept for reference only: the 2025–26 document above supersedes it.",
     category: "Policy",
     url: "/resources/MAA General Academic Policy Document 2024-25 (archived).docx",
     fileNote: "DOCX · archived",
@@ -43,7 +43,7 @@ export const resources: Resource[] = [
   {
     title: "Official Sports Accommodation Policy",
     description:
-      "OAA policy on academic accommodations for student-athletes (attendance, quiz weightage, documentation). Appears to be a proposal template — confirm current status with OAA before relying on it as final.",
+      "OAA policy on academic accommodations for student-athletes (attendance, quiz weightage, documentation). Appears to be a proposal template; confirm current status with OAA before relying on it as final.",
     category: "Policy",
     url: "/resources/Official Sports Accom Policy.pdf",
     fileNote: "PDF · unconfirmed final status",
@@ -53,7 +53,7 @@ export const resources: Resource[] = [
   {
     title: "Pass/Fail Crisis Guide",
     description:
-      "A student-sourced guide (50+ respondents) to the Pass/Fail decision — general factors, department-specific patterns, and an FAQ. Informal, not an official policy.",
+      "A student-sourced guide (50+ respondents) to the Pass/Fail decision covering general factors, department-specific patterns, and an FAQ. Informal, not an official policy.",
     category: "Guides",
     url: "/resources/MAA P_F Crisis Guide.docx",
     fileNote: "DOCX",
@@ -61,7 +61,7 @@ export const resources: Resource[] = [
   {
     title: "Academic Integrity How-To Guide",
     description:
-      "How the Academic Integrity Violation (AIV) process actually works — reporting, timelines, AIC involvement, consequences, appeals, and what to do if you're wrongly accused.",
+      "How the Academic Integrity Violation (AIV) process actually works: reporting, timelines, AIC involvement, consequences, appeals, and what to do if you're wrongly accused.",
     category: "Guides",
     url: "/resources/Academic Integrity How-To Guide_.docx",
     fileNote: "DOCX",
@@ -75,7 +75,7 @@ export const resources: Resource[] = [
     fileNote: "DOCX",
   },
   {
-    title: "Citation Guides — APA, MLA, Chicago",
+    title: "Citation Guides: APA, MLA, Chicago",
     description: "Quick-reference citation formats compiled for Ashoka coursework, plus a UWP citation workshop slide deck.",
     category: "Guides",
     url: "/resources/Citation Resources/MAA24_APA 7th Edition Citations.docx",
@@ -86,13 +86,13 @@ export const resources: Resource[] = [
   {
     title: "Faculty Finder",
     description:
-      "Real, department-by-department faculty directory — email, research interests, and whether a professor is currently on campus.",
+      "Real, department-by-department faculty directory with email, research interests, and whether a professor is currently on campus.",
     category: "Directories & Tools",
     url: "/resources/MAA's Faculty Finder (updated).xlsx",
     fileNote: "XLSX",
   },
   {
-    title: "Locate@Ashoka — Faculty Office Finder",
+    title: "Locate@Ashoka: Faculty Office Finder",
     description: "Which building and room a professor's office is in, plus a directory of academic offices and centres.",
     category: "Directories & Tools",
     url: "/resources/MAA_s Locate@Ashoka 2.0.xlsx",
@@ -101,7 +101,7 @@ export const resources: Resource[] = [
   {
     title: "Course Trajectory Pathways",
     description:
-      "Sample semester-by-semester course plans, by major. Coverage is partial — several departments don't have a trajectory filled in yet; reach out to your department rep to fill the gap.",
+      "Sample semester-by-semester course plans, by major. Coverage is partial: several departments don't have a trajectory filled in yet; reach out to your department rep to fill the gap.",
     category: "Directories & Tools",
     url: "/resources/Pathways- MAAxBOR Course Trajectories.xlsx",
     fileNote: "XLSX · partial coverage",
@@ -117,7 +117,7 @@ export const resources: Resource[] = [
   // Advocacy & reports
   {
     title: "BOR Annual Report (2024–25)",
-    description: "What the Board of Representatives worked on across every department in 2024–25 — the source for our archived representative roster.",
+    description: "What the Board of Representatives worked on across every department in 2024–25, the source for our archived representative roster.",
     category: "Advocacy & Reports",
     url: "/resources/Reports and Advocacy/BOR Annual Report 2024-25.docx",
     fileNote: "DOCX",
@@ -144,8 +144,8 @@ export const resources: Resource[] = [
     fileNote: "DOCX",
   },
   {
-    title: "Coping With Acads — Resource Doc",
-    description: "A mental-health and coping resource compiled with ACWB — stress, sleep, brain fog, and when to seek support.",
+    title: "Coping With Acads: Resource Doc",
+    description: "A mental-health and coping resource compiled with ACWB addressing stress, sleep, brain fog, and when to seek support.",
     category: "Advocacy & Reports",
     url: "/resources/Reports and Advocacy/MAA × ACWB Coping with Acads Resources Doc.docx",
     fileNote: "DOCX",
@@ -205,7 +205,7 @@ export const studentHandbooks = [
   { title: "UG2022, UG2025 & UG2026 Handbook", url: "/resources/Student Handbooks/UG2022_25_26 Handbook.pdf" },
 ];
 
-// Very large handbooks (50MB+) are not mirrored on this site — MAA can
+// Very large handbooks (50MB+) are not mirrored on this site; MAA can
 // share the current Drive link for these on request.
 export const largeHandbooksNotMirrored = [
   "UG2023 Handbook",
