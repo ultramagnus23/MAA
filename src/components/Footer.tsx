@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SignOutButton from "@/components/SignOutButton";
 import { nav, site } from "@/data/site";
 
 export default function Footer() {
@@ -169,6 +170,7 @@ export default function Footer() {
               Maintained by and for Ashoka University students. Not an official
               administrative organ of the Office of Academic Affairs (OAA).
             </p>
+            <SignOutButton className="w-fit text-xs text-accent underline hover:text-accent-dim" />
             <p className="text-[11px]">
               Plot 2, Rajiv Gandhi Education City, Sonipat, Haryana 131029
             </p>
