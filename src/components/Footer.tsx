@@ -65,7 +65,9 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm text-ink-soft">
               <li>
                 <a
-                  href="/resources/MAA General Academic Policy Document 2025-26_.docx"
+                  href="https://docs.google.com/document/d/11TC88zVRbmFpt8VWLoxAlsvcPMGVqtd6EjTq2TggVcs/edit"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-accent"
                 >
                   Academic Policy 2025–26 <span className="text-[10px] text-ink-faint">[DOCX]</span>
@@ -73,7 +75,9 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/resources/Academic Integrity How-To Guide_.docx"
+                  href="https://docs.google.com/document/d/1lEI3Rk1nPx4yx1Ssj4DBJzLaUOXaDN22yVid7Iv6DV0/edit"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-accent"
                 >
                   Academic Integrity Guide <span className="text-[10px] text-ink-faint">[DOCX]</span>
@@ -81,7 +85,9 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/resources/Undergraduate Thesis How-To Guide.docx"
+                  href="https://docs.google.com/document/d/1v0EyeuVs3SQ9TXFeqLG7008oZOJMwjdzL-kbT96p3rw/edit"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-accent"
                 >
                   Thesis How-To Guide <span className="text-[10px] text-ink-faint">[DOCX]</span>
@@ -89,7 +95,9 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/resources/MAA P_F Crisis Guide.docx"
+                  href="https://docs.google.com/document/d/169CUMMkpqbg24GbO5k84cYhVPBBr9cVKS632CA0ZMlM/edit"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-accent"
                 >
                   Pass/Fail Crisis Guide <span className="text-[10px] text-ink-faint">[DOCX]</span>
@@ -97,7 +105,9 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/resources/MAA's Faculty Finder (updated).xlsx"
+                  href="https://docs.google.com/spreadsheets/d/14_A_ekbjYETQKPye9QOVD7QZFvSctGVU9FvD71zjvK0/edit"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-accent"
                 >
                   Faculty Directory <span className="text-[10px] text-ink-faint">[XLSX]</span>

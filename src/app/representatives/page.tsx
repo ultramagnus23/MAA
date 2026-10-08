@@ -96,7 +96,7 @@ export default function RepresentativesPage() {
                 <p className="mt-1 text-sm text-ink-soft">The official Ministry WhatsApp group. Scan the QR code to join.</p>
               </div>
               <a
-                href="/resources/MAA Open Q_A Group (UG2025).jpg"
+                href="https://drive.google.com/file/d/1xCLQAfJbFXJG5fbNM4Y26n-JuaCpxkob/view"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-5 flex items-center justify-between rounded border border-accent px-4 py-2.5 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-white"
