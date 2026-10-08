@@ -139,7 +139,7 @@ export default function RepresentativesPage() {
               Looking for past representatives?
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-              The full 2024–25 list of department and Foundation Course representatives is kept as a dated archive.
+              The 2024–25 list of representatives is kept as a dated archive.
             </p>
           </div>
           <Link

@@ -9,7 +9,6 @@ export type Resource = {
 export type ResourceCategory =
   | "Policy"
   | "Guides"
-  | "Handbooks"
   | "Directories & Tools"
   | "Advocacy & Reports"
   | "Communication";
@@ -18,7 +17,6 @@ export const resourceCategories: ResourceCategory[] = [
   "Policy",
   "Guides",
   "Directories & Tools",
-  "Handbooks",
   "Advocacy & Reports",
   "Communication",
 ];
@@ -49,6 +47,14 @@ export const resources: Resource[] = [
     fileNote: "PDF · unconfirmed final status",
   },
 
+  {
+    title: "MAA's Mandate for Academic Societies at AU",
+    description: "The Ministry's mandate for academic societies at Ashoka: its role and how it supports them.",
+    category: "Policy",
+    url: "/resources/MAA_s Mandate for Academic Socs at AU.docx",
+    fileNote: "DOCX",
+  },
+
   // Guides
   {
     title: "Pass/Fail Crisis Guide",
@@ -75,11 +81,32 @@ export const resources: Resource[] = [
     fileNote: "DOCX",
   },
   {
-    title: "Citation Guides: APA, MLA, Chicago",
-    description: "Quick-reference citation formats compiled for Ashoka coursework, plus a UWP citation workshop slide deck.",
+    title: "APA 7th Edition Citation Guide",
+    description: "Quick-reference APA 7th edition formats compiled for Ashoka coursework.",
     category: "Guides",
     url: "/resources/Citation Resources/MAA24_APA 7th Edition Citations.docx",
-    fileNote: "DOCX + related files",
+    fileNote: "DOCX",
+  },
+  {
+    title: "MLA Citation Guide",
+    description: "Quick-reference MLA formats compiled for Ashoka coursework.",
+    category: "Guides",
+    url: "/resources/Citation Resources/MAA24_MLA Citations.docx",
+    fileNote: "DOCX",
+  },
+  {
+    title: "Chicago Notes-Bibliography Guide",
+    description: "Quick-reference Chicago notes-bibliography format compiled for Ashoka coursework.",
+    category: "Guides",
+    url: "/resources/Citation Resources/MAA24_Chicago NB Format.docx",
+    fileNote: "DOCX",
+  },
+  {
+    title: "UWP Citation Workshop Slides",
+    description: "Slides from the University Writing Programme citation workshop.",
+    category: "Guides",
+    url: "/resources/Citation Resources/UWP Citation Workshop Slides.pdf",
+    fileNote: "PDF",
   },
 
   // Directories & tools
@@ -173,44 +200,4 @@ export const resources: Resource[] = [
     url: "/resources/Post Grad QR.jpg",
     fileNote: "QR code",
   },
-];
-
-export const departmentHandbooks = [
-  "Biology Handbook 2024.pdf",
-  "Chemistry Handbook 2024-25.pdf",
-  "Creative Writing Handbook 25-26.pdf",
-  "CS Handbook Nov_24.pdf",
-  "Economics Department UG Handbook (2025-2026).pdf",
-  "ENG Undergraduate Student Handbook.pptx.pdf",
-  "Entrepreneurship Handbook_.pdf",
-  "History Handbook 2025.pdf",
-  "IR Dep. Handbook.pdf",
-  "Mathematics Handbook 2024-25.pdf",
-  "Performing Arts Handbook 2024-25.pdf",
-  "Philosophy Handbook 24-25.pdf",
-  "Physics Handbook 2024.pdf",
-  "Political Science Handbook 2025.pdf",
-  "PPE Handbook 24-25.docx",
-  "Psychology and Cognitive Sciences_UG MLS Handbook_Updated August 2026.pdf",
-  "SOA Handbook 2025_.pdf",
-  "Visual Arts Handbook AY 2024-25.pdf",
-].map((file) => ({
-  title: file.replace(/\.(pdf|docx)$/i, "").replace(/_/g, " "),
-  url: `/resources/Department Handbooks/${file}`,
-}));
-
-export const studentHandbooks = [
-  { title: "ASP25 Handbook", url: "/resources/Student Handbooks/ASP25 Handbook.pdf" },
-  { title: "MLS Handbook", url: "/resources/Student Handbooks/MLS Handbook.pdf" },
-  { title: "UG2022, UG2025 & UG2026 Handbook", url: "/resources/Student Handbooks/UG2022_25_26 Handbook.pdf" },
-];
-
-// Very large handbooks (50MB+) are not mirrored on this site; MAA can
-// share the current Drive link for these on request.
-export const largeHandbooksNotMirrored = [
-  "UG2023 Handbook",
-  "UG2024 Handbook",
-  "UG2025 Handbook",
-  "UG2026 Handbook",
-  "Course Registration 101",
 ];

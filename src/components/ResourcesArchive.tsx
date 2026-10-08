@@ -1,13 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import {
-  resources,
-  resourceCategories,
-  departmentHandbooks,
-  studentHandbooks,
-  largeHandbooksNotMirrored,
-} from "@/data/resources";
+import Link from "next/link";
+import { resources, resourceCategories } from "@/data/resources";
 import { Tag } from "@/components/ui";
 
 export default function ResourcesArchive() {
@@ -26,14 +21,6 @@ export default function ResourcesArchive() {
       (res.fileNote && res.fileNote.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
-
-  const filteredDeptHandbooks = departmentHandbooks.filter((h) =>
-    searchQuery === "" ? true : h.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  const filteredStudentHandbooks = studentHandbooks.filter((h) =>
-    searchQuery === "" ? true : h.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
 
   return (
     <div className="space-y-12">
@@ -147,112 +134,21 @@ export default function ResourcesArchive() {
         )}
       </div>
 
-      {/* Department Handbooks Directory */}
-      {(selectedCategory === "All" || selectedCategory === "Handbooks") && (
-        <div className="border-t border-line pt-12">
-          <div className="mb-6 flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
-            <div>
-              <span className="text-xs text-accent">
-                Department curricula
-              </span>
-              <h3 className="mt-1 text-2xl font-normal text-ink">
-                Department Handbooks
-              </h3>
-              <p className="mt-1 text-xs text-ink-soft">
-                Official course requirements, prerequisites, and faculty guidelines by department.
-              </p>
-            </div>
-            <span className="text-xs text-ink-faint">
-              {filteredDeptHandbooks.length} DEPARTMENTS
-            </span>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredDeptHandbooks.map((h) => (
-              <a
-                key={h.url}
-                href={h.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-xs border border-line bg-paper px-4 py-3 text-sm transition-all hover:border-accent hover:bg-paper-dim"
-              >
-                <div className="pr-2">
-                  <p className="text-sm font-medium text-ink group-hover:text-accent">
-                    {h.title}
-                  </p>
-                  <span className="text-[10px] text-ink-faint">
-                    Official Handbook
-                  </span>
-                </div>
-                <span className="text-xs text-accent transition-transform group-hover:translate-x-0.5">
-                  PDF ↗
-                </span>
-              </a>
-            ))}
-          </div>
+      {/* Handbooks live on their own page */}
+      <div className="flex flex-col gap-3 rounded-lg border border-line bg-paper-dim p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h3 className="text-ink">Looking for a handbook?</h3>
+          <p className="mt-1 text-sm text-ink-soft">
+            Department, student and batch handbooks are listed on their own page.
+          </p>
         </div>
-      )}
-
-      {/* Student Programme Handbooks */}
-      {(selectedCategory === "All" || selectedCategory === "Handbooks") && (
-        <div className="border-t border-line pt-12">
-          <div className="mb-6">
-            <span className="text-xs text-accent">
-              University Programme Manuals
-            </span>
-            <h3 className="mt-1 text-2xl font-normal text-ink">
-              Student Handbooks
-            </h3>
-            <p className="mt-1 text-xs text-ink-soft">
-              Cohort-wide academic regulations for Undergraduate, MLS, and ASP cohorts.
-            </p>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-3">
-            {filteredStudentHandbooks.map((h) => (
-              <a
-                key={h.url}
-                href={h.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-xs border border-line bg-paper p-4 transition-all hover:border-accent hover:bg-paper-dim"
-              >
-                <div>
-                  <p className="text-base text-ink group-hover:text-accent">
-                    {h.title}
-                  </p>
-                  <span className="text-[10px] text-ink-faint">
-                    Complete Guide · PDF
-                  </span>
-                </div>
-                <span className="text-accent text-sm transition-transform group-hover:translate-x-0.5">
-                  ↗
-                </span>
-              </a>
-            ))}
-          </div>
-
-          <div className="mt-8 rounded-xs border border-line bg-paper-dim/60 p-5 text-xs text-ink-soft">
-            <p className="text-ink font-medium">
-              Large Batch Handbooks Note:
-            </p>
-            <p className="mt-1">
-              Due to substantial file size (50MB–400MB), the following handbooks are hosted directly on MAA&apos;s institutional Google Drive:{" "}
-              <span className="font-medium text-ink">
-                {largeHandbooksNotMirrored.join(", ")}
-              </span>
-              . Request access at{" "}
-              <a
-                href="mailto:academicaffairs.ministry@ashoka.edu.in"
-                className="text-accent underline"
-              >
-                academicaffairs.ministry@ashoka.edu.in
-              </a>
-              .
-            </p>
-          </div>
-        </div>
-      )}
+        <Link
+          href="/handbooks"
+          className="shrink-0 rounded border border-accent px-5 py-2.5 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-white"
+        >
+          Go to handbooks →
+        </Link>
+      </div>
     </div>
   );
 }

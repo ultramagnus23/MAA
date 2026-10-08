@@ -13,5 +13,6 @@ export const nav = [
   { href: "/representatives", label: "Representatives" },
   { href: "/events", label: "Events" },
   { href: "/resources", label: "Resources" },
+  { href: "/handbooks", label: "Handbooks" },
   { href: "/calendar", label: "Calendar" },
 ];

@@ -81,8 +81,8 @@ export const teamPhotos: TeamPhoto[] = [
     src: "/team-photos/07.jpeg",
     alt: "Student representative at open consultation table",
     name: "Open Q&A & Peer Guidance",
-    role: "Foundation Course Advisory",
-    context: "First-year orientation & foundation course support",
+    role: "Peer Guidance",
+    context: "First-year orientation and peer support",
     aspectRatio: "landscape",
   },
   {

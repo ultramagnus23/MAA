@@ -1,111 +1,160 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader, Card, Eyebrow } from "@/components/ui";
+import { PageHeader, SectionHeading, Card } from "@/components/ui";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = { title: "About" };
+
+const verticals = [
+  {
+    name: "Policy and Resources",
+    text: "Writes and updates the academic policy document, how-to guides and handbooks, and keeps every resource on this site current.",
+  },
+  {
+    name: "Support and Research",
+    text: "Helps students with academic concerns and researches issues such as course caps, accommodations and the thesis process.",
+  },
+  {
+    name: "Collaborations and Events",
+    text: "Works with academic societies, organises the yearly Academic Societies Fair and Mixer, and keeps the events list up to date.",
+  },
+  {
+    name: "Tech",
+    text: "Builds and maintains this website and the Ministry's digital tools, including the Faculty Finder and the Assignment Tracker.",
+  },
+];
 
 export default function AboutPage() {
   return (
     <div>
       <PageHeader
-        eyebrow="About MAA"
-        title="The work of the Ministry of Academic Affairs"
-        description="The Ministry of Academic Affairs is a student-run body at Ashoka University dedicated to improving the academic experience of students."
-       
+        eyebrow="About us"
+        title="About the Ministry of Academic Affairs"
+        description="We are the student body at Ashoka University that works to improve the academic experience of students."
       />
 
-      <section className="mx-auto max-w-3xl px-5 py-14 sm:px-8">
-        <div className="prose-content space-y-6 text-[15px] leading-relaxed text-ink-soft">
-          <p>
-            MAA is dedicated to supporting and empowering students and
-            academic societies across Ashoka. In its own words, its role
-            &quot;is not to interfere but to facilitate&quot; — helping
-            departments and societies get the resources and institutional
-            backing they need, and giving students a direct line to the
-            Office of Academic Affairs (OAA) when something in the academic
-            experience isn&apos;t working.
-          </p>
+      <section className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
+        <p className="max-w-3xl text-base leading-relaxed text-ink-soft">
+          The Ministry supports students and academic societies across Ashoka.
+          In our own words, our role &quot;is not to interfere but to
+          facilitate&quot;. We help departments and societies get the
+          resources they need, and we give students a direct line to the
+          Office of Academic Affairs (OAA) when something in their academic
+          experience is not working.
+        </p>
 
-          <h2 className="text-xl text-ink">Structure of the Ministry</h2>
-          <p>
-            MAA&apos;s work is organised across a few functional areas —
-            policy and resources, support and research, and collaborations
-            and events — which together produce the guides, policy
-            documents, and directories on this site, run engagement with
-            academic societies, and follow up on issues raised by students.
-          </p>
+        {/* Verification */}
+        <div className="mt-12">
+          <SectionHeading
+            eyebrow="How things are verified"
+            title="Verified by the OAA"
+          />
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            <Card>
+              <p className="text-sm font-medium text-accent">Resources</p>
+              <p className="mt-2 text-sm text-ink-soft">
+                Every resource on this site is verified by the Office of
+                Academic Affairs.
+              </p>
+            </Card>
+            <Card>
+              <p className="text-sm font-medium text-accent">The Ministry</p>
+              <p className="mt-2 text-sm text-ink-soft">
+                The Ministry of Academic Affairs is itself recognised and
+                verified by the Office of Academic Affairs.
+              </p>
+            </Card>
+            <Card>
+              <p className="text-sm font-medium text-accent">Department matters</p>
+              <p className="mt-2 text-sm text-ink-soft">
+                Department Representatives sit on the Board of
+                Representatives (BOR) and handle matters for their own
+                department.
+              </p>
+            </Card>
+          </div>
+        </div>
 
-          <h2 className="text-xl text-ink">Representation</h2>
-          <p>
-            Every department has a representative — reachable at a standing
-            department email address regardless of who holds the role in a
-            given year — who acts as the bridge between students and
-            faculty on department-specific issues. Foundation Course (FC)
-            representatives play the same role for Foundation Courses, and
-            are expected to hold office hours at the start and end of each
-            semester.
+        {/* Who to contact */}
+        <div className="mt-14">
+          <SectionHeading eyebrow="Who to contact" title="Where should my query go?" />
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <Card>
+              <p className="text-sm font-medium text-accent">General queries</p>
+              <p className="mt-2 text-lg font-semibold text-ink">The Ministry</p>
+              <p className="mt-1 text-sm text-ink-soft">
+                Book an office hour, email us or message the WhatsApp group.
+              </p>
+            </Card>
+            <Card>
+              <p className="text-sm font-medium text-accent">Department queries</p>
+              <p className="mt-2 text-lg font-semibold text-ink">Board of Representatives</p>
+              <p className="mt-1 text-sm text-ink-soft">
+                Write to your Department Representative directly.
+              </p>
+            </Card>
+          </div>
+          <p className="mt-4 text-sm">
+            <Link href="/representatives" className="font-medium text-accent hover:underline">
+              See all contact options →
+            </Link>
           </p>
-          <p>
-            A small number of MAA representatives also hold their own
-            regular, bookable office hours for broader academic questions —
-            see the{" "}
-            <Link href="/representatives" className="text-accent hover:underline">
-              Representatives page
-            </Link>{" "}
-            for who&apos;s currently holding them.
-          </p>
+        </div>
 
-          <h2 className="text-xl text-ink">Academic societies</h2>
-          <p>
-            MAA keeps an open channel and monthly touchpoints with academic
-            society heads, runs the yearly Academic Societies Fair and
-            Mixer, and is often the first point of contact when societies
-            run into scheduling conflicts or need guidance on CASH/CADI
-            processes. Societies with concerns about MAA itself can use the{" "}
+        {/* Verticals */}
+        <div className="mt-14">
+          <SectionHeading
+            eyebrow="Our work"
+            title="The Ministry's teams"
+            description="The Ministry's work is divided into four verticals."
+          />
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {verticals.map((v) => (
+              <Card key={v.name}>
+                <h3 className="text-ink">{v.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{v.text}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Societies */}
+        <div className="mt-14 max-w-3xl">
+          <h2 className="text-ink">Academic societies</h2>
+          <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            We keep an open channel and monthly meetings with the heads of
+            academic societies, and we are often their first contact when
+            they face scheduling clashes or need guidance on CASH and CADI
+            processes. Societies with a concern about the Ministry itself
+            can use the{" "}
             <a
               href="https://forms.gle/iUivfL9iovp1kJvo6"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent hover:underline"
+              className="text-accent underline"
             >
-              grievance redressal form
+              grievance form
             </a>
             .
           </p>
 
-          <h2 className="text-xl text-ink">Records and resources</h2>
-          <p>
-            MAA has produced a real, growing archive of policy explainers,
-            department handbooks, thesis and academic-integrity guides, and
-            advocacy reports — all linked from{" "}
-            <Link href="/resources" className="text-accent hover:underline">
-              Resources
-            </Link>
-            . If any document on this site appears outdated or incorrect, please
-            inform us so that it can be corrected.
+          <h2 className="mt-10 text-ink">Records and resources</h2>
+          <p className="mt-3 text-base leading-relaxed text-ink-soft">
+            Our policy explainers, guides and reports are on the{" "}
+            <Link href="/resources" className="text-accent underline">Resources</Link>{" "}
+            page, and the department, student and batch handbooks are on the{" "}
+            <Link href="/handbooks" className="text-accent underline">Handbooks</Link>{" "}
+            page. If anything looks outdated or incorrect, please let us know.
+          </p>
+
+          <p className="mt-10 text-sm text-ink-soft">
+            Questions about the Ministry? Write to{" "}
+            <a href={`mailto:${site.email}`} className="text-accent underline">
+              {site.email}
+            </a>
+            .
           </p>
         </div>
-
-        <Card className="mt-10">
-          <Eyebrow>A note on accuracy</Eyebrow>
-          <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-            This site only lists representatives, office hours, and events
-            MAA can currently verify. Where our records are dated, such as the 2024–25 department representative roster, we state so clearly rather than presenting them as current. See the{" "}
-            <Link href="/representatives/archive" className="text-accent hover:underline">
-              archived roster
-            </Link>{" "}
-            for that history.
-          </p>
-        </Card>
-
-        <p className="mt-10 text-sm text-ink-faint">
-          For questions about the Ministry, or to report missing information, please write to{" "}
-          <a href={`mailto:${site.email}`} className="text-accent hover:underline">
-            {site.email}
-          </a>
-          .
-        </p>
       </section>
     </div>
   );
