@@ -14,7 +14,7 @@ export default function AddEventPage() {
       />
 
       <section className="mx-auto max-w-2xl px-5 py-14 sm:px-8">
-        <ol className="space-y-6 text-[15px] leading-relaxed text-ink-soft">
+        <ol className="space-y-6 text-sm leading-relaxed text-ink-soft">
           <li>
             <p className="font-medium text-ink">1. Open the Events sheet</p>
             <p className="mt-1">
@@ -31,7 +31,7 @@ export default function AddEventPage() {
                     <th className="px-3 py-2 font-medium text-ink">Example</th>
                   </tr>
                 </thead>
-                <tbody className="text-[13px]">
+                <tbody className="text-sm">
                   {[
                     ["title", "Academic Societies Mixer"],
                     ["date", "2026-10-14"],

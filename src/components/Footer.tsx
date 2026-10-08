@@ -71,7 +71,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-accent"
                 >
-                  Academic Policy 2025–26 <span className="text-[10px] text-ink-faint">[DOCX]</span>
+                  Academic Policy 2025–26 <span className="text-xs text-ink-faint">[DOCX]</span>
                 </a>
               </li>
               <li>
@@ -81,7 +81,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-accent"
                 >
-                  Academic Integrity Guide <span className="text-[10px] text-ink-faint">[DOCX]</span>
+                  Academic Integrity Guide <span className="text-xs text-ink-faint">[DOCX]</span>
                 </a>
               </li>
               <li>
@@ -91,7 +91,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-accent"
                 >
-                  Thesis How-To Guide <span className="text-[10px] text-ink-faint">[DOCX]</span>
+                  Thesis How-To Guide <span className="text-xs text-ink-faint">[DOCX]</span>
                 </a>
               </li>
               <li>
@@ -101,7 +101,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-accent"
                 >
-                  Pass/Fail Crisis Guide <span className="text-[10px] text-ink-faint">[DOCX]</span>
+                  Pass/Fail Crisis Guide <span className="text-xs text-ink-faint">[DOCX]</span>
                 </a>
               </li>
               <li>
@@ -111,7 +111,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-accent"
                 >
-                  Faculty Directory <span className="text-[10px] text-ink-faint">[XLSX]</span>
+                  Faculty Directory <span className="text-xs text-ink-faint">[XLSX]</span>
                 </a>
               </li>
             </ul>
@@ -167,11 +167,10 @@ export default function Footer() {
         <div className="mt-14 border-t border-line pt-8">
           <div className="flex flex-col gap-4 text-xs text-ink-faint sm:flex-row sm:items-center sm:justify-between">
             <p>
-              Maintained by and for Ashoka University students. Not an official
-              administrative organ of the Office of Academic Affairs (OAA).
+              The official page of the Ministry of Academic Affairs, Ashoka University.
             </p>
             <SignOutButton className="w-fit text-xs text-accent underline hover:text-accent-dim" />
-            <p className="text-[11px]">
+            <p className="text-xs">
               Plot 2, Rajiv Gandhi Education City, Sonipat, Haryana 131029
             </p>
           </div>

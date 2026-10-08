@@ -55,7 +55,7 @@ export default function ResourcesArchive() {
 
         {/* Category Pills */}
         <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-line/60">
-          <span className="mr-2 text-[10px] text-ink-faint ">
+          <span className="mr-2 text-xs text-ink-faint ">
             FILTER:
           </span>
           {categories.map((cat) => {
@@ -65,7 +65,7 @@ export default function ResourcesArchive() {
                 key={cat}
                 type="button"
                 onClick={() => setSelectedCategory(cat)}
-                className={`rounded-xs px-3 py-1.5 text-[11px] transition-all cursor-pointer ${
+                className={`rounded-xs px-3 py-1.5 text-xs transition-all cursor-pointer ${
                   active
                     ? "bg-accent text-white font-medium"
                     : "border border-line bg-paper text-ink-soft hover:border-line-strong hover:text-ink"
@@ -105,7 +105,7 @@ export default function ResourcesArchive() {
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] text-accent font-medium">
+                    <span className="text-xs text-accent font-medium">
                       {res.category}
                     </span>
                     {res.fileNote && <Tag variant="dim">{res.fileNote}</Tag>}
@@ -121,10 +121,10 @@ export default function ResourcesArchive() {
                 </div>
 
                 <div className="mt-6 flex items-center justify-between border-t border-line/60 pt-3">
-                  <span className="text-[11px] text-ink-faint">
+                  <span className="text-xs text-ink-faint">
                     Verified Link
                   </span>
-                  <span className="text-[11px] font-medium text-accent transition-transform group-hover:translate-x-0.5">
+                  <span className="text-xs font-medium text-accent transition-transform group-hover:translate-x-0.5">
                     Open File ↗
                   </span>
                 </div>

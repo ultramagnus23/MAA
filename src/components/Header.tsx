@@ -57,7 +57,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`relative px-3 py-1.5 text-[13px] transition-all ${
+                className={`relative px-3 py-1.5 text-sm transition-all ${
                   active
                     ? "font-medium text-ink"
                     : "text-ink-soft hover:text-ink"
@@ -82,7 +82,7 @@ export default function Header() {
             className="group inline-flex items-center gap-2 rounded-sm border border-line bg-paper px-3 py-1.5 text-xs text-ink transition-all hover:border-accent hover:bg-paper-dim"
           >
             <StatusDot active={true} />
-            <span className="text-[11px] text-ink-soft group-hover:text-ink">
+            <span className="text-xs text-ink-soft group-hover:text-ink">
               Office Hours
             </span>
             <span
@@ -102,7 +102,7 @@ export default function Header() {
           aria-controls="mobile-nav"
           onClick={() => setOpen((prev) => !prev)}
         >
-          <span className="text-[11px] ">
+          <span className="text-xs ">
             {open ? "Close" : "Menu"}
           </span>
           <span className="text-ink-faint" aria-hidden="true">

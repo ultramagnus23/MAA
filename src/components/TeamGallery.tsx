@@ -35,7 +35,7 @@ export default function TeamGallery() {
             <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7 text-paper">
               <div className="flex flex-wrap items-center gap-2">
                 <Tag variant="aubergine">Our team</Tag>
-                <span className="text-[10px] text-aubergine-muted ">
+                <span className="text-xs text-aubergine-muted ">
                   AY 2025–26
                 </span>
               </div>
@@ -67,7 +67,7 @@ export default function TeamGallery() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent opacity-75 group-hover:opacity-85 transition-opacity" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-paper">
-                  <p className="text-[10px] text-paper/75">
+                  <p className="text-xs text-paper/75">
                     {photo.role}
                   </p>
                   <p className="text-sm sm:text-base font-normal text-paper">
@@ -83,10 +83,10 @@ export default function TeamGallery() {
       {/* Editorial Photographic Filmstrip: 5 multi-ratio portraits and captures */}
       <div className="border-t border-b border-line py-6">
         <div className="mb-3 flex items-center justify-between">
-          <span className="text-[11px] text-ink-faint">
+          <span className="text-xs text-ink-faint">
             Campus Working Roster · 12 Archival Captures
           </span>
-          <span className="text-[11px] text-accent">
+          <span className="text-xs text-accent">
             Hover to explore role
           </span>
         </div>
@@ -108,7 +108,7 @@ export default function TeamGallery() {
                 />
                 {/* Overlay card on hover */}
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-aubergine via-aubergine/40 to-transparent p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <span className="text-[9px] text-aubergine-muted">
+                  <span className="text-xs text-aubergine-muted">
                     {photo.role}
                   </span>
                   <p className="text-xs font-normal text-paper leading-tight mt-0.5">
@@ -139,10 +139,10 @@ export default function TeamGallery() {
             </div>
             <div className="mt-3">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] text-ink-faint">
+                <span className="text-xs text-ink-faint">
                   {photo.role}
                 </span>
-                <span className="text-[10px] text-accent">
+                <span className="text-xs text-accent">
                   Ashoka AU
                 </span>
               </div>
@@ -190,7 +190,7 @@ export default function TeamGallery() {
                 <span className="text-xs text-accent">
                   {activePhoto.role}
                 </span>
-                <span className="text-[11px] text-ink-faint">
+                <span className="text-xs text-ink-faint">
                   Ashoka University
                 </span>
               </div>

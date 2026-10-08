@@ -79,7 +79,7 @@ export default function DepartmentDirectory() {
                   <p className="font-medium text-ink">
                     {dept.department}
                   </p>
-                  <span className="text-[10px] text-ink-faint sm:hidden">
+                  <span className="text-xs text-ink-faint sm:hidden">
                     Undergraduate / ASP
                   </span>
                 </div>
@@ -87,7 +87,7 @@ export default function DepartmentDirectory() {
                 <div className="col-span-7 sm:col-span-5">
                   <a
                     href={`mailto:${dept.email}`}
-                    className="text-xs sm:text-[13px] text-accent hover:underline break-all"
+                    className="text-xs sm:text-sm text-accent hover:underline break-all"
                   >
                     {dept.email}
                   </a>
@@ -97,13 +97,13 @@ export default function DepartmentDirectory() {
                   <button
                     type="button"
                     onClick={() => handleCopy(dept.email)}
-                    className="rounded-xs border border-line px-2.5 py-1 text-[11px] text-ink-soft transition-colors hover:border-line-strong hover:bg-paper-dim"
+                    className="rounded-xs border border-line px-2.5 py-1 text-xs text-ink-soft transition-colors hover:border-line-strong hover:bg-paper-dim"
                   >
                     {copiedEmail === dept.email ? "COPIED ✓" : "COPY"}
                   </button>
                   <a
                     href={`mailto:${dept.email}`}
-                    className="rounded-xs border border-accent/40 bg-accent-soft/30 px-2.5 py-1 text-[11px] text-accent transition-colors hover:bg-accent hover:text-paper"
+                    className="rounded-xs border border-accent/40 bg-accent-soft/30 px-2.5 py-1 text-xs text-accent transition-colors hover:bg-accent hover:text-paper"
                   >
                     EMAIL ↗
                   </a>

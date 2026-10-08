@@ -128,7 +128,7 @@ export function SectionHeading({
       </h2>
       {description && (
         <p
-          className={`mt-3 text-[15px] sm:text-base leading-relaxed ${
+          className={`mt-3 text-sm sm:text-base leading-relaxed ${
             isDark ? "text-aubergine-muted" : "text-ink-soft"
           }`}
         >
