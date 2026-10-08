@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { nav, site } from "@/data/site";
-import { StatusDot } from "@/components/ui";
 
 export default function Header() {
   const pathname = usePathname();
@@ -75,25 +74,6 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Right Action & Live Status */}
-        <div className="hidden items-center gap-4 md:flex">
-          <Link
-            href="/representatives#office-hours"
-            className="group inline-flex items-center gap-2 rounded-sm border border-line bg-paper px-3 py-1.5 text-xs text-ink transition-all hover:border-accent hover:bg-paper-dim"
-          >
-            <StatusDot active={true} />
-            <span className="text-xs text-ink-soft group-hover:text-ink">
-              Office Hours
-            </span>
-            <span
-              aria-hidden="true"
-              className="text-ink-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent"
-            >
-              →
-            </span>
-          </Link>
-        </div>
-
         {/* Mobile menu button */}
         <button
           type="button"
@@ -158,21 +138,6 @@ export default function Header() {
             })}
           </ul>
 
-          <div className="mt-6 border-t border-line pt-4">
-            <Link
-              href="/representatives#office-hours"
-              onClick={() => setOpen(false)}
-              className="flex w-full items-center justify-between rounded-sm border border-line-strong bg-paper-dim px-4 py-2.5 text-xs"
-            >
-              <div className="flex items-center gap-2">
-                <StatusDot active={true} />
-                <span className="text-ink">
-                  Current Office Hours
-                </span>
-              </div>
-              <span className="text-accent ">Book slot →</span>
-            </Link>
-          </div>
         </nav>
       )}
     </header>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Eyebrow, SectionHeading, Tag } from "@/components/ui";
 import TeamGallery from "@/components/TeamGallery";
+import HelpFinder, { type HelpTopic } from "@/components/HelpFinder";
 import { currentReps } from "@/data/representatives";
 import { resources } from "@/data/resources";
 import { site } from "@/data/site";
@@ -12,9 +13,50 @@ export default async function Home() {
   const { upcoming } = splitUpcomingPast(events);
   const featuredResources = resources.slice(0, 6);
 
+  const link = (title: string) => resources.find((r) => r.title === title)?.url ?? "/resources";
+  const helpTopics: HelpTopic[] = [
+    {
+      id: "department",
+      label: "A department matter",
+      answer: "Questions about your own department go straight to your Department Representative, not through the Ministry.",
+      action: "Find your Department Representative",
+      href: "/representatives#departments",
+    },
+    {
+      id: "policy",
+      label: "Academic policy",
+      answer: "The Academic Policy Document covers add/drop, pass/fail, audit, incompletes, retakes and more.",
+      action: "Open the policy document",
+      href: link("MAA General Academic Policy Document (2025–26)"),
+      external: true,
+    },
+    {
+      id: "thesis",
+      label: "My thesis",
+      answer: "The Undergraduate Thesis How-To Guide explains the thesis process step by step.",
+      action: "Open the thesis guide",
+      href: link("Undergraduate Thesis How-To Guide"),
+      external: true,
+    },
+    {
+      id: "handbook",
+      label: "A handbook",
+      answer: "Department, student and batch handbooks are all on one page.",
+      action: "Go to handbooks",
+      href: "/handbooks",
+    },
+    {
+      id: "else",
+      label: "Something else",
+      answer: "For any other matter, speak to the Ministry through an office hour, by email or on WhatsApp.",
+      action: "See how to reach the Ministry",
+      href: "/representatives#core-team",
+    },
+  ];
+
   const quickQuestions = [
     { q: "Who do I contact for my department?", href: "/representatives#departments" },
-    { q: "When are office hours held?", href: "/representatives#office-hours" },
+    { q: "When are office hours held?", href: "#office-hours" },
     { q: "What is happening this week?", href: "/events" },
     { q: "Where can I find the policy document?", href: "/resources" },
   ];
@@ -53,38 +95,7 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-line bg-white p-6">
-            <div className="flex items-center gap-3">
-              <Image src="/logo.png" alt="" width={48} height={48} className="h-12 w-12" />
-              <p className="text-lg font-semibold text-ink">Meet the Core Team</p>
-            </div>
-            <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-              Book an office hour with a Core Team member to discuss any general academic matter.
-            </p>
-            <div className="mt-5 space-y-3">
-              {currentReps.map((rep) => (
-                <a
-                  key={rep.name}
-                  href={rep.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between gap-4 rounded border border-line bg-paper px-4 py-3 transition-colors hover:border-accent"
-                >
-                  <span>
-                    <span className="block font-medium text-ink">{rep.name}</span>
-                    <span className="block text-sm text-ink-soft">Core Team</span>
-                  </span>
-                  <span className="text-sm font-medium text-accent">Book a time →</span>
-                </a>
-              ))}
-            </div>
-            <div className="mt-5 flex items-center justify-between border-t border-line pt-4 text-sm">
-              <span className="text-ink-soft">Department matters?</span>
-              <Link href="/representatives" className="font-medium text-accent hover:underline">
-                Contact your Department Representative →
-              </Link>
-            </div>
-          </div>
+          <HelpFinder topics={helpTopics} />
         </div>
       </section>
 
@@ -126,7 +137,7 @@ export default async function Home() {
             >
               <div>
                 <p className="text-lg font-semibold text-ink">{rep.name}</p>
-                <p className="mt-1 text-sm text-ink-soft">Core Team</p>
+                <p className="mt-1 text-sm text-ink-soft">{rep.role}</p>
               </div>
               <a
                 href={rep.bookingUrl}

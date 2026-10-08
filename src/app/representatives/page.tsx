@@ -55,7 +55,7 @@ export default function RepresentativesPage() {
               <Card key={rep.name} className="flex flex-col justify-between">
                 <div>
                   <h3 className="text-ink">{rep.name}</h3>
-                  <p className="mt-1 text-sm text-ink-soft">Core Team</p>
+                  <p className="mt-1 text-sm text-ink-soft">{rep.role}</p>
                 </div>
                 <a
                   href={rep.bookingUrl}

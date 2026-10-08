@@ -14,20 +14,20 @@ export type CurrentRep = {
 export const currentReps: CurrentRep[] = [
   {
     name: "Minal Priya",
-    role: "MAA Representative",
+    role: "Minister of Academic Affairs",
     bookingLabel: "Book office hours",
     bookingUrl:
       "https://calendly.com/minal-priya_ug2024-ashoka/maa-oh-with-minal-priya",
   },
   {
     name: "Anushka Sinha",
-    role: "MAA Representative",
+    role: "Deputy Minister of Academic Affairs",
     bookingLabel: "Book office hours",
     bookingUrl: "https://calendly.com/anushka-sinha_ug2024-ashoka/new-meeting",
   },
   {
     name: "Ananya Makkar",
-    role: "MAA Representative",
+    role: "Deputy Minister of Academic Affairs",
     bookingLabel: "Book office hours",
     bookingUrl:
       "https://calendly.com/ananya-makkar_ug2024-ashoka/placecom-office-hours",
