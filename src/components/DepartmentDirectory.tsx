@@ -29,15 +29,9 @@ export default function DepartmentDirectory() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search departments, for example Economics"
-            className="w-full rounded-xs border border-line bg-paper px-4 py-2.5 pl-10 text-sm text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
+            className="w-full rounded-xs border border-line bg-paper px-4 py-2.5 text-sm text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
             aria-label="Filter departments"
           />
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute left-3.5 top-2.5 text-ink-faint"
-          >
-            🔍
-          </span>
           {query && (
             <button
               type="button"
@@ -99,7 +93,7 @@ export default function DepartmentDirectory() {
                     onClick={() => handleCopy(dept.email)}
                     className="rounded-xs border border-line px-2.5 py-1 text-xs text-ink-soft transition-colors hover:border-line-strong hover:bg-paper-dim"
                   >
-                    {copiedEmail === dept.email ? "COPIED ✓" : "COPY"}
+                    {copiedEmail === dept.email ? "COPIED" : "COPY"}
                   </button>
                   <a
                     href={`mailto:${dept.email}`}

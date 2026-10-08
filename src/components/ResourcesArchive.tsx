@@ -33,15 +33,9 @@ export default function ResourcesArchive() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search policies, guides and handbooks"
-            className="w-full rounded-xs border border-line bg-paper-dim/40 px-4 py-3 pl-11 text-sm text-ink placeholder:text-ink-faint focus:border-accent focus:bg-paper focus:outline-none"
+            className="w-full rounded-xs border border-line bg-paper-dim/40 px-4 py-3 text-sm text-ink placeholder:text-ink-faint focus:border-accent focus:bg-paper focus:outline-none"
             aria-label="Search resources"
           />
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute left-4 top-3.5 text-ink-faint"
-          >
-            🔍
-          </span>
           {searchQuery && (
             <button
               type="button"

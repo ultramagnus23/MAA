@@ -85,9 +85,6 @@ export default function Header() {
           <span className="text-xs ">
             {open ? "Close" : "Menu"}
           </span>
-          <span className="text-ink-faint" aria-hidden="true">
-            {open ? "✕" : "☰"}
-          </span>
         </button>
       </div>
 
