@@ -66,7 +66,7 @@ Not implemented. No file in the project describes it. See [CONTENT_REGISTER.md](
 
 ## Marketing page
 
-- **How to reach it:** it is not in the main menu. Open About, go to the Community Outreach and Marketing department, and use the link there.
+- **How to reach it:** it is not in the main menu. Open About, go to the Community Outreach and Marketing department, and click Tarun Shetty or Niharika Ghosh. Confetti falls from the top of the screen and the Marketing page opens. With "reduce motion" on, or when opened in a new tab, the page opens with no confetti.
 - **Workflow:** a loud hero, then Tarun Shetty and Niharika Ghosh as two differently styled cards, a "The work" section, and a share section.
 - **Files:** `src/app/marketing/page.tsx`, `src/components/MarketingFx.tsx`, `src/data/marketing.ts`.
 - **Niharika's card:** over her card the mouse pointer becomes an Instagram-style icon. On touch screens and for keyboard users the icon and label are always visible in the card. Without a configured link, a click shows "Niharika's Instagram link has not been configured yet." With a link, the card opens it in a new tab.

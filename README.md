@@ -17,7 +17,7 @@ The website of the Ministry of Academic Affairs (MAA) at Ashoka University.
 | Resources | `/resources` | Searchable, filterable list of policies, guides, directories and reports |
 | Handbooks | `/handbooks` | Department, student and batch handbooks |
 | Representatives | `/representatives` | Department Representative emails and WhatsApp groups for 21 departments |
-| Marketing (not in the menu) | `/marketing` | The Community Outreach and Marketing department. Linked from the team section of the About page. |
+| Marketing (not in the menu) | `/marketing` | The Community Outreach and Marketing department. Opened by clicking Tarun Shetty or Niharika Ghosh in the team section of the About page. |
 
 `/calendar` redirects to `/events`, and `/transparency` redirects to `/projects`.
 

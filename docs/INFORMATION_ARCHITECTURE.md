@@ -14,7 +14,7 @@
 /handbooks                 Handbooks
 /representatives           Department Representatives and WhatsApp groups
   /representatives/archive 2024-25 archive
-/marketing                 Community Outreach and Marketing (not in the menu; linked from About)
+/marketing                 Community Outreach and Marketing (not in the menu; opened from the two names on About)
 ```
 
 Redirects: `/calendar` to `/events`, `/transparency` to `/projects`.
@@ -23,7 +23,7 @@ Redirects: `/calendar` to `/events`, `/transparency` to `/projects`.
 
 Main menu, in order: Home, About, Projects, Events, Office Hours, Resources, Handbooks, Representatives.
 
-The Marketing page is not in the menu. It is reached by a link in the Community Outreach and Marketing section of the team directory on About.
+The Marketing page is not in the menu. It is reached by clicking either name in the Community Outreach and Marketing section of the team directory on About. A short burst of confetti falls from the top of the screen, then the page opens.
 
 - Projects replaces Transparency. The monthly reports are on the Projects page (`/projects#reports`).
 - There is no Calendar item. The calendar is on Events.
@@ -42,7 +42,7 @@ The Marketing page is not in the menu. It is reached by a link in the Community 
 | Policies and guides | Resources | Six featured items on the home page, and some in the footer |
 | Handbooks | Handbooks | A link on Resources, the footer and the home page helper |
 | Department emails and WhatsApp groups | Representatives | A link on About and Office Hours |
-| Marketing team profiles | Marketing (linked from About) | Their names also appear in the About directory |
+| Marketing team profiles | Marketing (opened from the two names on About) | Their names also appear in the About directory |
 
 ## Two kinds of question
 

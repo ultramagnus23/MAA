@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader, SectionHeading, Card } from "@/components/ui";
 import Avatar from "@/components/Avatar";
+import ConfettiLink from "@/components/ConfettiLink";
 import TeamGallery from "@/components/TeamGallery";
 import {
   departments,
@@ -118,30 +119,23 @@ export default function AboutPage() {
               const members = teamMembers.filter((m) => m.department === dept);
               return (
                 <div key={dept}>
-                  <h3 className="text-ink">
-                    {dept === "Community Outreach and Marketing" ? (
-                      <Link href="/marketing" className="hover:text-accent hover:underline">
-                        {dept}
-                      </Link>
-                    ) : (
-                      dept
-                    )}
-                  </h3>
+                  <h3 className="text-ink">{dept}</h3>
                   <p className="mt-1 max-w-2xl text-sm text-ink-soft">{departmentDescriptions[dept]}</p>
-                  {dept === "Community Outreach and Marketing" && (
-                    <p className="mt-2 text-sm">
-                      <Link href="/marketing" className="font-medium text-accent underline">
-                        Explore the Marketing team&apos;s page →
-                      </Link>
-                    </p>
-                  )}
                   <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {members.map((m) => (
                       <li key={m.name}>
                         <Card className="flex h-full items-center gap-4">
                           <Avatar name={m.name} size={52} />
                           <div className="min-w-0">
-                            <p className="font-semibold text-ink">{m.name}</p>
+                            <p className="font-semibold text-ink">
+                              {m.department === "Community Outreach and Marketing" ? (
+                                <ConfettiLink href="/marketing" className="rounded-sm px-0.5 text-accent">
+                                  {m.name}
+                                </ConfettiLink>
+                              ) : (
+                                m.name
+                              )}
+                            </p>
                             <p className="text-sm text-accent">{m.designation ?? DEFAULT_DESIGNATION}</p>
                             {!m.designation && <p className="text-xs text-ink-faint">{m.department}</p>}
                             {hasOfficeHours(m.name) && (

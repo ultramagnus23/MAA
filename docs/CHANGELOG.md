@@ -15,7 +15,7 @@
 - Data files: `team-members.ts`, `office-hours.ts`, `whatsapp.ts`, `projects.ts`, `reports.ts`, `marketing.ts`, `footer-links.ts`, `hero.ts`.
 
 ### Changed
-- Menu: Projects and Office Hours added; Calendar removed. Marketing is not in the menu; it is linked from the team section of About. The full menu now shows from 1280px wide.
+- Menu: Projects and Office Hours added; Calendar removed. Marketing is not in the menu; it is opened by clicking Tarun Shetty or Niharika Ghosh on About, with a confetti effect. The full menu now shows from 1280px wide.
 - Home page rebuilt around the new structure. It no longer carries the team gallery. The gallery moved to About.
 - Team photos on About: invented names, roles and settings removed, replaced with short neutral captions.
 - Office hours now show the Minister and Deputy Minister designations.
