@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Eyebrow, SectionHeading, Tag } from "@/components/ui";
 import TeamGallery from "@/components/TeamGallery";
+import HeroVideo from "@/components/HeroVideo";
 import HelpFinder, { type HelpTopic } from "@/components/HelpFinder";
 import { currentReps } from "@/data/representatives";
 import { resources } from "@/data/resources";
@@ -64,37 +65,44 @@ export default async function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="border-b border-line">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.15fr_1fr]">
-          <div>
-            <Eyebrow>{site.university}</Eyebrow>
-            <h1 className="mt-3 text-4xl font-bold leading-[1.1] text-ink sm:text-6xl">
-              Ministry of Academic Affairs
-            </h1>
-            <p className="mt-6 text-xl font-medium text-ink">Your academic voice at Ashoka.</p>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink-soft">
-              We are the student body that represents every academic discipline
-              at Ashoka. We take student concerns to the Office of Academic
-              Affairs, work with academic societies, and keep the
-              university&apos;s academic policies, handbooks and guides in one
-              place.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/representatives"
-                className="rounded bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-dim"
-              >
-                Reach the Ministry →
-              </Link>
-              <Link
-                href="/resources"
-                className="rounded border border-accent px-6 py-3 text-sm font-medium text-accent transition-colors hover:bg-accent-soft"
-              >
-                Browse resources
-              </Link>
-            </div>
+      <section className="relative isolate flex min-h-[28rem] items-center overflow-hidden border-b border-line sm:min-h-[34rem] lg:min-h-[calc(100vh-5.5rem)] lg:max-h-[52rem]">
+        <HeroVideo />
+        <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+          <div className="flex items-center gap-4">
+            <Image src="/logo.png" alt="" width={72} height={72} priority className="h-16 w-16 sm:h-[72px] sm:w-[72px]" />
+            <p className="text-sm font-medium text-white/90 sm:text-base">{site.university}</p>
           </div>
+          <h1 className="mt-6 max-w-3xl font-bold leading-[1.08] text-white">
+            Ministry of Academic Affairs
+          </h1>
+          <p className="mt-5 text-xl font-medium text-white sm:text-2xl">Your academic voice at Ashoka.</p>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
+            We are the student body that represents every academic discipline
+            at Ashoka. We take student concerns to the Office of Academic
+            Affairs, work with academic societies, and keep the
+            university&apos;s academic policies, handbooks and guides in one
+            place.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/representatives"
+              className="rounded bg-white px-6 py-3 text-sm font-semibold text-accent transition-colors hover:bg-paper-dim"
+            >
+              Reach the Ministry →
+            </Link>
+            <Link
+              href="/resources"
+              className="rounded border border-white px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/15"
+            >
+              Browse resources
+            </Link>
+          </div>
+        </div>
+      </section>
 
+      {/* Help finder */}
+      <section className="border-b border-line">
+        <div className="mx-auto max-w-3xl px-5 py-12 sm:px-8">
           <HelpFinder topics={helpTopics} />
         </div>
       </section>
