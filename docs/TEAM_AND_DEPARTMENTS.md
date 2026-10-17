@@ -40,14 +40,14 @@ A data check (`npm test`) fails if anyone other than those three has a designati
 - **Designations** for the eight people shown as "Team member".
 - **Photographs** for everyone. Initials are shown instead.
 - **Department descriptions** (drafts).
-- **Departments of the three office-hour holders.** The roster places all three in Tech, so Tech is shown on their office-hour cards.
+- **Tech and the Minister and Deputy Ministers.** The roster places all three in Tech, so the About page still lists them in the Tech section. By request, "Tech" is not shown on their cards (About, Office Hours or the home page). Their designation is shown instead. If they should not be in the Tech section at all, say so.
 
 ## Office hours versus team membership
 
 - The team directory (About) lists everyone on the roster.
 - The Office Hours page lists only people in `src/data/office-hours.ts`: currently Minal Priya, Anuskha Sinha and Ananya Makkar, each with a Calendly link.
 - Being on the roster does not put someone on the Office Hours page, and the other eight people are not shown as having office hours.
-- The designation shown on a person's office-hours card comes from their roster entry. A data check confirms the two agree.
+- The designation shown on a person's office-hours card comes from their roster entry. A data check confirms the two agree. The department is not shown for the Minister and Deputy Ministers.
 
 ## Department Representatives are separate
 

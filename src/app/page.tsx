@@ -174,7 +174,7 @@ export default async function Home() {
                   <div>
                     <p className="text-lg font-semibold text-ink">{p.name}</p>
                     <p className="text-sm font-semibold text-accent">{p.designation}</p>
-                    <p className="mt-1 text-sm text-ink-soft">{p.department}</p>
+                    {p.department && <p className="mt-1 text-sm text-ink-soft">{p.department}</p>}
                   </div>
                   <a
                     href={p.bookingUrl}

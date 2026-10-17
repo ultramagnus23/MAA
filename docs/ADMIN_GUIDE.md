@@ -44,7 +44,7 @@ Each event gets its own page at `/events/<date>-<title>`. Changing the title or 
 
 File: `src/data/office-hours.ts`. Only people in this list appear on the Office Hours page and the home page. Being on the team roster does not add someone.
 
-For each person set `name`, `designation`, `department`, `bookingUrl` and `bookingLabel`. The designation must match the team roster. `timings` is optional: add a short line such as "Wednesdays, 4 to 6 pm" only if it is true. If it is left out, the page says the times are shown on the booking page.
+For each person set `name`, `designation`, `bookingUrl` and `bookingLabel`. The designation must match the team roster. `department` is optional and is currently left out, so no department is shown on the cards. `timings` is optional: add a short line such as "Wednesdays, 4 to 6 pm" only if it is true. If it is left out, the page says the times are shown on the booking page.
 
 To remove someone, delete their block. If the list is empty the pages show "Nobody has scheduled office hours at the moment."
 

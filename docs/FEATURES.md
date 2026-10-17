@@ -35,7 +35,7 @@ For each feature: what a student does, which files make it, what data it reads, 
 
 ## Office hours
 
-- **Workflow:** each person card shows name, designation, department, timings and a booking button. The three people with office hours are listed. The page also explains how to email or WhatsApp the Ministry.
+- **Workflow:** each person card shows name, designation, timings and a booking button (a department line appears only if one is set; it is currently not set). The three people with office hours are listed. The page also explains how to email or WhatsApp the Ministry.
 - **Files:** `src/app/office-hours/page.tsx`, `src/data/office-hours.ts`.
 - **Data:** three people with Calendly links.
 - **Limits:** booking happens on Calendly. The site cannot show available, booked, cancelled or completed sessions, and it cannot prevent double bookings, because it does not hold bookings. Calendly does that. Timings are not listed because none were supplied, so the card says they are shown when booking. If nobody is listed, the page shows an empty state.

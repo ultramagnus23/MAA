@@ -52,7 +52,6 @@ describe("office hours", () => {
       const member = teamMembers.find((m) => m.name === p.name);
       expect(member, p.name).toBeDefined();
       expect(p.designation).toBe(member?.designation);
-      expect(p.department).toBe(member?.department);
       expect(p.bookingUrl).toMatch(/^https:\/\//);
     }
   });

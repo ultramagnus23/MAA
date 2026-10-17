@@ -17,7 +17,7 @@ Nothing is stored about visitors. There are no cookies, accounts or form submiss
 | File | Shape | Notes |
 | --- | --- | --- |
 | `team-members.ts` | `TeamMember { name, department, designation? }` | `department` is one of five fixed values. `designation` left out means "Team member". |
-| `office-hours.ts` | `OfficeHourHolder { name, designation, department, bookingUrl, bookingLabel, timings? }` | Must also be on the roster, with the same designation and department. |
+| `office-hours.ts` | `OfficeHourHolder { name, designation, department?, bookingUrl, bookingLabel, timings? }` | Must also be on the roster with the same designation. `department` is optional and currently left out. |
 | `projects.ts` | `Project { name, summary, status, department?, period?, links?, source }` | `status` is Ongoing, Planned or Published. `source` is required. |
 | `reports.ts` | `MonthlyReport { period, published, summary, url }` | Empty. One entry per report. |
 | `resources.ts` | `Resource { title, description, category, url, fileNote? }` | Titles must be unique. |
@@ -34,7 +34,7 @@ Events (Google Sheet columns): `title`, `date`, `time`, `location`, `category`, 
 
 ## Relationships
 
-- Office-hour holder to team member: by exact name. Designation and department are copied from the roster and checked by a test.
+- Office-hour holder to team member: by exact name. Designation is copied from the roster and checked by a test.
 - WhatsApp group to department: by exact department name.
 - Project links to other pages: a link starting with `/` is an internal page, anything else opens in a new tab.
 - Event page address: `<date>-<title as lowercase words joined by hyphens>`, made by `eventSlug`.

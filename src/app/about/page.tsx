@@ -143,7 +143,7 @@ export default function AboutPage() {
                           <div className="min-w-0">
                             <p className="font-semibold text-ink">{m.name}</p>
                             <p className="text-sm text-accent">{m.designation ?? DEFAULT_DESIGNATION}</p>
-                            <p className="text-xs text-ink-faint">{m.department}</p>
+                            {!m.designation && <p className="text-xs text-ink-faint">{m.department}</p>}
                             {hasOfficeHours(m.name) && (
                               <Link
                                 href="/office-hours"

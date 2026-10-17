@@ -47,10 +47,12 @@ export default function OfficeHoursPage() {
                       </div>
                     </div>
                     <dl className="mt-5 space-y-2 text-sm">
-                      <div className="flex gap-2">
-                        <dt className="w-24 shrink-0 text-ink-faint">Department</dt>
-                        <dd className="text-ink">{person.department}</dd>
-                      </div>
+                      {person.department && (
+                        <div className="flex gap-2">
+                          <dt className="w-24 shrink-0 text-ink-faint">Department</dt>
+                          <dd className="text-ink">{person.department}</dd>
+                        </div>
+                      )}
                       <div className="flex gap-2">
                         <dt className="w-24 shrink-0 text-ink-faint">Timings</dt>
                         <dd className="text-ink">
