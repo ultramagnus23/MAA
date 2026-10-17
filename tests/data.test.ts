@@ -33,9 +33,12 @@ describe("team roster", () => {
     expect(departments).toHaveLength(5);
   });
 
-  it("only gives designations to the three supplied people", () => {
-    const withDesignation = teamMembers.filter((m) => m.designation).map((m) => m.name).sort();
-    expect(withDesignation).toEqual(["Ananya Makkar", "Anuskha Sinha", "Minal Priya"]);
+  it("makes everyone except the Minister and Deputy Ministers a Head of Department", () => {
+    const ministry = ["Ananya Makkar", "Anuskha Sinha", "Minal Priya"];
+    for (const m of teamMembers) {
+      if (ministry.includes(m.name)) expect(m.designation).toMatch(/Minister/);
+      else expect(m.designation).toBe("Head of Department");
+    }
   });
 
   it("has the right designations", () => {

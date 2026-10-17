@@ -9,7 +9,7 @@ Status key: **Complete and tested**, **Implemented, not fully tested**, **Partia
 | Projects content | Partial | Ten projects from three source documents. Statuses need confirming. | `src/data/projects.ts` |
 | Monthly transparency archive | Partial | Page and data file work and show an empty state. No reports supplied. | `src/data/reports.ts` |
 | SG report in the footer | Blocked | Footer slot built. No link supplied. | `src/data/footer-links.ts` |
-| About page and team directory | Complete and tested | 11 people, once each, correct departments, only three designations. Checked by data tests. Photos not supplied. | `src/app/about/`, `src/data/team-members.ts` |
+| About page and team directory | Complete and tested | 11 people, once each, correct departments, designations are Minister, Deputy Minister and Head of Department. Checked by data tests. Photos not supplied. | `src/app/about/`, `src/data/team-members.ts` |
 | Events page with calendar | Implemented, not fully tested | Tested with temporary events in the browser. The real sheet is not connected. | `src/app/events/`, `src/components/EventsExplorer.tsx` |
 | Calendar only on Events | Complete and tested | `/calendar` redirects. No calendar elsewhere. | `next.config.ts` |
 | Event detail pages | Complete and tested | Works, and unknown addresses give 404. | `src/app/events/[slug]/` |

@@ -22,6 +22,9 @@
 - Resources page has a short legend explaining the categories.
 - Reduced-motion and save-data checks use a shared hook (`src/lib/useMediaQuery.ts`).
 
+### Designations
+- The eight people other than the Minister and Deputy Ministers are now shown as Head of Department (About page and Marketing cards), as stated by the Ministry.
+
 ### Removed
 - `/calendar` page (redirects to `/events`).
 - The older `currentReps` data (replaced by `office-hours.ts`).

@@ -6,7 +6,7 @@ Everything on the site that was supplied, what is still missing, and what is a t
 
 | Content | Source |
 | --- | --- |
-| Team roster, departments, three designations | Supplied roster |
+| Team roster, departments, and designations (Minister, Deputy Ministers, and eight Heads of Department) | Supplied roster, and the Ministry's later confirmation |
 | Office-hour people and Calendly links | Existing site |
 | 21 department WhatsApp invite links and 21 representative emails | "Department Whatsapp Groups + BOR Email IDs" |
 | Links for 36 resources and 29 handbooks | Link list supplied by the Ministry |
@@ -23,7 +23,6 @@ Everything on the site that was supplied, what is still missing, and what is a t
 | **Instagram links** | Niharika Ghosh's profile address (needed for her pointer effect to open it), and Tarun Shetty's if there is one | `src/data/marketing.ts` |
 | **Marketing work** | Real campaigns, event promotions or creative work, with links | `src/data/marketing.ts` |
 | **Office-hour timings** | Weekly timings if they should be shown on the site (currently shown on Calendly only) | `src/data/office-hours.ts` |
-| **Designations** | For Tarun Shetty, Niharika Ghosh, Saanve Shalini Singh, Devyani Rai, Poorvi Sanath Kumar, Nia Motha, Endri Agarwal, Arjeeta Chakraborty | `src/data/team-members.ts` |
 | **Team photographs** | A photo for each person | Needs a small code change to show them |
 | **Events** | The published Google Sheet link, and the events | `EVENTS_SHEET_CSV_URL` |
 | **WhatsApp group purposes** | The source gives only group names. Add a purpose per group if wanted. | `src/data/whatsapp.ts` |

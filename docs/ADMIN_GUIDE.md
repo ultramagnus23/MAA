@@ -50,7 +50,7 @@ To remove someone, delete their block. If the list is empty the pages show "Nobo
 
 ## Team and designations
 
-File: `src/data/team-members.ts`. Each person has a `name`, a `department` (one of the five) and an optional `designation`. Leave `designation` out until it is confirmed. The site then shows "Team member". The About page and the data checks (`npm test`) both read this file.
+File: `src/data/team-members.ts`. Each person has a `name`, a `department` (one of the five) and an optional `designation`. Everyone currently has one (Minister, Deputy Minister or Head of Department). If a designation is left out, the site shows "Team member". The About page and the data checks (`npm test`) both read this file.
 
 Team photographs: none have been added yet. When a photo is supplied, ask a Tech member to add an image field for that person. Until then the site shows initials.
 

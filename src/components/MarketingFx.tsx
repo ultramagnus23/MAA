@@ -206,7 +206,7 @@ export default function MarketingProfiles() {
         <Avatar name={nih.name} size={72} />
         <div>
           <h3 className="text-ink">{nih.name}</h3>
-          <p className="text-sm font-semibold text-accent">Team member</p>
+          <p className="text-sm font-semibold text-accent">Head of Department</p>
           <p className="text-sm text-ink-soft">Community Outreach and Marketing</p>
         </div>
       </div>
@@ -230,7 +230,7 @@ export default function MarketingProfiles() {
             <Avatar name={tar.name} size={72} />
             <div>
               <h3 className="text-ink">{tar.name}</h3>
-              <p className="text-sm font-semibold text-accent">Team member</p>
+              <p className="text-sm font-semibold text-accent">Head of Department</p>
               <p className="text-sm text-ink-soft">Community Outreach and Marketing</p>
             </div>
           </div>

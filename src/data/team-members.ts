@@ -1,6 +1,7 @@
 // Official team roster, exactly as supplied by the Ministry.
-// Designation is only filled in where it was supplied. For everyone else it
-// is left empty and the site shows "Team member" until it is confirmed.
+// Designations: the Minister and two Deputy Ministers, and the eight other
+// people are Heads of Department (HODs). If a designation is left out, the
+// site shows "Team member".
 
 export const departments = [
   "Tech",
@@ -19,18 +20,20 @@ export type TeamMember = {
   designation?: string;
 };
 
+const HOD = "Head of Department";
+
 export const teamMembers: TeamMember[] = [
   { name: "Minal Priya", department: "Tech", designation: "Minister" },
   { name: "Ananya Makkar", department: "Tech", designation: "Deputy Minister" },
   { name: "Anuskha Sinha", department: "Tech", designation: "Deputy Minister" },
-  { name: "Tarun Shetty", department: "Community Outreach and Marketing" },
-  { name: "Niharika Ghosh", department: "Community Outreach and Marketing" },
-  { name: "Saanve Shalini Singh", department: "Strategy and Collaborations" },
-  { name: "Devyani Rai", department: "Strategy and Collaborations" },
-  { name: "Poorvi Sanath Kumar", department: "Policy and Resources" },
-  { name: "Nia Motha", department: "Policy and Resources" },
-  { name: "Endri Agarwal", department: "Support and Research" },
-  { name: "Arjeeta Chakraborty", department: "Support and Research" },
+  { name: "Tarun Shetty", department: "Community Outreach and Marketing", designation: HOD },
+  { name: "Niharika Ghosh", department: "Community Outreach and Marketing", designation: HOD },
+  { name: "Saanve Shalini Singh", department: "Strategy and Collaborations", designation: HOD },
+  { name: "Devyani Rai", department: "Strategy and Collaborations", designation: HOD },
+  { name: "Poorvi Sanath Kumar", department: "Policy and Resources", designation: HOD },
+  { name: "Nia Motha", department: "Policy and Resources", designation: HOD },
+  { name: "Endri Agarwal", department: "Support and Research", designation: HOD },
+  { name: "Arjeeta Chakraborty", department: "Support and Research", designation: HOD },
 ];
 
 export const DEFAULT_DESIGNATION = "Team member";

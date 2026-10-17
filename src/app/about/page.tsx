@@ -137,7 +137,7 @@ export default function AboutPage() {
                               )}
                             </p>
                             <p className="text-sm text-accent">{m.designation ?? DEFAULT_DESIGNATION}</p>
-                            {!m.designation && <p className="text-xs text-ink-faint">{m.department}</p>}
+                            {m.designation === "Head of Department" && <p className="text-xs text-ink-faint">{m.department}</p>}
                             {hasOfficeHours(m.name) && (
                               <Link
                                 href="/office-hours"
