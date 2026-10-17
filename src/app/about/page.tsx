@@ -128,6 +128,13 @@ export default function AboutPage() {
                     )}
                   </h3>
                   <p className="mt-1 max-w-2xl text-sm text-ink-soft">{departmentDescriptions[dept]}</p>
+                  {dept === "Community Outreach and Marketing" && (
+                    <p className="mt-2 text-sm">
+                      <Link href="/marketing" className="font-medium text-accent underline">
+                        Explore the Marketing team&apos;s page →
+                      </Link>
+                    </p>
+                  )}
                   <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {members.map((m) => (
                       <li key={m.name}>

@@ -84,7 +84,7 @@ The media is decorative and hidden from screen readers. A missing or broken vide
 
 ## Marketing page: its own visual language
 
-The Marketing page (`/marketing`) is the creative exception. It still uses Georgia, with no italics and no emojis, but it looks different:
+The Marketing page (`/marketing`, linked from the team section of About) is the creative exception. It still uses Georgia, with no italics and no emojis, but it looks different:
 
 - A dark hero with a hand-drawn squiggle underline, star-burst stickers and paint dots.
 - Cards with thick ink borders and hard offset shadows, slightly rotated, with a strip of tape on Tarun's card and a "Say hi" sticker on Niharika's.

@@ -16,5 +16,4 @@ export const nav = [
   { href: "/resources", label: "Resources" },
   { href: "/handbooks", label: "Handbooks" },
   { href: "/representatives", label: "Representatives" },
-  { href: "/marketing", label: "Marketing" },
 ];
