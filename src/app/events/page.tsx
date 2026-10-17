@@ -1,94 +1,41 @@
 import type { Metadata } from "next";
-import { PageHeader, Card, SectionHeading, Tag } from "@/components/ui";
-import { getEvents, splitUpcomingPast } from "@/lib/events";
+import Link from "next/link";
+import { PageHeader } from "@/components/ui";
+import EventsExplorer from "@/components/EventsExplorer";
+import { getEvents, eventSlug } from "@/lib/events";
 import { site } from "@/data/site";
 
-export const metadata: Metadata = { title: "Events" };
-
-function EventRow({
-  event,
-}: {
-  event: Awaited<ReturnType<typeof getEvents>>["events"][number];
-}) {
-  const d = new Date(event.date);
-  return (
-    <Card className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-      <div>
-        <div className="flex flex-wrap items-center gap-2">
-          <Tag >{event.category}</Tag>
-          {event.organizer && (
-            <span className="text-xs text-ink-faint">by {event.organizer}</span>
-          )}
-        </div>
-        <p className="mt-2 text-lg text-ink">{event.title}</p>
-        {event.description && (
-          <p className="mt-1 max-w-xl text-sm leading-relaxed text-ink-soft">
-            {event.description}
-          </p>
-        )}
-      </div>
-      <div className="shrink-0 text-sm text-ink-soft sm:text-right">
-        <p className="font-medium text-ink">
-          {d.toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" })}
-        </p>
-        {event.time && <p>{event.time}</p>}
-        {event.location && <p>{event.location}</p>}
-        {event.link && (
-          <a
-            href={event.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-1 inline-block text-accent hover:underline"
-          >
-            Details →
-          </a>
-        )}
-      </div>
-    </Card>
-  );
-}
+export const metadata: Metadata = {
+  title: "Events",
+  description: "The Ministry's events calendar: events run by the Ministry and events it promotes.",
+};
 
 export default async function EventsPage() {
   const { events } = await getEvents();
-  const { upcoming, past } = splitUpcomingPast(events);
+  const today = new Date().toISOString().slice(0, 10);
+  const items = events.map((e) => ({ ...e, slug: eventSlug(e) }));
 
   return (
     <div>
       <PageHeader
         eyebrow="Events"
-        title="Events"
-        description="Events organised by the Ministry, together with other academic events it supports. This list is maintained by the Ministry’s representatives."
-       
+        title="Events calendar"
+        description="Events run by the Ministry, and events by academic societies and the university that the Ministry promotes. Choose a day on the calendar or open an event for details."
       />
-
-      <section className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
-        <SectionHeading eyebrow="Coming up" title="Upcoming" />
-        <div className="mt-6 space-y-3">
-          {upcoming.length === 0 ? (
-            <Card className="text-sm text-ink-soft">
-              No events are scheduled at present. If you are organising an event that should be listed here, please{" "}
-              <a href={`mailto:${site.email}`} className="text-accent hover:underline">
-                send us the details
-              </a>
-              .
-            </Card>
-          ) : (
-            upcoming.map((event) => (
-              <EventRow key={`${event.title}-${event.date}`} event={event} />
-            ))
-          )}
-        </div>
-
-        {past.length > 0 && (
-          <div className="mt-14">
-            <SectionHeading eyebrow="Previous events" title="Past events" />
-            <div className="mt-6 space-y-3 opacity-80">
-              {past.map((event) => (
-                <EventRow key={`${event.title}-${event.date}`} event={event} />
-              ))}
-            </div>
-          </div>
-        )}
+      <section className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
+        <EventsExplorer events={items} today={today} />
+        <p className="mt-10 text-sm text-ink-soft">
+          Organising an event that should be listed? Representatives can add it
+          by following the{" "}
+          <Link href="/events/add" className="font-medium text-accent underline">
+            steps for adding an event
+          </Link>
+          , or write to{" "}
+          <a href={`mailto:${site.email}`} className="font-medium text-accent underline">
+            {site.email}
+          </a>
+          .
+        </p>
       </section>
     </div>
   );

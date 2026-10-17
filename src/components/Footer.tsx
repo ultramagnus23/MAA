@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { nav, site } from "@/data/site";
+import { footerLinks } from "@/data/footer-links";
 
 export default function Footer() {
   return (
@@ -60,7 +61,7 @@ export default function Footer() {
           {/* Key Resources */}
           <div className="lg:col-span-3">
             <p className="text-xs text-ink-faint">
-              Core Documents
+              Policies and resources
             </p>
             <ul className="mt-4 space-y-2.5 text-sm text-ink-soft">
               <li>
@@ -102,6 +103,11 @@ export default function Footer() {
                 >
                   Pass/Fail Crisis Guide <span className="text-xs text-ink-faint">[DOCX]</span>
                 </a>
+              </li>
+              <li>
+                <Link href="/handbooks" className="hover:text-accent">
+                  Handbooks
+                </Link>
               </li>
               <li>
                 <a
@@ -150,9 +156,21 @@ export default function Footer() {
                   Grievance Form ↗
                 </a>
               </li>
+              {footerLinks.sgReportUrl && (
+                <li>
+                  <a
+                    href={footerLinks.sgReportUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 hover:text-accent"
+                  >
+                    SG Report ↗
+                  </a>
+                </li>
+              )}
               <li>
                 <Link
-                  href="/representatives#office-hours"
+                  href="/office-hours"
                   className="inline-flex items-center gap-1 text-ink font-medium hover:text-accent"
                 >
                   Book Office Hours →
@@ -166,7 +184,7 @@ export default function Footer() {
         <div className="mt-14 border-t border-line pt-8">
           <div className="flex flex-col gap-4 text-xs text-ink-faint sm:flex-row sm:items-center sm:justify-between">
             <p>
-              The official page of the Ministry of Academic Affairs, Ashoka University.
+              The official page of the Ministry of Academic Affairs, Ashoka University. Academic year 2025–26.
             </p>
             <p className="text-xs">
               Plot 2, Rajiv Gandhi Education City, Sonipat, Haryana 131029

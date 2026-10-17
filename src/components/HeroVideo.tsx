@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { heroConfig } from "@/data/hero";
+import { usePrefersReducedMotion, useSaveData } from "@/lib/useMediaQuery";
 
 // Full-bleed background for the hero. Always renders the poster image first;
 // the video is added on top only when files are configured, the visitor has
@@ -10,16 +11,12 @@ import { heroConfig } from "@/data/hero";
 export default function HeroVideo() {
   const { video, poster } = heroConfig;
   const ref = useRef<HTMLVideoElement>(null);
-  const [allowed, setAllowed] = useState(false);
   const [ready, setReady] = useState(false);
   const [playing, setPlaying] = useState(true);
 
-  useEffect(() => {
-    if (video.length === 0) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
-    setAllowed(!reduce && !conn?.saveData);
-  }, [video.length]);
+  const reduced = usePrefersReducedMotion();
+  const saveData = useSaveData();
+  const allowed = video.length > 0 && !reduced && !saveData;
 
   const toggle = () => {
     const v = ref.current;

@@ -1,39 +1,3 @@
-// Only representatives with a real, currently-live public contact channel
-// (a booking link from MAA's own Linktree, linktr.ee/acadaffairs.ministry)
-// are listed as "current." Do not add a name here without a verifiable,
-// currently-active source; see /representatives/archive for the dated
-// 2024-25 department roster instead.
-
-export type CurrentRep = {
-  name: string;
-  role: string;
-  bookingLabel: string;
-  bookingUrl: string;
-};
-
-export const currentReps: CurrentRep[] = [
-  {
-    name: "Minal Priya",
-    role: "Minister of Academic Affairs",
-    bookingLabel: "Book office hours",
-    bookingUrl:
-      "https://calendly.com/minal-priya_ug2024-ashoka/maa-oh-with-minal-priya",
-  },
-  {
-    name: "Anushka Sinha",
-    role: "Deputy Minister of Academic Affairs",
-    bookingLabel: "Book office hours",
-    bookingUrl: "https://calendly.com/anushka-sinha_ug2024-ashoka/new-meeting",
-  },
-  {
-    name: "Ananya Makkar",
-    role: "Deputy Minister of Academic Affairs",
-    bookingLabel: "Book office hours",
-    bookingUrl:
-      "https://calendly.com/ananya-makkar_ug2024-ashoka/placecom-office-hours",
-  },
-];
-
 // Department contacts are role-inboxes (not a person), sourced from MAA's
 // "Department Whatsapp Groups + BOR Email IDs" document. These stay current
 // regardless of who holds the role in a given year.

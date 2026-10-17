@@ -1,18 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Eyebrow, SectionHeading, Tag } from "@/components/ui";
-import TeamGallery from "@/components/TeamGallery";
+import { SectionHeading, Tag } from "@/components/ui";
 import HeroVideo from "@/components/HeroVideo";
 import HelpFinder, { type HelpTopic } from "@/components/HelpFinder";
-import { currentReps } from "@/data/representatives";
+import { officeHourHolders } from "@/data/office-hours";
+import { projects } from "@/data/projects";
 import { resources } from "@/data/resources";
 import { site } from "@/data/site";
-import { getEvents, splitUpcomingPast } from "@/lib/events";
+import { getEvents, splitUpcomingPast, eventSlug } from "@/lib/events";
 
 export default async function Home() {
   const { events } = await getEvents();
   const { upcoming } = splitUpcomingPast(events);
   const featuredResources = resources.slice(0, 6);
+  const currentProjects = projects.filter((p) => p.status !== "Published").slice(0, 3);
 
   const link = (title: string) => resources.find((r) => r.title === title)?.url ?? "/resources";
   const helpTopics: HelpTopic[] = [
@@ -21,7 +22,7 @@ export default async function Home() {
       label: "A department matter",
       answer: "Questions about your own department go straight to your Department Representative, not through the Ministry.",
       action: "Find your Department Representative",
-      href: "/representatives#departments",
+      href: "/representatives",
     },
     {
       id: "policy",
@@ -51,13 +52,13 @@ export default async function Home() {
       label: "Something else",
       answer: "For any other matter, speak to the Ministry through an office hour, by email or on WhatsApp.",
       action: "See how to reach the Ministry",
-      href: "/representatives#core-team",
+      href: "/office-hours",
     },
   ];
 
-  const quickQuestions = [
-    { q: "Who do I contact for my department?", href: "/representatives#departments" },
-    { q: "When are office hours held?", href: "#office-hours" },
+  const quickLinks = [
+    { q: "Who do I contact for my department?", href: "/representatives" },
+    { q: "When are office hours held?", href: "/office-hours" },
     { q: "What is happening this week?", href: "/events" },
     { q: "Where can I find the policy document?", href: "/resources" },
   ];
@@ -85,16 +86,16 @@ export default async function Home() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="/representatives"
+              href="/office-hours"
               className="rounded bg-white px-6 py-3 text-sm font-semibold text-accent transition-colors hover:bg-paper-dim"
             >
               Reach the Ministry →
             </Link>
             <Link
-              href="/resources"
+              href="/projects"
               className="rounded border border-white px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/15"
             >
-              Browse resources
+              See our projects
             </Link>
           </div>
         </div>
@@ -107,21 +108,18 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Quick questions */}
+      {/* Quick links */}
       <section className="border-b border-line bg-paper-dim">
         <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {quickQuestions.map((item) => (
+            {quickLinks.map((item) => (
               <Link
                 key={item.q}
                 href={item.href}
                 className="group flex items-center justify-between rounded border border-line bg-white px-4 py-4 text-sm transition-colors hover:border-accent"
               >
                 <span className="font-medium text-ink">{item.q}</span>
-                <span
-                  aria-hidden
-                  className="text-accent transition-transform group-hover:translate-x-0.5"
-                >
+                <span aria-hidden className="text-accent transition-transform group-hover:translate-x-0.5">
                   →
                 </span>
               </Link>
@@ -130,154 +128,167 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Office hours */}
-      <section id="office-hours" className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-        <SectionHeading
-          eyebrow="Talk to someone"
-          title="Current office hours"
-          description="Three representatives currently hold office hours that can be booked online."
-        />
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          {currentReps.map((rep) => (
-            <div
-              key={rep.name}
-              className="flex flex-col justify-between rounded-lg border border-line border-t-4 border-t-accent bg-white p-5"
-            >
-              <div>
-                <p className="text-lg font-semibold text-ink">{rep.name}</p>
-                <p className="mt-1 text-sm text-ink-soft">{rep.role}</p>
-              </div>
-              <a
-                href={rep.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
-              >
-                {rep.bookingLabel} →
-              </a>
-            </div>
-          ))}
-        </div>
-        <p className="mt-4 text-sm text-ink-soft">
-          Looking for your department&apos;s representative?{" "}
-          <Link href="/representatives" className="font-medium text-accent underline">
-            See department contacts
+      {/* Current projects */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <SectionHeading eyebrow="What we are working on" title="Current projects" />
+          <Link href="/projects" className="text-sm font-medium text-accent hover:underline">
+            All projects and reports →
           </Link>
-          .
-        </p>
+        </div>
+        <ul className="mt-8 grid gap-4 md:grid-cols-3">
+          {currentProjects.map((p) => (
+            <li key={p.name} className="rounded-lg border border-line bg-white p-5">
+              <p className="text-sm font-medium text-accent">{p.status}</p>
+              <h3 className="mt-1 text-ink">{p.name}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{p.summary}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
-      {/* Events */}
+      {/* Office hours */}
       <section className="border-y border-line bg-paper-dim">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">
-            <SectionHeading eyebrow="What is on" title="Upcoming events" />
-            <Link href="/events" className="text-sm font-medium text-accent hover:underline">
-              View all events →
+            <SectionHeading
+              eyebrow="Talk to someone"
+              title="Current office hours"
+              description="These members of the Ministry have office hours that can be booked online."
+            />
+            <Link href="/office-hours" className="text-sm font-medium text-accent hover:underline">
+              Office hours and contact →
             </Link>
           </div>
-          <div className="mt-8">
-            {upcoming.length === 0 ? (
-              <div className="rounded-lg border border-line-strong bg-white p-5 text-sm text-ink-soft">
-                There are no upcoming events at present. Please check the{" "}
-                <Link href="/events" className="font-medium text-accent hover:underline">
-                  events page
-                </Link>{" "}
-                for updates, or write to us if you are organising an event that should be listed.
-              </div>
-            ) : (
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {upcoming.slice(0, 3).map((event) => (
-                  <div key={`${event.title}-${event.date}`} className="rounded-lg border border-line-strong bg-white p-5">
+          {officeHourHolders.length === 0 ? (
+            <p className="mt-8 rounded-lg border border-line-strong bg-white p-5 text-sm text-ink-soft">
+              Nobody has scheduled office hours at the moment.
+            </p>
+          ) : (
+            <ul className="mt-8 grid gap-4 sm:grid-cols-3">
+              {officeHourHolders.map((p) => (
+                <li
+                  key={p.name}
+                  className="flex flex-col justify-between rounded-lg border border-line border-t-4 border-t-accent bg-white p-5"
+                >
+                  <div>
+                    <p className="text-lg font-semibold text-ink">{p.name}</p>
+                    <p className="text-sm font-semibold text-accent">{p.designation}</p>
+                    <p className="mt-1 text-sm text-ink-soft">{p.department}</p>
+                  </div>
+                  <a
+                    href={p.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 text-sm font-medium text-accent hover:underline"
+                  >
+                    {p.bookingLabel} ↗
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </section>
+
+      {/* Events preview */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <SectionHeading eyebrow="What is on" title="Upcoming events" />
+          <Link href="/events" className="text-sm font-medium text-accent hover:underline">
+            Events calendar →
+          </Link>
+        </div>
+        <div className="mt-8">
+          {upcoming.length === 0 ? (
+            <div className="rounded-lg border border-line-strong bg-white p-5 text-sm text-ink-soft">
+              There are no upcoming events at present. Please check the{" "}
+              <Link href="/events" className="font-medium text-accent hover:underline">
+                events page
+              </Link>{" "}
+              for updates.
+            </div>
+          ) : (
+            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {upcoming.slice(0, 3).map((event) => (
+                <li key={eventSlug(event)}>
+                  <Link
+                    href={`/events/${eventSlug(event)}`}
+                    className="block h-full rounded-lg border border-line bg-white p-5 transition-colors hover:border-accent"
+                  >
                     <Tag>{event.category}</Tag>
                     <p className="mt-3 text-lg font-semibold text-ink">{event.title}</p>
                     <p className="mt-1 text-sm text-ink-soft">
-                      {new Date(event.date).toLocaleDateString("en-IN", {
-                        day: "numeric",
-                        month: "short",
-                      })}
+                      {new Date(event.date).toLocaleDateString("en-IN", { day: "numeric", month: "short" })}
                       {event.time ? ` · ${event.time}` : ""}
                       {event.location ? ` · ${event.location}` : ""}
                     </p>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </section>
 
       {/* Resources */}
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <SectionHeading
-            eyebrow="Everything in one place"
-            title="Resources and quick links"
-            description="Policy documents, guides and directories maintained by the Ministry."
-          />
-          <Link href="/resources" className="text-sm font-medium text-accent hover:underline">
-            All resources →
-          </Link>
-        </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredResources.map((resource) => (
-            <a
-              key={resource.title}
-              href={resource.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block rounded-lg border border-line bg-white p-5 transition-colors hover:border-accent"
-            >
-              <div className="flex items-start justify-between gap-2">
-                <p className="text-base font-semibold text-ink">{resource.title}</p>
-                {resource.fileNote && <Tag>{resource.fileNote}</Tag>}
-              </div>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{resource.description}</p>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-          <SectionHeading
-            eyebrow="The team"
-            title="Meet the Ministry"
-            description="The students who run the Ministry of Academic Affairs."
-          />
-          <div className="mt-10">
-            <TeamGallery />
-          </div>
-        </div>
-      </section>
-
-      {/* Contact */}
       <section className="border-t border-line bg-paper-dim">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-          <h2 className="max-w-2xl text-2xl font-semibold text-ink sm:text-3xl">
-            Whom should I approach with an academic concern?
-          </h2>
-          <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
-            For questions about a particular course, please begin with your
-            department&apos;s representative. For matters handled by the
-            Ministry directly, such as policy, thesis guidance and academic
-            integrity, write to us.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/representatives"
-              className="rounded border border-accent px-5 py-2.5 text-sm font-medium text-accent transition-colors hover:bg-accent-soft"
-            >
-              Find your department contact
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <SectionHeading
+              eyebrow="Everything in one place"
+              title="Policies and resources"
+              description="Policy documents, guides and directories maintained by the Ministry."
+            />
+            <Link href="/resources" className="text-sm font-medium text-accent hover:underline">
+              All resources →
             </Link>
-            <a
-              href={`mailto:${site.email}`}
-              className="rounded bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-dim"
-            >
-              Email {site.email}
-            </a>
           </div>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {featuredResources.map((resource) => (
+              <a
+                key={resource.title}
+                href={resource.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-lg border border-line bg-white p-5 transition-colors hover:border-accent"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <p className="text-base font-semibold text-ink">{resource.title}</p>
+                  {resource.fileNote && <Tag>{resource.fileNote}</Tag>}
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{resource.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team route */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Link
+            href="/about#team"
+            className="group rounded-lg border border-line bg-white p-6 transition-colors hover:border-accent"
+          >
+            <p className="text-sm font-medium text-accent">The team</p>
+            <h3 className="mt-1 text-ink">Meet the Ministry</h3>
+            <p className="mt-2 text-sm text-ink-soft">Our five departments and everyone on the team.</p>
+            <span className="mt-3 inline-block text-sm font-medium text-accent group-hover:underline">
+              See the team →
+            </span>
+          </Link>
+          <Link
+            href="/representatives"
+            className="group rounded-lg border border-line bg-white p-6 transition-colors hover:border-accent"
+          >
+            <p className="text-sm font-medium text-accent">Departments</p>
+            <h3 className="mt-1 text-ink">Department Representatives</h3>
+            <p className="mt-2 text-sm text-ink-soft">Contact details and a WhatsApp group for every department.</p>
+            <span className="mt-3 inline-block text-sm font-medium text-accent group-hover:underline">
+              Find your department →
+            </span>
+          </Link>
         </div>
       </section>
     </div>

@@ -1,10 +1,34 @@
-# MAA, Ministry of Academic Affairs website
+# MAA website
 
-Website for Ashoka University's Ministry of Academic Affairs (MAA). Built as
-a Next.js site so it's free to host, fast, and easy to hand over from one
-MAA team to the next.
+The website of the Ministry of Academic Affairs (MAA) at Ashoka University.
 
-## Running it locally
+- Live website: https://maa-silk.vercel.app/
+- Repository: https://github.com/ultramagnus23/MAA
+
+## What is on the site
+
+| Page | Address | What it does |
+| --- | --- | --- |
+| Home | `/` | Hero with optional background video, a topic helper, current projects, office hours, upcoming events, resources |
+| About | `/about` | What the Ministry is, how things are verified, the five departments and the full team (11 people) |
+| Projects | `/projects` | Ongoing, planned and completed projects, and the monthly transparency reports |
+| Events | `/events` | The only events calendar, with filters and a page for each event |
+| Office Hours | `/office-hours` | Who has bookable office hours, and how to email or WhatsApp the Ministry |
+| Resources | `/resources` | Searchable, filterable list of policies, guides, directories and reports |
+| Handbooks | `/handbooks` | Department, student and batch handbooks |
+| Representatives | `/representatives` | Department Representative emails and WhatsApp groups for 21 departments |
+| Marketing | `/marketing` | The Community Outreach and Marketing department (the one expressive page) |
+
+`/calendar` redirects to `/events`, and `/transparency` redirects to `/projects`.
+
+## Technology
+
+- Next.js 16 (App Router), React 19, TypeScript
+- Tailwind CSS 4
+- Vitest for data checks
+- Hosted on Vercel. There is no database and no login.
+
+## Run it locally
 
 ```bash
 npm install
@@ -13,84 +37,45 @@ npm run dev
 
 Open http://localhost:3000.
 
-## How content is organised
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start the site for development |
+| `npm run build` | Make the production build |
+| `npm run start` | Run the production build |
+| `npm run lint` | Check the code style |
+| `npm test` | Run the data checks |
+| `npx tsc --noEmit` | Check the types |
 
-Almost everything on the site is a plain TypeScript data file under
-`src/data/`, no database, no CMS login required for most content:
+## Environment variables
 
-- `src/data/representatives.ts`, current office-hours reps, department
-  contact emails, and the archived 2024–25 roster.
-- `src/data/resources.ts`, every resource card, grouped by category, plus
-  the department/student handbook lists.
-- `src/data/site.ts`, site name, nav links, contact email.
+| Name | Required | Purpose |
+| --- | --- | --- |
+| `EVENTS_SHEET_CSV_URL` | No | Link to the published Google Sheet that holds the events. Without it the Events page shows an empty state. |
 
-To update any of these, edit the file directly (it's a list of objects  - 
-copy an existing entry and change the text) and redeploy. No build tooling
-knowledge is needed beyond "edit text between quotes."
+No other variables are needed, and no secrets are stored in the repository.
 
-**Do not add a person, event, date, or link that isn't independently
-verifiable.** This site's whole value is that everything on it traces back
-to something real MAA actually produced or maintains, see `PRODUCT.md` and
-`DESIGN.md` for the reasoning behind that constraint.
+## Where content lives
 
-## Resource files
+Almost all content is in plain files under `src/data/`. See [docs/ADMIN_GUIDE.md](docs/ADMIN_GUIDE.md) for how to update each one.
 
-Actual documents (policy PDFs, handbooks, guides) live in
-`public/resources/`. They're plain static files, to update one, replace the
-file at the same path (same filename) and it goes live on next deploy. To
-add a new one, drop it in `public/resources/` and add a matching entry to
-`src/data/resources.ts` with its path (e.g. `/resources/My New Guide.docx`).
+## Documentation
 
-Large handbooks (50MB+) are intentionally **not** hosted here, they're
-listed in `largeHandbooksNotMirrored` in `src/data/resources.ts` and pointed
-at MAA's Drive instead, to keep the site light and fast.
+- [Project overview](docs/PROJECT_OVERVIEW.md)
+- [Information architecture](docs/INFORMATION_ARCHITECTURE.md)
+- [Design system](docs/DESIGN_SYSTEM.md)
+- [Features](docs/FEATURES.md)
+- [Team and departments](docs/TEAM_AND_DEPARTMENTS.md)
+- [Data model](docs/DATA_MODEL.md)
+- [API and integrations](docs/API_AND_INTEGRATIONS.md)
+- [Admin guide](docs/ADMIN_GUIDE.md)
+- [Setup and deployment](docs/SETUP_AND_DEPLOYMENT.md)
+- [Testing](docs/TESTING.md)
+- [Content register: what still needs to be supplied](docs/CONTENT_REGISTER.md)
+- [Changelog](docs/CHANGELOG.md)
+- [Implementation status](docs/IMPLEMENTATION_STATUS.md)
 
-## Events, the one part built for non-technical editing
+`DESIGN.md` and `PRODUCT.md` in the project root are older notes from the first version of the site. The `docs/` folder is the current reference.
 
-Events are the one thing the brief specifically called out as needing to be
-addable by an Academic Representative with no code access. The site solves
-this with a **published Google Sheet**, not a custom admin panel:
+## Rule for content
 
-1. Create a Google Sheet with one tab, one row per event, and these exact
-   column headers in row 1: `title`, `date`, `time`, `location`, `category`,
-   `description`, `link`, `organizer`. (`date` must be `YYYY-MM-DD`;
-   `category` must be exactly `MAA`, `Academic Society`, or `University`.)
-2. In Google Sheets: **File → Share → Publish to web** → select that sheet
-   tab → format **Comma-separated values (.csv)** → Publish. Copy the URL it
-   gives you.
-3. Set that URL as the `EVENTS_SHEET_CSV_URL` environment variable wherever
-   the site is deployed (e.g. in Vercel's Project Settings → Environment
-   Variables).
-4. Redeploy once. From then on, anyone with edit access to the sheet can add,
-   edit, or remove events, the site picks up changes automatically (checked
-   every 5 minutes), with zero code changes or redeploys.
-
-Until `EVENTS_SHEET_CSV_URL` is set, the events/calendar pages show an empty
-state rather than fabricated events, see `src/data/events.ts`.
-
-A plain-language walkthrough of steps 1–2 for a rep (not a developer) is
-published at `/events/add` on the live site.
-
-**On the "MAA-only vs. MAA + other academic events" question** the original
-brief left open: the `category` field already distinguishes these
-(`MAA` / `Academic Society` / `University`), so that policy decision can be
-made later, e.g. by filtering what shows on the homepage, without any
-schema change.
-
-## Deploying
-
-The site is a standard Next.js app, deploys cleanly to
-[Vercel](https://vercel.com) (recommended: free tier, zero server
-maintenance) by connecting this repository and setting the
-`EVENTS_SHEET_CSV_URL` environment variable described above.
-
-```bash
-npm run build
-```
-
-## Design system
-
-See `DESIGN.md` for the visual system (palette, type, component patterns)
-once documented, and `PRODUCT.md` for product context, what's real vs.
-placeholder, and open decisions that were deliberately left for MAA to make
-rather than guessed at.
+Do not add a person, event, date, project or link that cannot be checked. Every item on the site should trace back to something the Ministry actually produced or confirmed.

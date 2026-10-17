@@ -67,11 +67,9 @@ export function StatusDot({
 
 export function Eyebrow({
   children,
-  number,
   variant = "accent",
 }: {
   children: ReactNode;
-  number?: string;
   variant?: "accent" | "aubergine" | "ink" | "gold";
 }) {
   const color = {
@@ -89,7 +87,6 @@ export function Eyebrow({
 }
 
 export function SectionHeading({
-  number,
   eyebrow,
   title,
   italicTitle,
@@ -97,7 +94,6 @@ export function SectionHeading({
   variant = "default",
   align = "left",
 }: {
-  number?: string;
   eyebrow?: string;
   title: string;
   italicTitle?: string;
@@ -110,7 +106,7 @@ export function SectionHeading({
   return (
     <div className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
       {eyebrow && (
-        <Eyebrow number={number} variant={isDark ? "aubergine" : "accent"}>
+        <Eyebrow variant={isDark ? "aubergine" : "accent"}>
           {eyebrow}
         </Eyebrow>
       )}
@@ -166,13 +162,11 @@ export function Card({
 }
 
 export function PageHeader({
-  number,
   eyebrow,
   title,
   italicTitle,
   description,
 }: {
-  number?: string;
   eyebrow: string;
   title: string;
   italicTitle?: string;

@@ -135,3 +135,17 @@ export function splitUpcomingPast(events: MaaEvent[]) {
     past: events.filter((e) => e.date < today).reverse(),
   };
 }
+
+export function eventSlug(e: MaaEvent) {
+  const t = e.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  return `${e.date}-${t}`;
+}
+
+export function formatEventDate(iso: string, withWeekday = true) {
+  return new Date(iso + "T00:00:00").toLocaleDateString("en-IN", {
+    weekday: withWeekday ? "long" : undefined,
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}

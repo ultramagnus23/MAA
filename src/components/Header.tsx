@@ -43,7 +43,7 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav
-          className="hidden items-center gap-1 md:flex lg:gap-2"
+          className="hidden items-center gap-1 xl:flex"
           aria-label="Primary"
         >
           {nav.map((item) => {
@@ -56,7 +56,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`relative px-3 py-1.5 text-sm transition-all ${
+                className={`relative whitespace-nowrap px-3 py-1.5 text-sm transition-all ${
                   active
                     ? "font-medium text-ink"
                     : "text-ink-soft hover:text-ink"
@@ -77,7 +77,7 @@ export default function Header() {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="flex items-center gap-2 rounded-sm border border-line bg-paper px-3 py-1.5 text-xs text-ink md:hidden hover:border-line-strong"
+          className="flex items-center gap-2 rounded-sm border border-line bg-paper px-3 py-1.5 text-xs text-ink xl:hidden hover:border-line-strong"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((prev) => !prev)}
@@ -93,7 +93,7 @@ export default function Header() {
         <nav
           id="mobile-nav"
           aria-label="Mobile Navigation"
-          className="border-t border-line bg-paper px-5 py-6 md:hidden shadow-lg"
+          className="border-t border-line bg-paper px-5 py-6 xl:hidden shadow-lg"
         >
           <ul className="flex flex-col divide-y divide-line">
             {nav.map((item, index) => {
