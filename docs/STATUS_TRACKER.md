@@ -35,7 +35,7 @@ Same table as `website-status-tracker.xlsx`. PoC and Deadline are blank until th
 | 1.28 | Website | Automated checks: types, lint, 13 data tests, production build | To be assigned | Testing | To be set | Completed | All passed on 28 October 2026. |
 | 1.29 | Website | Checks on real phones, other browsers, screen readers and the reduce-motion setting | To be assigned | Testing | To be set | Not started | Not yet done. Listed in docs/TESTING.md. |
 | 1.30 | Website | Documentation (README and 13 documents in docs/) | To be assigned | Documentation | To be set | Completed |  |
-| 1.31 | Website | Deployment to the live site | To be assigned | Deployment | To be set | In progress | Pushed to main. The latest changes are committed locally and not yet pushed. Vercel deployment has not been checked. |
+| 1.31 | Website | Deployment to the live site | To be assigned | Deployment | To be set | In progress | All changes pushed to main. Vercel deployment has not been checked. |
 
 ## Summary (sub-tasks 1.1 to 1.31)
 
