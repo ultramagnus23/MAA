@@ -73,6 +73,7 @@ Almost all content is in plain files under `src/data/`. See [docs/ADMIN_GUIDE.md
 - [Content register: what still needs to be supplied](docs/CONTENT_REGISTER.md)
 - [Changelog](docs/CHANGELOG.md)
 - [Implementation status](docs/IMPLEMENTATION_STATUS.md)
+- [Status tracker](docs/STATUS_TRACKER.md)
 
 `DESIGN.md` and `PRODUCT.md` in the project root are older notes from the first version of the site. The `docs/` folder is the current reference.
 
