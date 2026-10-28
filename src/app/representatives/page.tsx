@@ -57,10 +57,10 @@ export default function RepresentativesPage() {
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <SectionHeading
             eyebrow="Other groups"
-            title="Q&A groups"
-            description="These groups are joined by scanning a QR code."
+            title="Q&A group"
+            description="This group is joined by scanning a QR code."
           />
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+          <ul className="mt-8 grid gap-4 sm:max-w-xl">
             {qrWhatsAppGroups.map((g) => (
               <li key={g.name}>
                 <Card className="flex h-full flex-col justify-between">

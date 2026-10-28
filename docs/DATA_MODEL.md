@@ -28,7 +28,7 @@ Nothing is stored about visitors. There are no cookies, accounts or form submiss
 | `hero.ts` | `heroConfig { video[], poster }` | See the admin guide. |
 | `footer-links.ts` | `footerLinks { sgReportUrl }` | Empty until the SG report address is set. |
 | `team.ts` | `TeamPhoto { id, src, caption, alt }` | The 12 group photos on About. |
-| `site.ts` | name, email, links, `nav` | |
+| `site.ts` | name, email, `linktree`, `instagram`, `nav` | `instagram` is the Ministry's official profile, used in the footer. |
 
 Events (Google Sheet columns): `title`, `date`, `time`, `location`, `category`, `description`, `link`, `organizer`. Parsed in `src/lib/events.ts` into `MaaEvent`.
 

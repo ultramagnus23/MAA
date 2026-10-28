@@ -6,7 +6,6 @@ import { departmentWhatsAppGroups } from "@/data/whatsapp";
 
 export default function DepartmentDirectory() {
   const [query, setQuery] = useState("");
-  const [copied, setCopied] = useState<string | null>(null);
 
   const q = query.trim().toLowerCase();
   const rows = departmentContacts
@@ -15,12 +14,6 @@ export default function DepartmentDirectory() {
       whatsapp: departmentWhatsAppGroups.find((g) => g.department === d.department),
     }))
     .filter((d) => q === "" || d.department.toLowerCase().includes(q) || d.email.toLowerCase().includes(q));
-
-  const copy = (email: string) => {
-    void navigator.clipboard?.writeText(email);
-    setCopied(email);
-    setTimeout(() => setCopied(null), 2000);
-  };
 
   return (
     <div>
@@ -64,13 +57,6 @@ export default function DepartmentDirectory() {
                 >
                   Email
                 </a>
-                <button
-                  type="button"
-                  onClick={() => copy(d.email)}
-                  className="rounded border border-line-strong px-3 py-1.5 text-ink-soft transition-colors hover:border-accent hover:text-accent"
-                >
-                  {copied === d.email ? "Copied" : "Copy email"}
-                </button>
                 {d.whatsapp ? (
                   <a
                     href={d.whatsapp.url}

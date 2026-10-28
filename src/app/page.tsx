@@ -41,13 +41,6 @@ export default async function Home() {
       external: true,
     },
     {
-      id: "handbook",
-      label: "A handbook",
-      answer: "Department, student and batch handbooks are all on one page.",
-      action: "Go to handbooks",
-      href: "/handbooks",
-    },
-    {
       id: "else",
       label: "Something else",
       answer: "For any other matter, speak to the Ministry through an office hour, by email or on WhatsApp.",

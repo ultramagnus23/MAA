@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { nav, site } from "@/data/site";
 import { footerLinks } from "@/data/footer-links";
+import { InstagramIcon } from "@/components/icons";
 
 export default function Footer() {
   return (
@@ -105,11 +106,6 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/handbooks" className="hover:text-accent">
-                  Handbooks
-                </Link>
-              </li>
-              <li>
                 <a
                   href="https://docs.google.com/spreadsheets/d/14_A_ekbjYETQKPye9QOVD7QZFvSctGVU9FvD71zjvK0/edit"
                   target="_blank"
@@ -134,6 +130,18 @@ export default function Footer() {
                   className="break-all text-xs text-accent hover:underline"
                 >
                   {site.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ministry of Academic Affairs on Instagram (opens in a new tab)"
+                  className="inline-flex items-center gap-2 hover:text-accent"
+                >
+                  <InstagramIcon />
+                  Instagram ↗
                 </a>
               </li>
               <li>

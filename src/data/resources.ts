@@ -279,13 +279,6 @@ export const resources: Resource[] = [
     fileNote: "QR code",
   },
   {
-    title: "Postgraduate Q&A Group",
-    description: "Scan to join the postgraduate-focused WhatsApp Q&A group.",
-    category: "Communication",
-    url: "https://drive.google.com/file/d/1KtSeyw1R1qVfv9Q8LPrUfL46-f33p02N/view",
-    fileNote: "QR code",
-  },
-  {
     title: "Department WhatsApp Groups and BOR Email IDs",
     description: "WhatsApp groups and email addresses for departments and the Board of Representatives.",
     category: "Communication",

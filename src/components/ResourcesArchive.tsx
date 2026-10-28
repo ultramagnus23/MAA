@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { resources, resourceCategories } from "@/data/resources";
 import { Tag } from "@/components/ui";
 
@@ -32,7 +31,7 @@ export default function ResourcesArchive() {
             type="search"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search policies, guides and handbooks"
+            placeholder="Search policies and guides"
             className="w-full rounded-xs border border-line bg-paper-dim/40 px-4 py-3 text-sm text-ink placeholder:text-ink-faint focus:border-accent focus:bg-paper focus:outline-none"
             aria-label="Search resources"
           />
@@ -128,21 +127,6 @@ export default function ResourcesArchive() {
         )}
       </div>
 
-      {/* Handbooks live on their own page */}
-      <div className="flex flex-col gap-3 rounded-lg border border-line bg-paper-dim p-6 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h3 className="text-ink">Looking for a handbook?</h3>
-          <p className="mt-1 text-sm text-ink-soft">
-            Department, student and batch handbooks are listed on their own page.
-          </p>
-        </div>
-        <Link
-          href="/handbooks"
-          className="shrink-0 rounded border border-accent px-5 py-2.5 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-white"
-        >
-          Go to handbooks →
-        </Link>
-      </div>
     </div>
   );
 }

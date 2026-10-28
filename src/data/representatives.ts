@@ -7,7 +7,7 @@ export type DepartmentContact = {
 };
 
 export const departmentContacts: DepartmentContact[] = [
-  { department: "Biology (UG)", email: "biology_ugrep@ashoka.edu.in" },
+  { department: "Biology", email: "biology_ugrep@ashoka.edu.in" },
   { department: "Chemistry", email: "chem.rep@ashoka.edu.in" },
   { department: "China Studies", email: "chinastudies.rep@ashoka.edu.in" },
   { department: "Computer Science", email: "cs.rep@ashoka.edu.in" },
@@ -22,7 +22,7 @@ export const departmentContacts: DepartmentContact[] = [
   { department: "Media Studies", email: "ms.rep@ashoka.edu.in" },
   { department: "Performing Arts", email: "performingarts.rep@ashoka.edu.in" },
   { department: "Philosophy", email: "philosophy.studentrep@ashoka.edu.in" },
-  { department: "Physics (UG)", email: "phys.rep@ashoka.edu.in" },
+  { department: "Physics", email: "phys.rep@ashoka.edu.in" },
   { department: "Political Science", email: "polsci.rep@ashoka.edu.in" },
   { department: "Psychology", email: "psy.rep@ashoka.edu.in" },
   { department: "PPE", email: "ppe.rep@ashoka.edu.in" },

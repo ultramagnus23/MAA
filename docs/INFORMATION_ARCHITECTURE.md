@@ -11,7 +11,7 @@
   /events/add              How representatives add an event
 /office-hours              Office hours and contacting the Ministry
 /resources                 Policies and resources
-/handbooks                 Handbooks
+/handbooks                 Archived handbooks (not in the menu; linked from the 2024-25 archive page)
 /representatives           Department Representatives and WhatsApp groups
   /representatives/archive 2024-25 archive
 /marketing                 Community Outreach and Marketing (not in the menu; opened from the two names on About)
@@ -21,7 +21,9 @@ Redirects: `/calendar` to `/events`, `/transparency` to `/projects`.
 
 ## Navigation
 
-Main menu, in order: Home, About, Projects, Events, Office Hours, Resources, Handbooks, Representatives.
+Main menu, in order: Home, About, Projects, Events, Office Hours, Resources, Representatives.
+
+Handbooks are archived. They are not in the menu, the footer or the home page helper. The page still exists at `/handbooks` and is linked from the 2024–25 archive page (`/representatives/archive`) and from the Department handbooks project on Projects.
 
 The Marketing page is not in the menu. It is reached by clicking either name in the Community Outreach and Marketing section of the team directory on About. A short burst of confetti falls from the top of the screen, then the page opens.
 
@@ -40,7 +42,7 @@ The Marketing page is not in the menu. It is reached by clicking either name in 
 | SG report | Footer, when its link is set | Nothing else |
 | Office hours | Office Hours | The same people shown on the home page, and a link beside their name on About |
 | Policies and guides | Resources | Six featured items on the home page, and some in the footer |
-| Handbooks | Handbooks | A link on Resources, the footer and the home page helper |
+| Archived handbooks | Archived handbooks (`/handbooks`) | A link on the 2024–25 archive page and on the Projects page |
 | Department emails and WhatsApp groups | Representatives | A link on About and Office Hours |
 | Marketing team profiles | Marketing (opened from the two names on About) | Their names also appear in the About directory |
 

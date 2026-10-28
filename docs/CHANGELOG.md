@@ -1,5 +1,24 @@
 # Changelog
 
+## 28 October 2026: confirmed changes
+
+### Removed
+- About: the "Verified by the OAA" section and its cards. The grievance form sentence in the Academic societies text.
+- Representatives: the "Copy email" button and its code.
+- Postgraduate Q&A Group (Representatives page, Resources, WhatsApp data).
+- Projects: "Open office hours with the Board of Representatives".
+
+### Changed
+- Department names no longer end in "(UG)" (Biology, Physics in the contact and WhatsApp data; Economics and English in the handbook list). Individual programme labels in the 2024–25 archive (for example "Hiyaa Atreya (UG)") were kept because they describe the person, not the department.
+- Handbooks archived: removed from the menu, footer, Resources page and home page helper. Page marked "Archived handbooks" and linked from the 2024–25 archive page. Data and links kept.
+- Footer: added the Ministry's Instagram link (opens in a new tab, with an accessible label).
+- 2024–25 archive page: clearer layout (programme labels, summary line, notice that it is a historical record). Title and year unchanged.
+
+### Not changed
+- No mail icon existed in the footer, so none was replaced. The email address is still shown as a link.
+- Grievance form kept in the footer.
+- Excluded items (new hero and About descriptions, project updates, FAQs, faculty discovery, volunteer and thesis forms) were not touched.
+
 ## This round (October 2026)
 
 ### Added

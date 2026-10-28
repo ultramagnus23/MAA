@@ -2,7 +2,7 @@
 
 ## Automated checks
 
-Run on 17 October 2026, on the final code of this round.
+Run on 28 October 2026 on the latest code (earlier run: 17 October 2026).
 
 | Check | Command | Result |
 | --- | --- | --- |

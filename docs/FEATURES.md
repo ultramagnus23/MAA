@@ -14,13 +14,13 @@ For each feature: what a student does, which files make it, what data it reads, 
 
 - **Workflow:** projects are grouped as Ongoing, Planned and Completed. Each card shows status, period, a summary, links, and the document it came from. Below them is the monthly transparency archive.
 - **Files:** `src/app/projects/page.tsx`, `src/data/projects.ts`, `src/data/reports.ts`.
-- **Data:** ten projects taken from the BOR Annual Report 2024-25, the Course Caps Report and the Mandate for Academic Societies. No dates are shown unless a source gave one.
+- **Data:** nine projects taken from the BOR Annual Report 2024-25, the Course Caps Report and the Mandate for Academic Societies. No dates are shown unless a source gave one.
 - **Permissions:** edit the data files in the repository.
 - **Limits:** no monthly report has been supplied, so the archive shows an empty state. The three "Ongoing" and "Planned" statuses come from the wording of the source documents. The Ministry should confirm them. Project details beyond what those documents say have not been added.
 
 ## About and team directory
 
-- **Workflow:** the page explains the Ministry, how things are verified, and where each kind of query goes. Then it lists the five departments with their members. Community Outreach and Marketing links to its page. People with office hours have a "Book office hours" link.
+- **Workflow:** the page explains the Ministry and where each kind of query goes. Then it lists the five departments with their members. Clicking Tarun Shetty or Niharika Ghosh opens the Marketing page. People with office hours have a "Book office hours" link.
 - **Files:** `src/app/about/page.tsx`, `src/data/team-members.ts`, `src/components/Avatar.tsx`, `src/components/TeamGallery.tsx`.
 - **Data:** the 11-person roster. A data check confirms each person appears once and is in a valid department.
 - **Limits:** no photographs yet (initials are shown). The Minister and Deputy Ministers keep their titles, and the other eight people are shown as Heads of Department. Department descriptions are drafts. The team photo gallery shows 12 group photos with neutral captions that describe only what is visible.
@@ -44,18 +44,19 @@ For each feature: what a student does, which files make it, what data it reads, 
 
 - **Workflow:** search, and filter by category (Policy, Guides, Directories and Tools, Advocacy and Reports, Communication). A short legend explains the categories.
 - **Files:** `src/app/resources/page.tsx`, `src/components/ResourcesArchive.tsx`, `src/data/resources.ts`.
-- **Data:** 36 resources, each linking to its Google document.
+- **Data:** 35 resources, each linking to its Google document.
 - **Limits:** the site does not label anything "official policy" beyond the category name. No applicable dates are shown except those in the titles (such as 2025–26). Many links currently ask visitors to sign in. See [CONTENT_REGISTER.md](CONTENT_REGISTER.md).
 
-## Handbooks
+## Archived handbooks
 
+- **Status:** archived. Handbooks are no longer in the menu, footer, Resources page or home page helper. The page remains at `/handbooks`, is marked as an archive, and is linked from the 2024–25 archive page and the Projects page. No handbook data or link was deleted.
 - **Workflow:** filter by Department, Student or Batch, or search by name.
 - **Files:** `src/app/handbooks/page.tsx`, `src/components/HandbooksDirectory.tsx`, `src/data/handbooks.ts`.
 - **Data:** 29 handbooks with Google Drive links.
 
 ## WhatsApp groups and representatives
 
-- **Workflow:** search departments, then email the representative, copy the email, or join the department's WhatsApp group. Two QR-code groups are listed below.
+- **Workflow:** search departments, then email the representative or join the department's WhatsApp group. The Open Q&A group (joined by QR code) is listed below. Department names are shown without "(UG)".
 - **Files:** `src/app/representatives/page.tsx`, `src/components/DepartmentDirectory.tsx`, `src/data/whatsapp.ts`, `src/data/representatives.ts`.
 - **Data:** 21 department emails and 21 invite links taken from the Ministry's document "Department Whatsapp Groups + BOR Email IDs". All 21 invite links answered when checked.
 - **Limits:** the source document does not give a purpose or audience per group, so every group is described only as a department WhatsApp group. Sanskrit Studies has no representative or group. Past representatives are on the archive page.
@@ -75,6 +76,6 @@ Not implemented. No file in the project describes it. See [CONTENT_REGISTER.md](
 
 ## Footer and SG report
 
-- **Workflow:** every page has a footer with the Ministry identity, the main pages, key policies and handbooks, contact links, the grievance form, and the address.
+- **Workflow:** every page has a footer with the Ministry identity, the main pages, key policies, contact links (email, Instagram, Linktree), the grievance form, and the address.
 - **Files:** `src/components/Footer.tsx`, `src/data/footer-links.ts`.
 - **Limits:** the SG report link appears only after `sgReportUrl` is set. No address has been supplied, so it is not shown.

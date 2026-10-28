@@ -14,7 +14,7 @@ export default function ResourcesPage() {
       <PageHeader
         eyebrow="Everything in one place"
         title="Resources"
-        description="Policy documents, how-to guides, directories and reports for Ashoka students. Every resource here is verified by the Office of Academic Affairs (OAA). Handbooks are on their own page."
+        description="Policy documents, how-to guides, directories and reports for Ashoka students. Every resource here is verified by the Office of Academic Affairs (OAA)."
       />
 
       <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">

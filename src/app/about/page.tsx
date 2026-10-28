@@ -40,30 +40,6 @@ export default function AboutPage() {
         </p>
 
         <div className="mt-12">
-          <SectionHeading eyebrow="How things are verified" title="Verified by the OAA" />
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <Card>
-              <p className="text-sm font-medium text-accent">Resources</p>
-              <p className="mt-2 text-sm text-ink-soft">
-                Every resource on this site is verified by the Office of Academic Affairs.
-              </p>
-            </Card>
-            <Card>
-              <p className="text-sm font-medium text-accent">The Ministry</p>
-              <p className="mt-2 text-sm text-ink-soft">
-                The Ministry of Academic Affairs is itself recognised and verified by the Office of Academic Affairs.
-              </p>
-            </Card>
-            <Card>
-              <p className="text-sm font-medium text-accent">Department matters</p>
-              <p className="mt-2 text-sm text-ink-soft">
-                Department Representatives sit on the Board of Representatives (BOR) and handle matters for their own department.
-              </p>
-            </Card>
-          </div>
-        </div>
-
-        <div className="mt-14">
           <SectionHeading eyebrow="Who to contact" title="Where should my query go?" />
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <Card>
@@ -91,17 +67,7 @@ export default function AboutPage() {
             We keep an open channel and monthly meetings with the heads of
             academic societies, and we are often their first contact when
             they face scheduling clashes or need guidance on CASH and CADI
-            processes. Societies with a concern about the Ministry itself
-            can use the{" "}
-            <a
-              href="https://forms.gle/iUivfL9iovp1kJvo6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent underline"
-            >
-              grievance form
-            </a>
-            .
+            processes.
           </p>
         </div>
       </section>

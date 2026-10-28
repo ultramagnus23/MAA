@@ -18,14 +18,14 @@ Status key: **Complete and tested**, **Implemented, not fully tested**, **Partia
 | Office hours | Implemented, not fully tested | Name, designation, department, timings text, booking link, empty state. No session statuses or double-booking control, because Calendly holds the bookings. | `src/app/office-hours/`, `src/data/office-hours.ts` |
 | Only scheduled people shown | Complete and tested | Checked by a data test. | |
 | Policies and resources | Implemented, not fully tested | Search and category filter, 36 links. Many links ask for sign-in. | `src/app/resources/` |
-| Handbooks | Implemented, not fully tested | 29 handbooks, filter and search. | `src/app/handbooks/` |
+| Handbooks (archived) | Implemented, not fully tested | Moved out of the menu, footer, Resources and home helper. Page, data and 29 links kept. Reachable from the 2024–25 archive page. | `src/app/handbooks/` |
 | WhatsApp groups and representatives | Complete and tested | 21 real invite links, all answered when checked. Purposes not in the source. | `src/app/representatives/`, `src/data/whatsapp.ts` |
 | Projector tracker | Blocked | Requirements are not documented anywhere. Not built. See the content register. | n/a |
 | Marketing page | Implemented, not fully tested | Built and viewed. Reduced motion and screen readers were not run. | `src/app/marketing/` |
 | Niharika's Instagram-style pointer | Implemented, not fully tested | Logic checked with simulated pointer events (mouse, touch, leave, click). Not checked on real devices. | `src/components/MarketingFx.tsx` |
 | Instagram link for Niharika | Blocked | No link supplied. The card shows "awaiting configuration". | `src/data/marketing.ts` |
 | Sharing (Web Share, copy link) | Implemented, not fully tested | Not run in a browser. Neither the copy action nor the phone share menu was tested. | `src/components/MarketingFx.tsx` |
-| Footer | Implemented, not fully tested | Links to main pages, key documents, contact. | `src/components/Footer.tsx` |
+| Footer | Implemented, not fully tested | Main pages, key documents, contact, Ministry Instagram link (new tab, labelled). No mail icon existed, so nothing was replaced. | `src/components/Footer.tsx` |
 | Hero video | Implemented, not fully tested | Missing-file case checked. A real video was never played. | `src/components/HeroVideo.tsx` |
 | Mobile layouts | Implemented, not fully tested | No sideways scrolling at 375px on eight pages. | |
 | Keyboard and reduced motion | Implemented, not fully tested | Controls are real buttons and links. Reduced motion handled in code, not run. | |

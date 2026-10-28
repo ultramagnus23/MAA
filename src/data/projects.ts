@@ -59,7 +59,7 @@ export const projects: Project[] = [
     summary: "Department handbooks collected and shared with students, with several revised or newly written by department representatives.",
     status: "Published",
     period: "2024–25",
-    links: [{ label: "See the handbooks", url: "/handbooks" }],
+    links: [{ label: "See the archived handbooks", url: "/handbooks" }],
     source: BOR_REPORT,
   },
   {
@@ -68,13 +68,6 @@ export const projects: Project[] = [
     status: "Published",
     period: "2024–25",
     links: [{ label: "Join a group", url: "/representatives#whatsapp" }],
-    source: BOR_REPORT,
-  },
-  {
-    name: "Open office hours with the Board of Representatives",
-    summary: "Open office hours titled \"Meet the BOR I and II\", held jointly by the Ministry and the Board.",
-    status: "Published",
-    period: "2024–25",
     source: BOR_REPORT,
   },
   {

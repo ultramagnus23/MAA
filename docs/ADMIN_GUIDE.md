@@ -60,7 +60,9 @@ File: `src/data/resources.ts`. Copy a block and set `title`, `description` (one 
 
 Google links must be shared so the people who need them can open them. See [CONTENT_REGISTER.md](CONTENT_REGISTER.md) for links that currently ask for a sign-in.
 
-## Handbooks
+## Archived handbooks
+
+Handbooks are archived: they are not in the menu or footer. The page is `/handbooks` and it is linked from the 2024–25 archive page. To bring handbooks back, add `{ href: "/handbooks", label: "Handbooks" }` to `nav` in `src/data/site.ts` and change the page heading in `src/app/handbooks/page.tsx`.
 
 File: `src/data/handbooks.ts`. Each handbook has a `title`, a `group` (`Department`, `Student` or `Batch`), an optional `year` and a `url`.
 
@@ -68,7 +70,7 @@ File: `src/data/handbooks.ts`. Each handbook has a `title`, a `group` (`Departme
 
 - Department emails: `src/data/representatives.ts` (`departmentContacts`).
 - Department WhatsApp groups: `src/data/whatsapp.ts` (`departmentWhatsAppGroups`). The `department` must match a name in `departmentContacts` exactly.
-- QR-code groups: `qrWhatsAppGroups` in the same file.
+- QR-code group: `qrWhatsAppGroups` in the same file (currently the Open Q&A group).
 
 Only use invite links that the group admin has confirmed. If a group has no link, leave it out. The page then says "No WhatsApp group listed".
 

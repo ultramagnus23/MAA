@@ -9,8 +9,8 @@ Everything on the site that was supplied, what is still missing, and what is a t
 | Team roster, departments, and designations (Minister, Deputy Ministers, and eight Heads of Department) | Supplied roster, and the Ministry's later confirmation |
 | Office-hour people and Calendly links | Existing site |
 | 21 department WhatsApp invite links and 21 representative emails | "Department Whatsapp Groups + BOR Email IDs" |
-| Links for 36 resources and 29 handbooks | Link list supplied by the Ministry |
-| Ten projects | BOR Annual Report 2024-25, Course Caps Report, Mandate for Academic Societies |
+| Links for 35 resources and 29 archived handbooks | Link list supplied by the Ministry |
+| Nine projects | BOR Annual Report 2024-25, Course Caps Report, Mandate for Academic Societies |
 | Grievance form link | Existing site |
 
 ## Missing: needs input
@@ -20,7 +20,7 @@ Everything on the site that was supplied, what is still missing, and what is a t
 | **SG report** | The link to the report | `src/data/footer-links.ts` (`sgReportUrl`) |
 | **Monthly transparency reports** | Each report's link, period, publication date and a one or two line summary | `src/data/reports.ts` |
 | **Projector tracker** | What it should track. Nothing in the project describes it. See below. | Not built |
-| **Instagram links** | Niharika Ghosh's profile address (needed for her pointer effect to open it), and Tarun Shetty's if there is one | `src/data/marketing.ts` |
+| **Personal Instagram links** | Niharika Ghosh's profile address (needed for her pointer effect to open it), and Tarun Shetty's if there is one. The Ministry's own Instagram profile has been supplied and is in the footer. | `src/data/marketing.ts` |
 | **Marketing work** | Real campaigns, event promotions or creative work, with links | `src/data/marketing.ts` |
 | **Office-hour timings** | Weekly timings if they should be shown on the site (currently shown on Calendly only) | `src/data/office-hours.ts` |
 | **Team photographs** | A photo for each person | Needs a small code change to show them |
@@ -34,7 +34,6 @@ Everything on the site that was supplied, what is still missing, and what is a t
 - The status of each project. "Ongoing" for the fest calendar and fest guidelines, and "Planned" for the research network, come from the wording of their source documents. "Published" means a finished document exists.
 - The department descriptions on About (drafts).
 - The captions on the 12 team photos. They describe only what is visible.
-- The sentence on About that says the Ministry and the Ministry's resources are verified by the Office of Academic Affairs. It was written from instructions given in conversation, not from a document.
 
 ## Links that ask for a sign-in
 
