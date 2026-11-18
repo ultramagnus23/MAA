@@ -5,7 +5,7 @@ import Avatar from "@/components/Avatar";
 import ConfettiLink from "@/components/ConfettiLink";
 import TeamGallery from "@/components/TeamGallery";
 import {
-  departments,
+  teamGroups,
   departmentDescriptions,
   teamMembers,
   DEFAULT_DESIGNATION,
@@ -76,12 +76,12 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <SectionHeading
             eyebrow="The team"
-            title="Our departments and team"
-            description="The Ministry has five departments. Everyone on the team is listed once, under their department."
+            title="Our team and departments"
+            description="The Ministry has a core team and five departments. Everyone is listed once."
           />
 
           <div className="mt-10 space-y-12">
-            {departments.map((dept) => {
+            {teamGroups.map((dept) => {
               const members = teamMembers.filter((m) => m.department === dept);
               return (
                 <div key={dept}>

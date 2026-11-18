@@ -13,9 +13,14 @@ export const departments = [
 
 export type Department = (typeof departments)[number];
 
+// The core team is listed first on the About page. It is a group, not a department.
+export const CORE_TEAM = "Core Team";
+export const teamGroups = [CORE_TEAM, ...departments] as const;
+export type TeamGroup = (typeof teamGroups)[number];
+
 export type TeamMember = {
   name: string;
-  department: Department;
+  department: TeamGroup;
   /** Verified designation. Leave undefined until confirmed. */
   designation?: string;
 };
@@ -23,9 +28,15 @@ export type TeamMember = {
 const HOD = "Head of Department";
 
 export const teamMembers: TeamMember[] = [
-  { name: "Minal Priya", department: "Tech", designation: "Minister" },
-  { name: "Ananya Makkar", department: "Tech", designation: "Deputy Minister" },
-  { name: "Anushka Sinha", department: "Tech", designation: "Deputy Minister" },
+  // Core team: the Minister, the Deputy Ministers and Sreejit
+  { name: "Minal Priya", department: CORE_TEAM, designation: "Minister" },
+  { name: "Ananya Makkar", department: CORE_TEAM, designation: "Deputy Minister" },
+  { name: "Anushka Sinha", department: CORE_TEAM, designation: "Deputy Minister" },
+  { name: "Sreejit", department: CORE_TEAM },
+  // Tech
+  { name: "Yash Singh", department: "Tech", designation: HOD },
+  { name: "Chaitanya Tripathi", department: "Tech", designation: HOD },
+  // Other departments
   { name: "Tarun Shetty", department: "Community Outreach and Marketing", designation: HOD },
   { name: "Niharika Ghosh", department: "Community Outreach and Marketing", designation: HOD },
   { name: "Saanve Shalini Singh", department: "Strategy and Collaborations", designation: HOD },
@@ -39,7 +50,8 @@ export const teamMembers: TeamMember[] = [
 export const DEFAULT_DESIGNATION = "Team member";
 
 // Short descriptions of each department. DRAFT: please confirm.
-export const departmentDescriptions: Record<Department, string> = {
+export const departmentDescriptions: Record<TeamGroup, string> = {
+  "Core Team": "The Minister, the Deputy Ministers and the rest of the Ministry's core team.",
   Tech: "Builds and maintains this website and the Ministry's digital tools.",
   "Strategy and Collaborations":
     "Works with academic societies and other student bodies and plans joint events.",

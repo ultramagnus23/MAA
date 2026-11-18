@@ -11,7 +11,7 @@ Run on 18 November 2026 on the latest code (earlier runs: 28 October and 17 Octo
 | Data tests | `npm test` (Vitest) | 13 tests passed, 1 file |
 | Production build | `npm run build` | Passed, 14 pages generated |
 
-The data tests are in `tests/data.test.ts`. They check: the roster has exactly the 11 supplied people once each; every person is in one of the five departments; the Minister and Deputy Ministers have those titles and everyone else is a Head of Department; office-hour people are on the roster with matching details and are fewer than the whole team; every WhatsApp link is an invite link and matches a real department with no duplicates; resource and handbook links point to Google or this site; resource titles are unique; every project names a source; the menu has Projects and no Transparency or Calendar; event addresses are made correctly.
+The data tests are in `tests/data.test.ts`. They check: the roster has exactly the 14 listed people once each; the core team and the Tech team are as given; every person is in one of the five departments; the Minister and Deputy Ministers have those titles and everyone else is a Head of Department; office-hour people are on the roster with matching details and are fewer than the whole team; every WhatsApp link is an invite link and matches a real department with no duplicates; resource and handbook links point to Google or this site; resource titles are unique; every project names a source; the menu has Projects and no Transparency or Calendar; event addresses are made correctly.
 
 There are no automated tests for page appearance or browser behaviour.
 
@@ -62,7 +62,7 @@ Office hours and events:
 
 Content:
 - [ ] Re-run the link check and note any link that does not open for a signed-in Ashoka account
-- [ ] About lists all 11 people once
+- [ ] About lists all 14 people once
 - [ ] No full team directory or calendar on any other page
 
 Marketing:

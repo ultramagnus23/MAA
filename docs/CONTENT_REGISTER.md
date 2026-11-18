@@ -6,7 +6,7 @@ Everything on the site that was supplied, what is still missing, and what is a t
 
 | Content | Source |
 | --- | --- |
-| Team roster, departments, and designations (Minister, Deputy Ministers, and eight Heads of Department) | Supplied roster, and the Ministry's later confirmation |
+| Team roster (14 people), core team, departments, and designations (Minister, Deputy Ministers, and eight Heads of Department) | Supplied roster, and the Ministry's later confirmation |
 | Office-hour people and Calendly links | Existing site |
 | 21 department WhatsApp invite links and 21 representative emails | "Department Whatsapp Groups + BOR Email IDs" |
 | Links for 35 resources and 29 archived handbooks | Link list supplied by the Ministry |
@@ -30,6 +30,8 @@ Everything on the site that was supplied, what is still missing, and what is a t
 
 ## To confirm
 
+- **Sreejit:** the full name and designation (only a first name was given).
+- **Yash Singh and Chaitanya Tripathi:** the designation shown is "Head of Department", following the departments rule. Please confirm.
 - The spelling "Anushka Sinha". The site now uses "Anushka" (see the team document). The original roster said "Anuskha".
 - The status of each project. "Ongoing" for the fest calendar and fest guidelines, and "Planned" for the research network, come from the wording of their source documents. "Published" means a finished document exists.
 - The department descriptions on About (drafts).

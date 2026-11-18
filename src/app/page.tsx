@@ -265,7 +265,7 @@ export default async function Home() {
           >
             <p className="text-sm font-medium text-accent">The team</p>
             <h3 className="mt-1 text-ink">Meet the Ministry</h3>
-            <p className="mt-2 text-sm text-ink-soft">Our five departments and everyone on the team.</p>
+            <p className="mt-2 text-sm text-ink-soft">Our core team, five departments and everyone on the team.</p>
             <span className="mt-3 inline-block text-sm font-medium text-accent group-hover:underline">
               See the team →
             </span>

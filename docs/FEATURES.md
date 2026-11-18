@@ -20,9 +20,9 @@ For each feature: what a student does, which files make it, what data it reads, 
 
 ## About and team directory
 
-- **Workflow:** the page explains the Ministry and where each kind of query goes. Then it lists the five departments with their members. Clicking Tarun Shetty or Niharika Ghosh opens the Marketing page. People with office hours have a "Book office hours" link.
+- **Workflow:** the page explains the Ministry and where each kind of query goes. Then it lists the core team and the five departments with their members. Clicking Tarun Shetty or Niharika Ghosh opens the Marketing page. People with office hours have a "Book office hours" link.
 - **Files:** `src/app/about/page.tsx`, `src/data/team-members.ts`, `src/components/Avatar.tsx`, `src/components/TeamGallery.tsx`.
-- **Data:** the 11-person roster. A data check confirms each person appears once and is in a valid department.
+- **Data:** the 14-person roster. A data check confirms each person appears once, is in the core team or a valid department, and has the right designation.
 - **Limits:** no photographs yet (initials are shown). The Minister and Deputy Ministers keep their titles, and the other eight people are shown as Heads of Department. Department descriptions are drafts. The team photo gallery shows 12 group photos with neutral captions that describe only what is visible.
 
 ## Events and calendar

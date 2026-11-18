@@ -1,5 +1,12 @@
 # Changelog
 
+## 18 November 2026: team change
+
+- Tech department is now Yash Singh and Chaitanya Tripathi.
+- New "Core Team" group, listed first on About: Minal Priya (Minister), Ananya Makkar and Anushka Sinha (Deputy Ministers), and Sreejit.
+- Roster is now 14 people. Data tests updated.
+- To confirm: Sreejit's full name and designation, and the designation shown for Yash Singh and Chaitanya Tripathi (Head of Department).
+
 ## 18 November 2026: wrap-up
 
 ### Changed

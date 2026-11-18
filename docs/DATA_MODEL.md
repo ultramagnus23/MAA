@@ -16,7 +16,7 @@ Nothing is stored about visitors. There are no cookies, accounts or form submiss
 
 | File | Shape | Notes |
 | --- | --- | --- |
-| `team-members.ts` | `TeamMember { name, department, designation? }` | `department` is one of five fixed values. `designation` left out means "Team member". Currently everyone has one: Minister, Deputy Minister or Head of Department. |
+| `team-members.ts` | `TeamMember { name, department, designation? }` | `department` is the core team or one of five fixed department names. `designation` left out means "Team member". Currently everyone has one: Minister, Deputy Minister or Head of Department. |
 | `office-hours.ts` | `OfficeHourHolder { name, designation, department?, bookingUrl, bookingLabel, timings? }` | Must also be on the roster with the same designation. `department` is optional and currently left out. |
 | `projects.ts` | `Project { name, summary, status, department?, period?, links?, source }` | `status` is Ongoing, Planned or Published. `source` is required. |
 | `reports.ts` | `MonthlyReport { period, published, summary, url }` | Empty. One entry per report. |
@@ -41,7 +41,7 @@ Events (Google Sheet columns): `title`, `date`, `time`, `location`, `category`, 
 
 ## Validation
 
-- **Data files:** `npm test` checks the roster (11 people, once each, valid departments, only three designations, correct designations), that office-hour people are on the roster with matching details and are fewer than the whole team, that every WhatsApp link is a `chat.whatsapp.com` invite and matches a real department, that resource and handbook links point to Google or this site, that resource titles are unique, that every project has a source, that the menu has Projects and no Transparency or Calendar, and that event addresses are made correctly. TypeScript also checks the shapes.
+- **Data files:** `npm test` checks the roster (14 people, once each, core team and Tech team as given, valid groups, correct designations), that office-hour people are on the roster with matching details and are fewer than the whole team, that every WhatsApp link is a `chat.whatsapp.com` invite and matches a real department, that resource and handbook links point to Google or this site, that resource titles are unique, that every project has a source, that the menu has Projects and no Transparency or Calendar, and that event addresses are made correctly. TypeScript also checks the shapes.
 - **Events sheet:** rows without a title or date are skipped. An unknown category becomes `MAA`.
 
 ## Migrations

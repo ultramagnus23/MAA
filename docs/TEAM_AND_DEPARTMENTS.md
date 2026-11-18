@@ -1,14 +1,17 @@
 # Team and departments
 
-## Official roster
+## Roster
 
-Names and departments are exactly as supplied. Designations: the Minister and two Deputy Ministers were supplied in the roster, and the Ministry later confirmed that the other eight people are Heads of Department (HODs). File: `src/data/team-members.ts`.
+File: `src/data/team-members.ts`. The About page lists the core team first, then the five departments. Everyone appears once.
 
-| Name | Designation shown | Department |
+| Name | Designation shown | Group |
 | --- | --- | --- |
-| Minal Priya | Minister | Tech |
-| Ananya Makkar | Deputy Minister | Tech |
-| Anushka Sinha | Deputy Minister | Tech |
+| Minal Priya | Minister | Core Team |
+| Ananya Makkar | Deputy Minister | Core Team |
+| Anushka Sinha | Deputy Minister | Core Team |
+| Sreejit | Team member | Core Team |
+| Yash Singh | Head of Department | Tech |
+| Chaitanya Tripathi | Head of Department | Tech |
 | Tarun Shetty | Head of Department | Community Outreach and Marketing |
 | Niharika Ghosh | Head of Department | Community Outreach and Marketing |
 | Saanve Shalini Singh | Head of Department | Strategy and Collaborations |
@@ -18,36 +21,44 @@ Names and departments are exactly as supplied. Designations: the Minister and tw
 | Endri Agarwal | Head of Department | Support and Research |
 | Arjeeta Chakraborty | Head of Department | Support and Research |
 
-## Departments
+On 18 November 2026 the Ministry changed the roster: the Tech department is now Yash Singh and Chaitanya Tripathi, and the previous Tech members (the Minister and Deputy Ministers) together with Sreejit form the core team.
 
-1. Tech
-2. Strategy and Collaborations
-3. Community Outreach and Marketing
-4. Policy and Resources
-5. Support and Research
+## Groups
+
+The core team, then the five departments:
+
+1. Core Team
+2. Tech
+3. Strategy and Collaborations
+4. Community Outreach and Marketing
+5. Policy and Resources
+6. Support and Research
 
 The short description of each department on the About page is a draft and needs confirming.
 
 ## Verified designations
 
-- Minal Priya: Minister. Ananya Makkar and Anushka Sinha: Deputy Minister. (Supplied in the roster.)
-- The other eight people are Heads of Department. The Ministry stated this directly, so the site shows "Head of Department" on the About page and on their Marketing cards. No other title has been added.
+- Minal Priya: Minister. Ananya Makkar and Anushka Sinha: Deputy Minister. (Supplied in the original roster.)
+- The Ministry said that the people in the departments are Heads of Department. The site shows "Head of Department" for them, including Yash Singh and Chaitanya Tripathi.
+- Sreejit has no designation, so the site shows "Team member".
 
-A data check (`npm test`) fails if anyone other than the three Ministers is not a Head of Department, or if the roster changes from the 11 supplied names.
+A data check (`npm test`) fails if the roster changes from these 14 people, if the core team or Tech team differ from the list above, or if a designation differs from the rules above.
 
 ## Missing or to confirm
 
-- **Spelling.** The roster said "Anuskha Sinha". The Calendly link, earlier versions of the site and the Ministry's latest status list say "Anushka". The site now uses "Anushka Sinha". Change it back in `team-members.ts`, `office-hours.ts` and the test if "Anuskha" is correct.
-- **"Head of Department" wording.** Please confirm the full title (it is shown in full, not as "HOD"), and whether each department has two heads as the roster suggests.
+- **Sreejit's full name** (only a first name was given) and **designation**.
+- **Designations of Yash Singh and Chaitanya Tripathi.** They are shown as Head of Department, following the rule for departments. Please confirm.
+- **Spelling.** The original roster said "Anuskha Sinha". The site uses "Anushka Sinha", as in the Calendly link and the Ministry's latest status list.
+- **"Head of Department" wording**, and whether each department has two heads.
 - **Photographs** for everyone. Initials are shown instead.
-- **Department descriptions** (drafts).
-- **Tech and the Minister and Deputy Ministers.** The roster places all three in Tech, so the About page still lists them in the Tech section. By request, "Tech" is not shown on their cards (About, Office Hours or the home page). Their designation is shown instead. If they should not be in the Tech section at all, say so.
+- **Department descriptions** (drafts, including the one for the core team).
+- "Tech" is not shown on the Minister and Deputy Minister cards.
 
 ## Office hours versus team membership
 
 - The team directory (About) lists everyone on the roster.
 - The Office Hours page lists only people in `src/data/office-hours.ts`: currently Minal Priya, Anushka Sinha and Ananya Makkar, each with a Calendly link.
-- Being on the roster does not put someone on the Office Hours page, and the other eight people are not shown as having office hours.
+- Being on the roster does not put someone on the Office Hours page, and nobody else is shown as having office hours.
 - The designation shown on a person's office-hours card comes from their roster entry. A data check confirms the two agree. The department is not shown for the Minister and Deputy Ministers.
 
 ## Department Representatives are separate

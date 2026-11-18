@@ -10,7 +10,7 @@ The website of the Ministry of Academic Affairs (MAA) at Ashoka University.
 | Page | Address | What it does |
 | --- | --- | --- |
 | Home | `/` | Hero with optional background video, a topic helper, current projects, office hours, upcoming events, resources |
-| About | `/about` | What the Ministry is, where each query should go, the five departments and the full team (11 people) |
+| About | `/about` | What the Ministry is, where each query should go, the core team, five departments and the full team (14 people) |
 | Projects | `/projects` | Ongoing, planned and completed projects, and the monthly transparency reports |
 | Events | `/events` | The only events calendar, with filters and a page for each event |
 | Office Hours | `/office-hours` | Who has bookable office hours, and how to email or WhatsApp the Ministry |

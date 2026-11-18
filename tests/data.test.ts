@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { departments, teamMembers } from "../src/data/team-members";
+import { departments, teamGroups, teamMembers } from "../src/data/team-members";
 import { officeHourHolders } from "../src/data/office-hours";
 import { departmentWhatsAppGroups } from "../src/data/whatsapp";
 import { departmentContacts } from "../src/data/representatives";
@@ -21,22 +21,32 @@ const EXPECTED_ROSTER = [
   "Nia Motha",
   "Endri Agarwal",
   "Arjeeta Chakraborty",
+  "Sreejit",
+  "Yash Singh",
+  "Chaitanya Tripathi",
 ];
 
 describe("team roster", () => {
-  it("has exactly the 11 supplied people, once each", () => {
+  it("has exactly the 14 listed people, once each", () => {
     expect(teamMembers.map((m) => m.name).sort()).toEqual([...EXPECTED_ROSTER].sort());
   });
 
-  it("puts everyone in one of the five departments", () => {
-    for (const m of teamMembers) expect(departments).toContain(m.department);
+  it("puts everyone in the core team or one of the five departments", () => {
+    for (const m of teamMembers) expect(teamGroups).toContain(m.department);
     expect(departments).toHaveLength(5);
   });
 
-  it("makes everyone except the Minister and Deputy Ministers a Head of Department", () => {
+  it("has the core team and the Tech team as given", () => {
+    const names = (g: string) => teamMembers.filter((m) => m.department === g).map((m) => m.name).sort();
+    expect(names("Core Team")).toEqual(["Ananya Makkar", "Anushka Sinha", "Minal Priya", "Sreejit"]);
+    expect(names("Tech")).toEqual(["Chaitanya Tripathi", "Yash Singh"]);
+  });
+
+  it("gives the Minister and Deputy Ministers those titles, Sreejit none, and everyone else Head of Department", () => {
     const ministry = ["Ananya Makkar", "Anushka Sinha", "Minal Priya"];
     for (const m of teamMembers) {
       if (ministry.includes(m.name)) expect(m.designation).toMatch(/Minister/);
+      else if (m.name === "Sreejit") expect(m.designation).toBeUndefined();
       else expect(m.designation).toBe("Head of Department");
     }
   });
