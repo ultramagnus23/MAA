@@ -248,7 +248,6 @@ export default async function Home() {
               >
                 <div className="flex items-start justify-between gap-2">
                   <p className="text-base font-semibold text-ink">{resource.title}</p>
-                  {resource.fileNote && <Tag>{resource.fileNote}</Tag>}
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">{resource.description}</p>
               </a>

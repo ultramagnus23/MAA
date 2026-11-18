@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { resources, resourceCategories } from "@/data/resources";
-import { Tag } from "@/components/ui";
 
 export default function ResourcesArchive() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -16,8 +15,7 @@ export default function ResourcesArchive() {
     const matchesSearch =
       searchQuery === "" ||
       res.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      res.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (res.fileNote && res.fileNote.toLowerCase().includes(searchQuery.toLowerCase()));
+      res.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -101,7 +99,6 @@ export default function ResourcesArchive() {
                     <span className="text-xs text-accent font-medium">
                       {res.category}
                     </span>
-                    {res.fileNote && <Tag variant="dim">{res.fileNote}</Tag>}
                   </div>
 
                   <h4 className="mt-3 text-lg font-medium text-ink group-hover:text-accent">
