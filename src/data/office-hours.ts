@@ -23,7 +23,7 @@ export const officeHourHolders: OfficeHourHolder[] = [
     bookingUrl: "https://calendly.com/minal-priya_ug2024-ashoka/maa-oh-with-minal-priya",
   },
   {
-    name: "Anuskha Sinha",
+    name: "Anushka Sinha",
     designation: "Deputy Minister",
     bookingLabel: "Book on Calendly",
     bookingUrl: "https://calendly.com/anushka-sinha_ug2024-ashoka/new-meeting",

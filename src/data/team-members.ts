@@ -25,7 +25,7 @@ const HOD = "Head of Department";
 export const teamMembers: TeamMember[] = [
   { name: "Minal Priya", department: "Tech", designation: "Minister" },
   { name: "Ananya Makkar", department: "Tech", designation: "Deputy Minister" },
-  { name: "Anuskha Sinha", department: "Tech", designation: "Deputy Minister" },
+  { name: "Anushka Sinha", department: "Tech", designation: "Deputy Minister" },
   { name: "Tarun Shetty", department: "Community Outreach and Marketing", designation: HOD },
   { name: "Niharika Ghosh", department: "Community Outreach and Marketing", designation: HOD },
   { name: "Saanve Shalini Singh", department: "Strategy and Collaborations", designation: HOD },

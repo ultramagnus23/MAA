@@ -30,7 +30,7 @@ Everything on the site that was supplied, what is still missing, and what is a t
 
 ## To confirm
 
-- The spelling "Anuskha Sinha" (roster) or "Anushka Sinha" (older sources).
+- The spelling "Anushka Sinha". The site now uses "Anushka" (see the team document). The original roster said "Anuskha".
 - The status of each project. "Ongoing" for the fest calendar and fest guidelines, and "Planned" for the research network, come from the wording of their source documents. "Published" means a finished document exists.
 - The department descriptions on About (drafts).
 - The captions on the 12 team photos. They describe only what is visible.

@@ -12,7 +12,7 @@ import { eventSlug } from "../src/lib/events";
 const EXPECTED_ROSTER = [
   "Minal Priya",
   "Ananya Makkar",
-  "Anuskha Sinha",
+  "Anushka Sinha",
   "Tarun Shetty",
   "Niharika Ghosh",
   "Saanve Shalini Singh",
@@ -34,7 +34,7 @@ describe("team roster", () => {
   });
 
   it("makes everyone except the Minister and Deputy Ministers a Head of Department", () => {
-    const ministry = ["Ananya Makkar", "Anuskha Sinha", "Minal Priya"];
+    const ministry = ["Ananya Makkar", "Anushka Sinha", "Minal Priya"];
     for (const m of teamMembers) {
       if (ministry.includes(m.name)) expect(m.designation).toMatch(/Minister/);
       else expect(m.designation).toBe("Head of Department");
@@ -45,7 +45,7 @@ describe("team roster", () => {
     const get = (n: string) => teamMembers.find((m) => m.name === n)?.designation;
     expect(get("Minal Priya")).toBe("Minister");
     expect(get("Ananya Makkar")).toBe("Deputy Minister");
-    expect(get("Anuskha Sinha")).toBe("Deputy Minister");
+    expect(get("Anushka Sinha")).toBe("Deputy Minister");
   });
 });
 

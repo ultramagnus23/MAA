@@ -1,5 +1,24 @@
 # Changelog
 
+## 18 November 2026: wrap-up
+
+### Changed
+- The Resources page no longer says resources are "verified by the Office of Academic Affairs".
+- "Anuskha Sinha" is now spelled "Anushka Sinha" (About, Office Hours, tests, docs), matching the Calendly link and the Ministry's latest status list.
+
+### Fixed
+- Marketing page: duplicate element ids on the Instagram-style icons (each icon now has its own id).
+
+### Checked
+- Pages: one h1, image text, button and link names, form labels, safe external links, no emoji, no sideways scrolling at 375px on 11 pages.
+- Reduce-motion: opening Marketing from About skips the confetti and just opens the page.
+- Live site (maa-silk.vercel.app) shows the latest menu (no Handbooks, no Marketing) and the footer Instagram link.
+- Links: about 55 Google document and Drive links still ask for a sign-in. All 21 WhatsApp and 3 Calendly links open.
+- Types, lint, 13 data tests and the production build all passed.
+
+### Repository
+- Six automated security and dependency workflow commits from the repository owner were merged in (`.github/`). No site code changed.
+
 ## 28 October 2026: confirmed changes
 
 ### Removed

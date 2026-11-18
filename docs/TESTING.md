@@ -2,7 +2,7 @@
 
 ## Automated checks
 
-Run on 28 October 2026 on the latest code (earlier run: 17 October 2026).
+Run on 18 November 2026 on the latest code (earlier runs: 28 October and 17 October 2026).
 
 | Check | Command | Result |
 | --- | --- | --- |
@@ -83,4 +83,4 @@ Marketing:
 ## Known issues
 
 - Many document links ask for a sign-in when opened without an account.
-- `Anuskha` and `Anushka` spellings differ between the roster and older sources.
+- The roster spelling was "Anuskha". The site now uses "Anushka", as in the Calendly link and the Ministry's latest status list. Please confirm.

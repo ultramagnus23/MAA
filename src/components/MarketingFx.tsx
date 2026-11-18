@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useId, useRef, useState, type ReactNode } from "react";
 import Avatar from "@/components/Avatar";
 import { usePrefersReducedMotion } from "@/lib/useMediaQuery";
 import { marketingProfiles } from "@/data/marketing";
@@ -134,18 +134,19 @@ export function ShareBar({ title, anchor = "" }: { title: string; anchor?: strin
 /* ---------- Instagram-inspired glyph ---------- */
 
 function InstagramGlyph({ size = 44 }: { size?: number }) {
+  const gid = `ig-grad-${useId().replace(/:/g, "")}`;
   return (
     <svg width={size} height={size} viewBox="0 0 48 48" aria-hidden="true" focusable="false">
       <defs>
-        <linearGradient id="ig-grad" x1="0" y1="1" x2="1" y2="0">
+        <linearGradient id={gid} x1="0" y1="1" x2="1" y2="0">
           <stop offset="0" stopColor="#e0b33b" />
           <stop offset="0.5" stopColor="#d98a96" />
           <stop offset="1" stopColor="#4b1a6b" />
         </linearGradient>
       </defs>
-      <rect x="4" y="4" width="40" height="40" rx="12" fill="#fffdf2" stroke="url(#ig-grad)" strokeWidth="4" />
-      <circle cx="24" cy="24" r="9" fill="none" stroke="url(#ig-grad)" strokeWidth="4" />
-      <circle cx="35" cy="13" r="2.6" fill="url(#ig-grad)" />
+      <rect x="4" y="4" width="40" height="40" rx="12" fill="#fffdf2" stroke={`url(#${gid})`} strokeWidth="4" />
+      <circle cx="24" cy="24" r="9" fill="none" stroke={`url(#${gid})`} strokeWidth="4" />
+      <circle cx="35" cy="13" r="2.6" fill={`url(#${gid})`} />
     </svg>
   );
 }
