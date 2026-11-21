@@ -1,5 +1,21 @@
 # Changelog
 
+## 21 November 2026: wording, captions and redundancy
+
+### Changed
+- Sports accommodation policy: removed the "appears to be a proposal template" note.
+- Pass/Fail guide: removed "Informal, not an official policy".
+- Team photo captions replaced with the captions supplied by the Ministry (for example "Behind the scenes at the Academic Societies Awards", "MAA trip to Murthal", "Meet the BOR").
+- Sreejit is shown as Executive Director. Yash Singh and Chaitanya Tripathi are confirmed as the Tech Heads of Department.
+
+### Removed (repeated content)
+- Home page: the strip of four quick links (the menu and the "What do you need help with?" helper already cover them).
+- Office Hours: the bottom card about department questions (the page introduction already says it).
+- Representatives: the two-card guide at the top (the page heading already says it). The heading now also points to Office Hours.
+
+### Left in place for your decision
+- The Resources page still lists "Department WhatsApp Groups and BOR Email IDs" and "MAA Open Q&A Group (UG2025)", which the Representatives and Office Hours pages also cover. They were supplied in your link list, so they were not removed.
+
 ## 18 November 2026: team change
 
 - Tech department is now Yash Singh and Chaitanya Tripathi.

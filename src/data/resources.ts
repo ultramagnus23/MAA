@@ -41,10 +41,10 @@ export const resources: Resource[] = [
   {
     title: "Official Sports Accommodation Policy",
     description:
-      "OAA policy on academic accommodations for student-athletes (attendance, quiz weightage, documentation). Appears to be a proposal template; confirm current status with OAA before relying on it as final.",
+      "OAA policy on academic accommodations for student-athletes (attendance, quiz weightage, documentation).",
     category: "Policy",
     url: "https://drive.google.com/file/d/1rHY35R3JHQ04HHlv2npzXKODiRD4lTDd/view",
-    fileNote: "PDF · unconfirmed final status",
+    fileNote: "PDF",
   },
 
   {
@@ -59,7 +59,7 @@ export const resources: Resource[] = [
   {
     title: "Pass/Fail Crisis Guide",
     description:
-      "A student-sourced guide (50+ respondents) to the Pass/Fail decision covering general factors, department-specific patterns, and an FAQ. Informal, not an official policy.",
+      "A student-sourced guide (50+ respondents) to the Pass/Fail decision covering general factors, department-specific patterns, and an FAQ.",
     category: "Guides",
     url: "https://docs.google.com/document/d/169CUMMkpqbg24GbO5k84cYhVPBBr9cVKS632CA0ZMlM/edit",
     fileNote: "DOCX",

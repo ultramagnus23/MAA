@@ -49,13 +49,6 @@ export default async function Home() {
     },
   ];
 
-  const quickLinks = [
-    { q: "Who do I contact for my department?", href: "/representatives" },
-    { q: "When are office hours held?", href: "/office-hours" },
-    { q: "What is happening this week?", href: "/events" },
-    { q: "Where can I find the policy document?", href: "/resources" },
-  ];
-
   return (
     <div>
       {/* Hero */}
@@ -98,26 +91,6 @@ export default async function Home() {
       <section className="border-b border-line">
         <div className="mx-auto max-w-3xl px-5 py-12 sm:px-8">
           <HelpFinder topics={helpTopics} />
-        </div>
-      </section>
-
-      {/* Quick links */}
-      <section className="border-b border-line bg-paper-dim">
-        <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {quickLinks.map((item) => (
-              <Link
-                key={item.q}
-                href={item.href}
-                className="group flex items-center justify-between rounded border border-line bg-white px-4 py-4 text-sm transition-colors hover:border-accent"
-              >
-                <span className="font-medium text-ink">{item.q}</span>
-                <span aria-hidden className="text-accent transition-transform group-hover:translate-x-0.5">
-                  →
-                </span>
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 

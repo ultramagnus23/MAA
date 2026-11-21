@@ -16,31 +16,8 @@ export default function RepresentativesPage() {
       <PageHeader
         eyebrow="Department Representatives"
         title="Representatives and WhatsApp groups"
-        description="For a question, issue or request about your own department, contact your Department Representative directly. Each department also has a WhatsApp group."
+        description="For a question, issue or request about your own department, contact your Department Representative directly. You do not need to go through the Ministry. Each department also has a WhatsApp group. For general Ministry matters, see Office Hours."
       />
-
-      <section className="mx-auto max-w-6xl px-5 pt-12 sm:px-8">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <Card className="border-l-4 border-l-accent">
-            <p className="text-sm font-medium text-accent">Department matters</p>
-            <p className="mt-2 text-lg font-semibold text-ink">Your Department Representative</p>
-            <p className="mt-1 text-sm text-ink-soft">
-              Write to the email for your department below. You do not need to go through the Ministry.
-            </p>
-          </Card>
-          <Card>
-            <p className="text-sm font-medium text-accent">General Ministry matters</p>
-            <p className="mt-2 text-lg font-semibold text-ink">The Ministry</p>
-            <p className="mt-1 text-sm text-ink-soft">
-              Use office hours, email or WhatsApp on the{" "}
-              <Link href="/office-hours" className="font-medium text-accent underline">
-                Office Hours page
-              </Link>
-              .
-            </p>
-          </Card>
-        </div>
-      </section>
 
       <section id="whatsapp" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
         <SectionHeading

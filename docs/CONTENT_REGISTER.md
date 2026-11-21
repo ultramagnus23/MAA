@@ -12,6 +12,7 @@ Everything on the site that was supplied, what is still missing, and what is a t
 | Links for 35 resources and 29 archived handbooks | Link list supplied by the Ministry |
 | Nine projects | BOR Annual Report 2024-25, Course Caps Report, Mandate for Academic Societies |
 | Grievance form link | Existing site |
+| Captions for the 12 team photos | Supplied by the Ministry (21 November 2026) |
 
 ## Missing: needs input
 
@@ -30,12 +31,10 @@ Everything on the site that was supplied, what is still missing, and what is a t
 
 ## To confirm
 
-- **Sreejit:** the full name and designation (only a first name was given).
-- **Yash Singh and Chaitanya Tripathi:** the designation shown is "Head of Department", following the departments rule. Please confirm.
+- **Sreejit:** the surname (only a first name was given). His designation, Executive Director, is confirmed.
 - The spelling "Anushka Sinha". The site now uses "Anushka" (see the team document). The original roster said "Anuskha".
 - The status of each project. "Ongoing" for the fest calendar and fest guidelines, and "Planned" for the research network, come from the wording of their source documents. "Published" means a finished document exists.
 - The department descriptions on About (drafts).
-- The captions on the 12 team photos. They describe only what is visible.
 
 ## Links that ask for a sign-in
 

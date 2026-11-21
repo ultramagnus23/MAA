@@ -42,11 +42,11 @@ describe("team roster", () => {
     expect(names("Tech")).toEqual(["Chaitanya Tripathi", "Yash Singh"]);
   });
 
-  it("gives the Minister and Deputy Ministers those titles, Sreejit none, and everyone else Head of Department", () => {
+  it("gives the core team their titles and everyone else Head of Department", () => {
     const ministry = ["Ananya Makkar", "Anushka Sinha", "Minal Priya"];
     for (const m of teamMembers) {
       if (ministry.includes(m.name)) expect(m.designation).toMatch(/Minister/);
-      else if (m.name === "Sreejit") expect(m.designation).toBeUndefined();
+      else if (m.name === "Sreejit") expect(m.designation).toBe("Executive Director");
       else expect(m.designation).toBe("Head of Department");
     }
   });
@@ -56,6 +56,7 @@ describe("team roster", () => {
     expect(get("Minal Priya")).toBe("Minister");
     expect(get("Ananya Makkar")).toBe("Deputy Minister");
     expect(get("Anushka Sinha")).toBe("Deputy Minister");
+    expect(get("Sreejit")).toBe("Executive Director");
   });
 });
 

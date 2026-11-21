@@ -18,7 +18,7 @@ export default function OfficeHoursPage() {
       <PageHeader
         eyebrow="Office hours"
         title="Talk to the Ministry"
-        description="Book an office hour with a member of the Ministry, or contact us by email or WhatsApp. For a question about your own department, write to your Department Representative instead."
+        description="Book an office hour with a member of the Ministry, or contact us by email or WhatsApp. For a question about your own department, write to your Department Representative instead (see Representatives)."
       />
 
       <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
@@ -126,23 +126,6 @@ export default function OfficeHoursPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-        <Card className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <h3 className="text-ink">Question about your own department?</h3>
-            <p className="mt-1 text-sm text-ink-soft">
-              Department Representatives handle department matters. They are
-              separate from the Ministry&apos;s office hours, email and WhatsApp.
-            </p>
-          </div>
-          <Link
-            href="/representatives"
-            className="shrink-0 rounded border border-accent px-5 py-2.5 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-white"
-          >
-            Find your representative →
-          </Link>
-        </Card>
-      </section>
     </div>
   );
 }

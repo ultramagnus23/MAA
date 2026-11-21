@@ -4,7 +4,7 @@ For each feature: what a student does, which files make it, what data it reads, 
 
 ## Home page
 
-- **Workflow:** a student lands on the hero, picks a topic in "What do you need help with?", and gets one answer and one link. Below are quick links, current projects, office hours, upcoming events, featured resources, and links to the team and department contacts.
+- **Workflow:** a student lands on the hero, picks a topic in "What do you need help with?", and gets one answer and one link. Below are current projects, office hours, upcoming events, featured resources, and links to the team and department contacts.
 - **Files:** `src/app/page.tsx`, `src/components/HeroVideo.tsx`, `src/components/HelpFinder.tsx`.
 - **Data:** `hero.ts`, `projects.ts`, `office-hours.ts`, `resources.ts`, events (Google Sheet).
 - **Permissions:** none; read only.
@@ -23,7 +23,7 @@ For each feature: what a student does, which files make it, what data it reads, 
 - **Workflow:** the page explains the Ministry and where each kind of query goes. Then it lists the core team and the five departments with their members. Clicking Tarun Shetty or Niharika Ghosh opens the Marketing page. People with office hours have a "Book office hours" link.
 - **Files:** `src/app/about/page.tsx`, `src/data/team-members.ts`, `src/components/Avatar.tsx`, `src/components/TeamGallery.tsx`.
 - **Data:** the 14-person roster. A data check confirms each person appears once, is in the core team or a valid department, and has the right designation.
-- **Limits:** no photographs yet (initials are shown). The Minister and Deputy Ministers keep their titles, and the other eight people are shown as Heads of Department. Department descriptions are drafts. The team photo gallery shows 12 group photos with neutral captions that describe only what is visible.
+- **Limits:** no photographs yet (initials are shown). The Minister and Deputy Ministers keep their titles, and the other eight people are shown as Heads of Department. Department descriptions are drafts. The team photo gallery shows 12 group photos with captions supplied by the Ministry.
 
 ## Events and calendar
 

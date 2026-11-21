@@ -58,5 +58,5 @@ None. There is no database.
 | Resource and handbook links | Genuine (supplied by the Ministry) |
 | Projects | Genuine content from named documents. Statuses should be confirmed. |
 | Department descriptions | Draft, needs confirming |
-| Team photo captions | Written from what is visible in each photo. Need checking. |
+| Team photo captions | Genuine (supplied by the Ministry) |
 | Monthly reports, SG report link, campaigns, Instagram links, events | Empty. Nothing was invented. |

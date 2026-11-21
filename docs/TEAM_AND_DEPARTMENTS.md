@@ -9,7 +9,7 @@ File: `src/data/team-members.ts`. The About page lists the core team first, then
 | Minal Priya | Minister | Core Team |
 | Ananya Makkar | Deputy Minister | Core Team |
 | Anushka Sinha | Deputy Minister | Core Team |
-| Sreejit | Team member | Core Team |
+| Sreejit | Executive Director | Core Team |
 | Yash Singh | Head of Department | Tech |
 | Chaitanya Tripathi | Head of Department | Tech |
 | Tarun Shetty | Head of Department | Community Outreach and Marketing |
@@ -21,7 +21,7 @@ File: `src/data/team-members.ts`. The About page lists the core team first, then
 | Endri Agarwal | Head of Department | Support and Research |
 | Arjeeta Chakraborty | Head of Department | Support and Research |
 
-On 18 November 2026 the Ministry changed the roster: the Tech department is now Yash Singh and Chaitanya Tripathi, and the previous Tech members (the Minister and Deputy Ministers) together with Sreejit form the core team.
+On 18 November 2026 the Ministry changed the roster: the Tech department is now Yash Singh and Chaitanya Tripathi, and the previous Tech members (the Minister and Deputy Ministers) together with Sreejit (Executive Director) form the core team.
 
 ## Groups
 
@@ -39,15 +39,14 @@ The short description of each department on the About page is a draft and needs 
 ## Verified designations
 
 - Minal Priya: Minister. Ananya Makkar and Anushka Sinha: Deputy Minister. (Supplied in the original roster.)
-- The Ministry said that the people in the departments are Heads of Department. The site shows "Head of Department" for them, including Yash Singh and Chaitanya Tripathi.
-- Sreejit has no designation, so the site shows "Team member".
+- Sreejit: Executive Director. (Confirmed by the Ministry on 21 November 2026.)
+- Everyone in the departments is a Head of Department, including Yash Singh and Chaitanya Tripathi, who the Ministry confirmed are the Tech Heads of Department.
 
 A data check (`npm test`) fails if the roster changes from these 14 people, if the core team or Tech team differ from the list above, or if a designation differs from the rules above.
 
 ## Missing or to confirm
 
-- **Sreejit's full name** (only a first name was given) and **designation**.
-- **Designations of Yash Singh and Chaitanya Tripathi.** They are shown as Head of Department, following the rule for departments. Please confirm.
+- **Sreejit's surname.** Only a first name was given.
 - **Spelling.** The original roster said "Anuskha Sinha". The site uses "Anushka Sinha", as in the Calendly link and the Ministry's latest status list.
 - **"Head of Department" wording**, and whether each department has two heads.
 - **Photographs** for everyone. Initials are shown instead.

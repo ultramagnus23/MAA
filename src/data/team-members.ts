@@ -28,11 +28,11 @@ export type TeamMember = {
 const HOD = "Head of Department";
 
 export const teamMembers: TeamMember[] = [
-  // Core team: the Minister, the Deputy Ministers and Sreejit
+  // Core team: the Minister, the Deputy Ministers and the Executive Director
   { name: "Minal Priya", department: CORE_TEAM, designation: "Minister" },
   { name: "Ananya Makkar", department: CORE_TEAM, designation: "Deputy Minister" },
   { name: "Anushka Sinha", department: CORE_TEAM, designation: "Deputy Minister" },
-  { name: "Sreejit", department: CORE_TEAM },
+  { name: "Sreejit", department: CORE_TEAM, designation: "Executive Director" },
   // Tech
   { name: "Yash Singh", department: "Tech", designation: HOD },
   { name: "Chaitanya Tripathi", department: "Tech", designation: HOD },
